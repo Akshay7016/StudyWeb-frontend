@@ -40,7 +40,7 @@ const Home = () => {
                     </CTAButton>
                 </div>
 
-                <div className='mt-12 mb-[140px] w-[97%] relative shadow-[-5px_-5px_40px_10px_#073B4C]'>
+                <div className='mt-12 mb-[80px] lg:mb-[140px] w-[97%] relative shadow-[-5px_-5px_40px_10px_#073B4C]'>
                     <video autoPlay muted loop className='relative z-20'>
                         <source src={Banner} type="video/mp4" />
                     </video>
@@ -49,7 +49,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className='flex flex-col gap-28'>
+                <div className='flex flex-col gap-1 lg:gap-28'>
                     {/* Code block 1 */}
                     <CodeBlocks
                         flexDirection={"lg:flex-row"}
@@ -69,7 +69,7 @@ const Home = () => {
                     <CodeBlocks
                         flexDirection={"lg:flex-row-reverse"}
                         heading={
-                            <div className='w-[50%] text-4xl font-semibold'>
+                            <div className='lg:w-[50%] text-4xl font-semibold'>
                                 Start <HighlightText text="coding in seconds" />
                             </div>
                         }
