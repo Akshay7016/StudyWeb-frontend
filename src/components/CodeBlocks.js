@@ -65,6 +65,7 @@ const CodeBlocks = ({
                                 display: "block",
                             }
                         }
+                        className="text-[13px] lg:text-[14px]"
                     />
                 </div>
             </div>
