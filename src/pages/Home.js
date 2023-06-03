@@ -7,6 +7,7 @@ import CTAButton from '../components/CTAButton';
 import CodeBlocks from '../components/CodeBlocks';
 import TimelineSection from '../components/TimelineSection';
 import LearningLanguageSection from '../components/LearningLanguageSection';
+import InstructorSection from '../components/InstructorSection';
 
 import Banner from '../assets/Images/banner.mp4';
 
@@ -129,6 +130,13 @@ const Home = () => {
             </div>
 
             {/* Section 3 */}
+            <div className='w-11/12 max-w-maxContent mx-auto'>
+                <InstructorSection />
+
+                <div className='text-4xl text-white text-center font-semibold'>
+                    Reviews from other learners
+                </div>
+            </div>
 
             {/* Footer */}
         </>

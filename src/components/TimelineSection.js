@@ -56,7 +56,7 @@ const TimelineSection = () => {
 
                 <div className='w-full h-full bg-white absolute top-4 left-4 z-[10]'></div>
 
-                <div className='absolute -bottom-[65px] left-10 z-[30] bg-caribbeangreen-700 flex justify-between text-white uppercase p-[42px]'>
+                <div className='absolute -bottom-[65px] left-11 z-[30] bg-caribbeangreen-700 flex justify-between text-white uppercase p-[42px]'>
                     <div className='flex gap-6  border-r-[1px] border-caribbeangreen-300'>
                         <div className='text-3xl font-bold'>10</div>
                         <div className='w-[50%] text-caribbeangreen-300 text-sm'>Years Experience</div>
