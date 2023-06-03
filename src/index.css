@@ -52,3 +52,7 @@ code {
 *::-webkit-scrollbar-thumb:active {
   background-color: #dbddea;
 }
+
+.homepage_bg {
+  background: url(./assets/Images/bghome.svg);
+}

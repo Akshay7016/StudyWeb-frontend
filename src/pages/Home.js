@@ -5,6 +5,8 @@ import { FaArrowRight } from 'react-icons/fa';
 import HighlightText from '../components/HighlightText';
 import CTAButton from '../components/CTAButton';
 import CodeBlocks from '../components/CodeBlocks';
+import TimelineSection from '../components/TimelineSection';
+import LearningLanguageSection from '../components/LearningLanguageSection';
 
 import Banner from '../assets/Images/banner.mp4';
 
@@ -82,7 +84,49 @@ const Home = () => {
                 </div>
 
             </div>
+
             {/* Section 2 */}
+            <div className='bg-pure-greys-5 text-richblack-700'>
+                <div className='homepage_bg h-[333px]'>
+                    <div className='w-11/12 h-full mx-auto max-w-maxContent flex items-center justify-center'>
+                        <div className='flex gap-6'>
+                            <CTAButton active={true} linkTo="/signup">
+                                <div className='flex gap-2 items-center'>
+                                    Explore Full Catalog
+                                    <FaArrowRight />
+                                </div>
+                            </CTAButton>
+
+                            <CTAButton linkTo="/signup">
+                                Learn More
+                            </CTAButton>
+                        </div>
+                    </div>
+                </div>
+
+                <div className='w-11/12 max-w-maxContent mx-auto mt-[90px] flex flex-col'>
+                    <div className='flex justify-between mb-[90px]'>
+                        <div className='w-[50%] text-4xl font-semibold'>
+                            Get the skills you need for a {" "}
+                            <HighlightText text="job that is in demand." />
+                        </div>
+
+                        <div className='w-[42%] flex flex-col items-start gap-12'>
+                            <div>
+                                The modern StudyNotion is the dictates its own terms. Today, to be a competitive specialist requires more than professional skills.
+                            </div>
+
+                            <CTAButton active={true} linkTo="/signup">
+                                Learn More
+                            </CTAButton>
+                        </div>
+                    </div>
+
+                    <TimelineSection />
+
+                    <LearningLanguageSection />
+                </div>
+            </div>
 
             {/* Section 3 */}
 
