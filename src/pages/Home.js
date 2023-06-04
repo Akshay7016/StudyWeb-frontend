@@ -9,6 +9,7 @@ import TimelineSection from '../components/core/homepage/TimelineSection';
 import LearningLanguageSection from '../components/core/homepage/LearningLanguageSection';
 import InstructorSection from '../components/core/homepage/InstructorSection';
 import ExploreMore from '../components/core/homepage/ExploreMore';
+import Footer from '../components/common/Footer';
 
 import Banner from '../assets/Images/banner.mp4';
 
@@ -136,12 +137,13 @@ const Home = () => {
             <div className='w-11/12 max-w-maxContent mx-auto'>
                 <InstructorSection />
 
-                <div className='text-4xl text-white text-center font-semibold'>
+                <div className='mb-[100px] text-4xl text-white text-center font-semibold'>
                     Reviews from other learners
                 </div>
             </div>
 
             {/* Footer */}
+            <Footer />
         </>
     )
 }
