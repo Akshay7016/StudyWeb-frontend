@@ -91,9 +91,9 @@ const Home = () => {
 
             {/* Section 2 */}
             <div className='bg-pure-greys-5 text-richblack-700'>
-                <div className='homepage_bg h-[333px]'>
-                    <div className='w-11/12 h-full mx-auto max-w-maxContent flex items-center justify-center'>
-                        <div className='flex gap-6'>
+                <div className='homepage_bg h-[318px]'>
+                    <div className='w-11/12 h-full mx-auto max-w-maxContent flex justify-center'>
+                        <div className='mt-[200px] flex gap-6'>
                             <Button active={true} linkTo="/signup">
                                 <div className='flex gap-2 items-center'>
                                     Explore Full Catalog

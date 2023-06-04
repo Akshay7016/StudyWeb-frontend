@@ -25,7 +25,7 @@ const ExploreMore = () => {
     };
 
     return (
-        <div className='w-full mt-20'>
+        <div className='w-full relative mt-20 mb-[140px]'>
             <div className='text-4xl font-semibold text-center'>
                 Unlock the <HighlightText text="Power of Code" />
             </div>
@@ -52,19 +52,21 @@ const ExploreMore = () => {
                 }
             </div>
 
-            <div className='w-full flex items-center justify-between'>
-                {
-                    courses.map((course, index) => {
-                        return (
-                            <CourseCard
-                                key={index}
-                                course={course}
-                                currentCard={currentCard}
-                                setCurrentCard={setCurrentCard}
-                            />
-                        )
-                    })
-                }
+            <div className='w-full absolute top-[190px]'>
+                <div className='w-full flex items-center justify-between'>
+                    {
+                        courses.map((course, index) => {
+                            return (
+                                <CourseCard
+                                    key={index}
+                                    course={course}
+                                    currentCard={currentCard}
+                                    setCurrentCard={setCurrentCard}
+                                />
+                            )
+                        })
+                    }
+                </div>
             </div>
         </div>
     )

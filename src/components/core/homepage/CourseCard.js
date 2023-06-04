@@ -7,7 +7,7 @@ const CourseCard = ({ course, currentCard, setCurrentCard }) => {
     const { heading, description, level, lessonNumber } = course;
 
     return (
-        <div className='relative mb-[200px] w-[330px] h-[280px]'>
+        <div className='relative w-[330px] h-[280px]'>
 
             {
                 currentCard === heading &&
