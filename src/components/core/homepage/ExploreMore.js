@@ -25,7 +25,7 @@ const ExploreMore = () => {
     };
 
     return (
-        <div className='w-full relative mt-20 mb-[140px]'>
+        <div className='w-full relative mt-0 lg:mt-20 mb-[55px] lg:mb-[140px]'>
             <div className='text-4xl font-semibold text-center'>
                 Unlock the <HighlightText text="Power of Code" />
             </div>
@@ -34,7 +34,7 @@ const ExploreMore = () => {
                 Learn to Build Anything You Can Imagine
             </div>
 
-            <div className='w-fit mx-auto mt-5 mb-[50px] flex items-center gap-6 bg-richblack-800 rounded-full p-1 shadow-[0_1px_1px_rgba(255,255,255,0.4)]'>
+            <div className='w-fit mx-auto mt-5 mb-[50px] hidden lg:flex items-center gap-6 bg-richblack-800 rounded-full p-1 shadow-[0_1px_1px_rgba(255,255,255,0.4)]'>
                 {
                     tabsName.map((tab, index) => {
                         return (
@@ -52,8 +52,8 @@ const ExploreMore = () => {
                 }
             </div>
 
-            <div className='w-full absolute top-[190px]'>
-                <div className='w-full flex items-center justify-between'>
+            <div className='w-full mt-10 lg:mt-0 lg:absolute top-[190px]'>
+                <div className='w-full flex flex-col gap-10 lg:flex-row items-center justify-between'>
                     {
                         courses.map((course, index) => {
                             return (

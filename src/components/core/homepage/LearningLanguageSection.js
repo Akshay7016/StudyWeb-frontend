@@ -9,35 +9,35 @@ import plan_your_lesson from "../../../assets/Images/Plan_your_lessons.svg";
 
 const LearningLanguageSection = () => {
     return (
-        <div className='mt-[200px] mb-[70px] flex flex-col items-center gap-3'>
-            <div className='text-4xl font-semibold'>
+        <div className='mt-[155px] lg:mt-[200px] mb-[70px] flex flex-col items-center gap-7 lg:gap-3'>
+            <div className='text-4xl font-semibold text-center'>
                 Your swiss knife for <HighlightText text="learning any language" />
             </div>
 
-            <div className='w-[75%] mx-auto text-base text-center text-richblack-600 '>
+            <div className='lg:w-[75%] mx-auto text-base text-center text-richblack-600 '>
                 Using spin making learning multiple languages easy. with 20+ languages realistic voice-over, progress tracking, custom schedule and more.
             </div>
 
-            <div className='w-full flex items-center justify-center'>
+            <div className='w-full flex flex-col lg:flex-row items-center justify-center'>
                 <img
                     src={know_your_progress}
                     alt="know_your_progress"
-                    className='h-[400px] -mr-32'
+                    className='h-[400px] lg:-mr-32'
                 />
                 <img
                     src={compare_with_others}
                     alt="compare_with_others"
-                    className='h-[500px]'
+                    className='h-[500px] -mt-[150px] -mb-[200px] lg:my-0'
                 />
 
                 <img
                     src={plan_your_lesson}
                     alt="plan_your_lesson"
-                    className='h-[450px] -ml-36'
+                    className='h-[450px] lg:-ml-36'
                 />
             </div>
 
-            <div>
+            <div className='-mt-[60px] lg:mt-0'>
                 <Button active={true} linkTo="/signup">
                     <div className='font-semibold'>
                         Learn More

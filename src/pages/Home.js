@@ -58,7 +58,7 @@ const Home = () => {
                     <CodeBlocks
                         flexDirection={"lg:flex-row"}
                         heading={
-                            <div className='text-4xl font-semibold'>
+                            <div className='text-4xl font-semibold text-center lg:text-start'>
                                 Unlock your <HighlightText text="coding potential" /> with our online courses.
                             </div>
                         }
@@ -73,7 +73,7 @@ const Home = () => {
                     <CodeBlocks
                         flexDirection={"lg:flex-row-reverse"}
                         heading={
-                            <div className='lg:w-[50%] text-4xl font-semibold'>
+                            <div className='lg:w-[50%] text-4xl font-semibold text-center lg:text-start'>
                                 Start <HighlightText text="coding in seconds" />
                             </div>
                         }
@@ -91,9 +91,9 @@ const Home = () => {
 
             {/* Section 2 */}
             <div className='bg-pure-greys-5 text-richblack-700'>
-                <div className='homepage_bg h-[318px]'>
+                <div className='homepage_bg h-[200px] lg:h-[318px]'>
                     <div className='w-11/12 h-full mx-auto max-w-maxContent flex justify-center'>
-                        <div className='mt-[200px] flex gap-6'>
+                        <div className='mt-[70px] lg:mt-[200px] flex gap-6'>
                             <Button active={true} linkTo="/signup">
                                 <div className='flex gap-2 items-center'>
                                     Explore Full Catalog
@@ -108,14 +108,14 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className='w-11/12 max-w-maxContent mx-auto mt-[90px] flex flex-col'>
-                    <div className='flex justify-between mb-[90px]'>
-                        <div className='w-[50%] text-4xl font-semibold'>
+                <div className='w-11/12 max-w-maxContent mx-auto mt-[40px] lg:mt-[90px] flex flex-col'>
+                    <div className='flex flex-col gap-6 lg:flex-row lg:gap-0 justify-between mb-[90px]'>
+                        <div className='lg:w-[50%] text-4xl font-semibold text-center lg:text-start'>
                             Get the skills you need for a {" "}
                             <HighlightText text="job that is in demand." />
                         </div>
 
-                        <div className='w-[42%] flex flex-col items-start gap-12'>
+                        <div className='lg:w-[42%] flex flex-col items-center lg:items-start gap-12'>
                             <div>
                                 The modern StudyNotion is the dictates its own terms. Today, to be a competitive specialist requires more than professional skills.
                             </div>
