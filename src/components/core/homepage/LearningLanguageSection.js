@@ -1,15 +1,15 @@
 import React from 'react';
 
 import HighlightText from "./HighlightText";
-import CTAButton from './CTAButton';
+import Button from './Button';
 
-import know_your_progress from "../assets/Images/Know_your_progress.svg";
-import compare_with_others from "../assets/Images/Compare_with_others.svg";
-import plan_your_lesson from "../assets/Images/Plan_your_lessons.svg";
+import know_your_progress from "../../../assets/Images/Know_your_progress.svg";
+import compare_with_others from "../../../assets/Images/Compare_with_others.svg";
+import plan_your_lesson from "../../../assets/Images/Plan_your_lessons.svg";
 
 const LearningLanguageSection = () => {
     return (
-        <div className='mt-[200px] mb-[90px] flex flex-col items-center gap-3'>
+        <div className='mt-[200px] mb-[70px] flex flex-col items-center gap-3'>
             <div className='text-4xl font-semibold'>
                 Your swiss knife for <HighlightText text="learning any language" />
             </div>
@@ -38,11 +38,11 @@ const LearningLanguageSection = () => {
             </div>
 
             <div>
-                <CTAButton active={true} linkTo="/signup">
+                <Button active={true} linkTo="/signup">
                     <div className='font-semibold'>
                         Learn More
                     </div>
-                </CTAButton>
+                </Button>
             </div>
         </div>
     )

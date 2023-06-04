@@ -2,12 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa';
 
-import HighlightText from '../components/HighlightText';
-import CTAButton from '../components/CTAButton';
-import CodeBlocks from '../components/CodeBlocks';
-import TimelineSection from '../components/TimelineSection';
-import LearningLanguageSection from '../components/LearningLanguageSection';
-import InstructorSection from '../components/InstructorSection';
+import HighlightText from '../components/core/homepage/HighlightText';
+import Button from '../components/core/homepage/Button';
+import CodeBlocks from '../components/core/homepage/CodeBlocks';
+import TimelineSection from '../components/core/homepage/TimelineSection';
+import LearningLanguageSection from '../components/core/homepage/LearningLanguageSection';
+import InstructorSection from '../components/core/homepage/InstructorSection';
+import ExploreMore from '../components/core/homepage/ExploreMore';
 
 import Banner from '../assets/Images/banner.mp4';
 
@@ -34,13 +35,13 @@ const Home = () => {
                 </div>
 
                 <div className='flex gap-6 mt-[38px]'>
-                    <CTAButton active={true} linkTo="/signup">
+                    <Button active={true} linkTo="/signup">
                         Learn More
-                    </CTAButton>
+                    </Button>
 
-                    <CTAButton linkTo="/login">
+                    <Button linkTo="/login">
                         Book a Demo
-                    </CTAButton>
+                    </Button>
                 </div>
 
                 <div className='mt-12 mb-[80px] lg:mb-[140px] w-[97%] relative shadow-[-5px_-5px_40px_10px_#073B4C]'>
@@ -79,10 +80,12 @@ const Home = () => {
                         subHeading="Go ahead, give it a try. Our hands-on learning environment means you'll be writing real code from your very first lesson."
                         ctabtn1="Continue Lesson"
                         ctabtn2="Learn More"
-                        codeLines={`import React, {useState} from 'react'; \n import CTAButton from './Button'; \n import {toast} from 'react-toastify'; \n import {FaArrowRight} from 'react-icons/fa'; \n  \n const Home = () => { \n return ( \n <div>Home</div> \n ) \n }; \n export default Home;`}
+                        codeLines={`import React, {useState} from 'react'; \n import Button from './Button'; \n import {toast} from 'react-toastify'; \n import {FaArrowRight} from 'react-icons/fa'; \n  \n const Home = () => { \n return ( \n <div>Home</div> \n ) \n }; \n export default Home;`}
                         codeColor="text-caribbeangreen-5"
                     />
                 </div>
+
+                <ExploreMore />
 
             </div>
 
@@ -91,16 +94,16 @@ const Home = () => {
                 <div className='homepage_bg h-[333px]'>
                     <div className='w-11/12 h-full mx-auto max-w-maxContent flex items-center justify-center'>
                         <div className='flex gap-6'>
-                            <CTAButton active={true} linkTo="/signup">
+                            <Button active={true} linkTo="/signup">
                                 <div className='flex gap-2 items-center'>
                                     Explore Full Catalog
                                     <FaArrowRight />
                                 </div>
-                            </CTAButton>
+                            </Button>
 
-                            <CTAButton linkTo="/signup">
+                            <Button linkTo="/signup">
                                 Learn More
-                            </CTAButton>
+                            </Button>
                         </div>
                     </div>
                 </div>
@@ -117,9 +120,9 @@ const Home = () => {
                                 The modern StudyNotion is the dictates its own terms. Today, to be a competitive specialist requires more than professional skills.
                             </div>
 
-                            <CTAButton active={true} linkTo="/signup">
+                            <Button active={true} linkTo="/signup">
                                 Learn More
-                            </CTAButton>
+                            </Button>
                         </div>
                     </div>
 
