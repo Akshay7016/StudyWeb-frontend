@@ -64,9 +64,9 @@ const Navbar = () => {
                                                     <div>{title}</div>
                                                     <RiArrowDownSLine fontSize="22px" />
 
-                                                    <div className='invisible py-5 px-4 absolute -left-[100px] top-[40px] flex flex-col rounded-md bg-richblack-5 text-richblack-900 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 lg:w-[270px]'>
+                                                    <div className='invisible py-5 px-4 absolute md:-left-[85px] md:top-[40px] lg:-left-[100px] lg:top-[40px] flex flex-col rounded-md bg-richblack-5 text-richblack-900 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 md:w-[250px] lg:w-[270px]'>
 
-                                                        <div className='absolute -top-[10px] left-[155px] w-6 h-6 rotate-45 rounded bg-richblack-5 invisible opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100'>
+                                                        <div className='absolute md:-top-[10px] md:left-[140px] lg:-top-[10px] lg:left-[155px] w-6 h-6 rotate-45 rounded bg-richblack-5 invisible opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100'>
                                                         </div>
 
                                                         {
