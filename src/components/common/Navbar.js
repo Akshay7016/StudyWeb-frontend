@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Link, matchPath, useLocation } from 'react-router-dom';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { RiArrowDownSLine } from 'react-icons/ri';
+import { RxHamburgerMenu } from 'react-icons/rx';
 
 import ProfileDropdown from '../core/auth/ProfileDropdown';
 import { apiConnector } from '../../services/apiConnector';
@@ -50,7 +51,7 @@ const Navbar = () => {
                 </Link>
 
                 {/* Navbar links */}
-                <div className='flex gap-6 text-richblack-25'>
+                <div className='hidden md:flex lg:flex gap-6 text-richblack-25'>
                     {
                         NavbarLinks.map((link, index) => {
                             const { title, path } = link;
@@ -102,7 +103,7 @@ const Navbar = () => {
                 </div>
 
                 {/* login/signup/dashboard */}
-                <div className='flex gap-4 items-center'>
+                <div className='hidden md:flex lg:flex gap-4 items-center'>
                     {
                         user && user.accountType !== ACCOUNT_TYPE.instructor && user.accountType !== ACCOUNT_TYPE.admin && (
                             <Link to="/dashboard/cart" className='relative'>
@@ -139,6 +140,10 @@ const Navbar = () => {
                     {
                         token !== null && <ProfileDropdown />
                     }
+                </div>
+
+                <div className='flex md:hidden lg:hidden'>
+                    <RxHamburgerMenu className='text-richblack-50 text-[26px]' />
                 </div>
             </div>
         </div>
