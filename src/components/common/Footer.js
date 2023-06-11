@@ -239,7 +239,7 @@ const Footer = () => {
                 </div>
 
                 <div className="flex items-center gap-1 text-[13px] font-normal text-richblack-400">
-                    Made with <AiFillHeart className='text-[15px] text-[#FF0000]' /> Akshay &copy; 2023 StudyWeb
+                    Made with <AiFillHeart className='text-[15px] text-[#FF0000]' /> by Akshay &copy; 2023 StudyWeb
                 </div>
             </div>
         </div>
