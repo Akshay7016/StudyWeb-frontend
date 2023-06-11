@@ -8,7 +8,7 @@ import HighlightText from './HighlightText';
 const InstructorSection = () => {
     return (
         <div className='my-[50px] lg:my-[90px] flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-20'>
-            <div className='w-[90%] lg:w-[50%] h-[300px] lg:h-[460px] relative border-2'>
+            <div className='w-[90%] md:w-[60%] lg:w-[50%] h-[300px] lg:h-[460px] relative border-2'>
                 <img
                     src={Instructor}
                     alt="Instructor"

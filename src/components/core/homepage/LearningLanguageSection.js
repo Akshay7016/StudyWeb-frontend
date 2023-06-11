@@ -27,7 +27,7 @@ const LearningLanguageSection = () => {
                 <img
                     src={compare_with_others}
                     alt="compare_with_others"
-                    className='h-[500px] -mt-[150px] -mb-[200px] lg:my-0'
+                    className='h-[500px] -mt-[150px] -mb-[200px] md:-mt-14 md:-mb-20 lg:my-0'
                 />
 
                 <img
@@ -37,7 +37,7 @@ const LearningLanguageSection = () => {
                 />
             </div>
 
-            <div className='-mt-[60px] lg:mt-0'>
+            <div className='-mt-[60px] md:-mt-[30px] lg:mt-0'>
                 <Button active={true} linkTo="/signup">
                     <div className='font-semibold'>
                         Learn More
