@@ -159,7 +159,7 @@ const Navbar = () => {
                     }
                 </div>
 
-                <div className={`w-full absolute top-[44px] py-4 gap-5 ${isOpen ? "flex" : "hidden"} bg-richblack-500 text-richblack-25 border-[1px] border-richblack-300 rounded-md flex-col items-center md:hidden lg:hidden`}>
+                <div className={`w-full absolute top-[44px] py-4 gap-[18px] ${isOpen ? "flex" : "hidden"} bg-richblue-600 text-richblack-25 border-[1px] border-richblue-300 rounded-md flex-col items-center md:hidden lg:hidden`}>
                     {
                         mobileNavbarLinks.map((element, index) => {
                             const { title, path } = element;
