@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
-import { Link, matchPath, useLocation } from 'react-router-dom';
+import { Link, matchPath, useLocation, useNavigate } from 'react-router-dom';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { RiArrowDownSLine } from 'react-icons/ri';
-import { RxHamburgerMenu } from 'react-icons/rx';
+import { RxHamburgerMenu, RxCross2 } from 'react-icons/rx';
 
 import ProfileDropdown from '../core/auth/ProfileDropdown';
 import { apiConnector } from '../../services/apiConnector';
 import { categories } from '../../services/apis';
 import { NavbarLinks } from "../../data/navbar-links";
+import { mobileNavbarLinks } from '../../data/mobileNavbarLinks';
 import { ACCOUNT_TYPE } from '../../enums';
 import Logo from "../../assets/Logo/logo.png"
 
 const Navbar = () => {
+    const navigate = useNavigate();
     const location = useLocation();
     const { token } = useSelector((state) => state.auth);
     const { user } = useSelector((state) => state.profile);
     const { totalItems } = useSelector((state) => state.cart);
     const [catalogs, setCatalogs] = useState([]);
+    const [isOpen, setIsOpen] = useState(false);
 
     const fetchCatalogs = async () => {
         try {
@@ -36,9 +39,14 @@ const Navbar = () => {
         return matchPath({ path: route }, location.pathname)
     }
 
+    const navigationHandler = (path) => {
+        navigate(path);
+        setIsOpen(false);
+    }
+
     return (
         <div className='h-14 flex items-center border-b-[1px] border-richblack-700'>
-            <div className='w-11/12 mx-auto flex justify-between items-center'>
+            <div className='w-11/12 relative mx-auto flex justify-between items-center'>
                 {/* Logo */}
                 <Link to="/">
                     <img
@@ -142,11 +150,28 @@ const Navbar = () => {
                     }
                 </div>
 
-                <div className='flex md:hidden lg:hidden'>
-                    <RxHamburgerMenu className='text-richblack-50 text-[26px]' />
+                {/* Mobile responsiveness */}
+                <div onClick={() => setIsOpen(!isOpen)} className='flex md:hidden lg:hidden'>
+                    {
+                        isOpen ?
+                            <RxCross2 className='text-richblack-50 text-[26px]' /> :
+                            <RxHamburgerMenu className='text-richblack-50 text-[26px]' />
+                    }
+                </div>
+
+                <div className={`w-full absolute top-[44px] py-4 gap-5 ${isOpen ? "flex" : "hidden"} bg-richblack-500 text-richblack-25 border-[1px] border-richblack-300 rounded-md flex-col items-center md:hidden lg:hidden`}>
+                    {
+                        mobileNavbarLinks.map((element, index) => {
+                            const { title, path } = element;
+
+                            return (
+                                <div onClick={() => navigationHandler(path)} className='font-semibold text-[20px]'>{title}</div>
+                            )
+                        })
+                    }
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
