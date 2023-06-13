@@ -6,12 +6,13 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 const LoginForm = () => {
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
-    const { register, handleSubmit, reset } = useForm({
+    const { register, handleSubmit, reset, formState } = useForm({
         defaultValues: {
             email: "",
             password: ""
         }
     });
+    const { errors } = formState;
 
     const submitHandler = (data) => {
         console.log(data);
@@ -19,11 +20,11 @@ const LoginForm = () => {
         navigate("/dashboard");
     }
 
-    // TODO: add custom form field validation
     return (
         <form
             onSubmit={handleSubmit(submitHandler)}
             className='w-full flex flex-col gap-4 mt-6'
+            noValidate
         >
             <label className='w-full'>
                 <p className='text-[14px] text-richblack-25 mb-1'>
@@ -31,12 +32,23 @@ const LoginForm = () => {
                 </p>
 
                 <input
-                    required
                     type="email"
                     placeholder='Enter email address'
-                    {...register("email")}
+                    {...register("email", {
+                        required: {
+                            value: true,
+                            message: "Email is required"
+                        },
+                        pattern: {
+                            value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                            message: "Enter valid email address"
+                        }
+                    })}
                     className="w-full bg-richblack-700 rounded-lg text-richblack-5 placeholder-richblack-400 p-[10px] border-b-[1px] border-richblack-200 outline-none"
                 />
+
+                <p className='text-pink-200 text-xs'>{errors?.email?.message}</p>
+
             </label>
 
             <label className='w-full relative'>
@@ -48,9 +60,13 @@ const LoginForm = () => {
                     required
                     type={showPassword ? "text" : "password"}
                     placeholder="Enter password"
-                    {...register("password")}
+                    {...register("password", {
+                        required: "Password is required"
+                    })}
                     className="w-full bg-richblack-700 rounded-lg text-richblack-5 placeholder-richblack-400 p-[10px] border-b-[1px] border-richblack-200 outline-none"
                 />
+
+                <p className='text-pink-200 text-xs'>{errors?.password?.message}</p>
 
                 <span
                     onClick={() => setShowPassword(!showPassword)}
