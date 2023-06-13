@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import Navbar from './components/common/Navbar';
 import Home from './pages/Home';
 import PageNotFound from './pages/PageNotFound';
+import Login from './pages/Login';
 import { store } from './redux/store';
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>
