@@ -28,7 +28,7 @@ const LoginForm = () => {
         >
             <label className='w-full'>
                 <p className='text-[14px] text-richblack-25 mb-1'>
-                    Email Address<sup className='text-pink-200'>*</sup>
+                    Email Address<sup className='ml-1 text-pink-200'>*</sup>
                 </p>
 
                 <input
@@ -44,7 +44,7 @@ const LoginForm = () => {
                             message: "Enter valid email address"
                         }
                     })}
-                    className="w-full bg-richblack-700 rounded-lg text-richblack-5 placeholder-richblack-400 p-[10px] border-b-[1px] border-richblack-200 outline-none"
+                    className="w-full bg-richblack-700 rounded-lg text-richblack-5 placeholder-richblack-400 p-[10px] border-b-[1px] border-richblack-300 outline-none"
                 />
 
                 <p className='text-pink-200 text-xs'>{errors?.email?.message}</p>
@@ -53,17 +53,16 @@ const LoginForm = () => {
 
             <label className='w-full relative'>
                 <p className='text-[14px] text-richblack-25 mb-1'>
-                    Password<sup className='text-pink-200'>*</sup>
+                    Password<sup className='ml-1 text-pink-200'>*</sup>
                 </p>
 
                 <input
-                    required
                     type={showPassword ? "text" : "password"}
                     placeholder="Enter password"
                     {...register("password", {
                         required: "Password is required"
                     })}
-                    className="w-full bg-richblack-700 rounded-lg text-richblack-5 placeholder-richblack-400 p-[10px] border-b-[1px] border-richblack-200 outline-none"
+                    className="w-full bg-richblack-700 rounded-lg text-richblack-5 placeholder-richblack-400 p-[10px] border-b-[1px] border-richblack-300 outline-none"
                 />
 
                 <p className='text-pink-200 text-xs'>{errors?.password?.message}</p>

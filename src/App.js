@@ -6,6 +6,7 @@ import Navbar from './components/common/Navbar';
 import Home from './pages/Home';
 import PageNotFound from './pages/PageNotFound';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
 import { store } from './redux/store';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>

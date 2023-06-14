@@ -1,6 +1,5 @@
-import React from 'react'
-
 import LoginForm from './LoginForm';
+import SignupForm from './SignupForm';
 
 import frameImage from '../../../assets/Images/frame.png';
 
@@ -9,7 +8,7 @@ const Template = ({ title, desc1, desc2, image, formType }) => {
         <div className='w-11/12 mx-auto pt-9 pb-6 lg:flex justify-between'>
             {/* Left container */}
             <div className='w-[90%] mx-auto md:w-[75%] lg:w-[38%] lg:mx-0'>
-                <h1 className='text-richblack-5 font-semibold text-[28px]'>
+                <h1 className='text-richblack-5 font-semibold text-[28px] leading-9'>
                     {title}
                 </h1>
 
@@ -25,7 +24,10 @@ const Template = ({ title, desc1, desc2, image, formType }) => {
                     </span>
                 </p>
 
-                <LoginForm />
+                {formType === "signup" ?
+                    (<SignupForm />) :
+                    (<LoginForm />)
+                }
             </div>
 
             <div className='relative w-[38%] hidden md:hidden lg:block'>
