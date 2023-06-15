@@ -7,7 +7,7 @@ import { RxHamburgerMenu, RxCross2 } from 'react-icons/rx';
 
 import ProfileDropdown from '../core/auth/ProfileDropdown';
 import { apiConnector } from '../../services/apiConnector';
-import { categories } from '../../services/apis';
+import { categoriesEndpoints } from '../../services/apis';
 import { NavbarLinks } from "../../data/navbar-links";
 import { mobileNavbarLinks } from '../../data/mobileNavbarLinks';
 import { ACCOUNT_TYPE } from '../../enums';
@@ -24,7 +24,7 @@ const Navbar = () => {
 
     const fetchCatalogs = async () => {
         try {
-            const result = await apiConnector("GET", categories.CATEGORIES_API);
+            const result = await apiConnector("GET", categoriesEndpoints.CATEGORIES_API);
             setCatalogs(result?.data?.data);
         } catch (error) {
             console.log("Could not fetch category list ", error.message);
@@ -113,7 +113,7 @@ const Navbar = () => {
                 {/* login/signup/dashboard */}
                 <div className='hidden md:flex lg:flex gap-4 items-center'>
                     {
-                        user && user.accountType !== ACCOUNT_TYPE.instructor && user.accountType !== ACCOUNT_TYPE.admin && (
+                        user && user.accountType !== ACCOUNT_TYPE.INSTRUCTOR && user.accountType !== ACCOUNT_TYPE.ADMIN && (
                             <Link to="/dashboard/cart" className='relative'>
                                 <AiOutlineShoppingCart />
                                 {

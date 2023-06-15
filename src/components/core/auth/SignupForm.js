@@ -3,11 +3,27 @@ import { useForm } from 'react-hook-form';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
 
+import { ACCOUNT_TYPE } from '../../../enums';
+import Tab from '../../common/Tab';
+
+const tabData = [
+    {
+        id: 1,
+        tabName: "Student",
+        type: ACCOUNT_TYPE.STUDENT,
+    },
+    {
+        id: 2,
+        tabName: "Instructor",
+        type: ACCOUNT_TYPE.INSTRUCTOR,
+    },
+];
+
 const SignupForm = () => {
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-    const [accountType, setAccountType] = useState("Student");
+    const [accountType, setAccountType] = useState(ACCOUNT_TYPE.STUDENT);
     const { register, handleSubmit, reset, formState } = useForm({
         defaultValues: {
             firstName: "",
@@ -24,26 +40,12 @@ const SignupForm = () => {
         console.log(payload);
         reset();
         navigate("/dashboard");
-    }
+    };
 
     return (
         <>
             {/* Student - Instructor toggler */}
-            <div className='flex gap-1 p-1 bg-richblack-800 my-6 rounded-full w-max border-b-[1px] border-richblack-600'>
-                <button
-                    onClick={() => setAccountType("Student")}
-                    className={`${accountType === "Student" ? "bg-richblack-900 text-richblack-5" : "bg-transparent text-richblack-200"} py-2 px-5 rounded-full transition-all duration-200`}
-                >
-                    Student
-                </button>
-
-                <button
-                    onClick={() => setAccountType("Instructor")}
-                    className={`${accountType === "Instructor" ? "bg-richblack-900 text-richblack-5" : "bg-transparent text-richblack-200"} py-2 px-5 rounded-full transition-all duration-200`}
-                >
-                    Instructor
-                </button>
-            </div>
+            <Tab tabData={tabData} accountType={accountType} setAccountType={setAccountType} />
 
             <form
                 onSubmit={handleSubmit(submitHandler)}
