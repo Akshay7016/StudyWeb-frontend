@@ -1,10 +1,15 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
+import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
+
+import Tab from '../../common/Tab';
 
 import { ACCOUNT_TYPE } from '../../../enums';
-import Tab from '../../common/Tab';
+import { setSignupData } from '../../../redux/slices/authSlice';
+import { sendOtp } from "../../../services/operations/authAPI";
 
 const tabData = [
     {
@@ -21,6 +26,7 @@ const tabData = [
 
 const SignupForm = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const [accountType, setAccountType] = useState(ACCOUNT_TYPE.STUDENT);
@@ -36,10 +42,26 @@ const SignupForm = () => {
     const { errors } = formState;
 
     const submitHandler = (data) => {
-        const payload = { ...data, accountType }
-        console.log(payload);
+        const { email, password, confirmPassword } = data;
+
+        if (password !== confirmPassword) {
+            toast.error("Passwords do not match");
+            return;
+        }
+
+        const signupData = { ...data, accountType };
+
+        // Setting signup data to state
+        // to be used after otp verification
+        dispatch(setSignupData(signupData));
+
+        // send OTP to user for verification
+        dispatch(sendOtp(email, navigate));
+
+        // reset form fields
         reset();
-        navigate("/dashboard");
+
+        setAccountType(ACCOUNT_TYPE.STUDENT);
     };
 
     return (

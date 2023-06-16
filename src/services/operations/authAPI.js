@@ -13,22 +13,14 @@ export const sendOtp = (email, navigate) => {
         const toastId = toast.loading("Loading...");
         dispatch(setLoading(true));
         try {
-            const response = await apiConnector("POST", SENDOTP_API, {
+            await apiConnector("POST", SENDOTP_API, {
                 email
             });
-
-            console.log("SENDOTP API RESPONSE...", response);
-            // TODO: handle toast message for user already registered case based on status code. and redirect to login page
-
-            if (!response?.data?.success) {
-                throw new Error(response.data.message);
-            }
 
             toast.success("OTP sent successfully");
             navigate("/verify-email");
         } catch (error) {
-            console.log("SENDOTP API ERROR: ", error);
-            toast.error("Could not send OTP");
+            toast.error(error?.response?.data?.message);
         };
 
         dispatch(setLoading(false));
