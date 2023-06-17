@@ -2,11 +2,13 @@ import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-import Navbar from './components/common/Navbar';
 import Home from './pages/Home';
 import PageNotFound from './pages/PageNotFound';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import ForgotPassword from './pages/ForgotPassword';
+import Navbar from './components/common/Navbar';
+import OpenRoute from './components/core/auth/OpenRoute';
 import { store } from './redux/store';
 
 const App = () => {
@@ -16,10 +18,42 @@ const App = () => {
         <BrowserRouter>
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="*" element={<PageNotFound />} />
+            <Route
+              path="/"
+              element={<Home />}
+            />
+
+            <Route
+              path="/login"
+              element={
+                <OpenRoute>
+                  <Login />
+                </OpenRoute>
+              }
+            />
+
+            <Route
+              path="/signup"
+              element={
+                <OpenRoute>
+                  <Signup />
+                </OpenRoute>
+              }
+            />
+
+            <Route
+              path="/forgot-password"
+              element={
+                <OpenRoute>
+                  <ForgotPassword />
+                </OpenRoute>
+              }
+            />
+
+            <Route
+              path="*"
+              element={<PageNotFound />}
+            />
           </Routes>
         </BrowserRouter>
       </Provider>

@@ -204,7 +204,7 @@ const SignupForm = () => {
                     </label>
                 </div>
 
-                <button className='mt-11 bg-yellow-50 rounded-lg font-medium text-richblack-900 px-3 py-2'>
+                <button className='mt-8 bg-yellow-50 rounded-lg font-medium text-richblack-900 px-3 py-2'>
                     Create Account
                 </button>
             </form>
