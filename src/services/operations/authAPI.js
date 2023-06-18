@@ -42,7 +42,7 @@ export const signUp = (
         const toastId = toast.loading("Loading...");
         dispatch(setLoading(true));
         try {
-            const response = await apiConnector("POST", SIGNUP_API, {
+            await apiConnector("POST", SIGNUP_API, {
                 firstName,
                 lastName,
                 email,
@@ -52,17 +52,10 @@ export const signUp = (
                 otp
             });
 
-            console.log("SIGNUP API RESPONSE...", response);
-
-            if (!response?.data?.success) {
-                throw new Error(response.data.message);
-            }
-
             toast.success("Signup successful");
             navigate("/login");
         } catch (error) {
-            console.log("SIGNUP API ERROR:..... ", error);
-            toast.error("Signup failed");
+            toast.error(error?.response?.data?.message);
             navigate("/signup");
         }
 

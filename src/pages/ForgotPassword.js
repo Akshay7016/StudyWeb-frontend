@@ -79,7 +79,7 @@ const ForgotPassword = () => {
 
                     <button
                         type='submit'
-                        className={`mt-6 w-full bg-yellow-50 rounded-lg font-medium text-richblack-900 px-3 py-2`}
+                        className='mt-6 w-full bg-yellow-50 rounded-lg font-medium text-richblack-900 px-3 py-2'
                     >
                         {!emailSent ? "Submit" : "Resend Email"}
                     </button>

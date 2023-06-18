@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import ForgotPassword from './pages/ForgotPassword';
 import UpdatePassword from './pages/UpdatePassword';
+import VerifyEmail from './pages/VerifyEmail';
 import Navbar from './components/common/Navbar';
 import OpenRoute from './components/core/auth/OpenRoute';
 import { store } from './redux/store';
@@ -38,6 +39,15 @@ const App = () => {
               element={
                 <OpenRoute>
                   <Signup />
+                </OpenRoute>
+              }
+            />
+
+            <Route
+              path="/verify-email"
+              element={
+                <OpenRoute>
+                  <VerifyEmail />
                 </OpenRoute>
               }
             />
