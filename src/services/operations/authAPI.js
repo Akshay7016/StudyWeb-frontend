@@ -56,7 +56,9 @@ export const signUp = (
             navigate("/login");
         } catch (error) {
             toast.error(error?.response?.data?.message);
-            navigate("/signup");
+            if (error?.response?.data?.message !== "Invalid OTP") {
+                navigate("/signup");
+            }
         }
 
         dispatch(setLoading(false));
