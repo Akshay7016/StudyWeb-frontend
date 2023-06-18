@@ -115,10 +115,10 @@ const Navbar = () => {
                     {
                         user && user.accountType !== ACCOUNT_TYPE.INSTRUCTOR && user.accountType !== ACCOUNT_TYPE.ADMIN && (
                             <Link to="/dashboard/cart" className='relative'>
-                                <AiOutlineShoppingCart />
+                                <AiOutlineShoppingCart className='text-2xl text-richblack-100' />
                                 {
                                     totalItems > 0 && (
-                                        <span>
+                                        <span className='absolute -top-[6px] -right-[10px] w-[17px] h-[17px] flex justify-center items-center rounded-full bg-yellow-100 text-black font-semibold text-[13px]'>
                                             {totalItems}
                                         </span>
                                     )
