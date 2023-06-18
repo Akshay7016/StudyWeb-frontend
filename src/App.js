@@ -7,6 +7,7 @@ import PageNotFound from './pages/PageNotFound';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import ForgotPassword from './pages/ForgotPassword';
+import UpdatePassword from './pages/UpdatePassword';
 import Navbar from './components/common/Navbar';
 import OpenRoute from './components/core/auth/OpenRoute';
 import { store } from './redux/store';
@@ -46,6 +47,15 @@ const App = () => {
               element={
                 <OpenRoute>
                   <ForgotPassword />
+                </OpenRoute>
+              }
+            />
+
+            <Route
+              path="/update-password/:token"
+              element={
+                <OpenRoute>
+                  <UpdatePassword />
                 </OpenRoute>
               }
             />
