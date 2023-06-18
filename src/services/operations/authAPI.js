@@ -150,7 +150,7 @@ export const resetPassword = (token, password, confirmPassword, navigate) => {
             navigate("/login")
         } catch (error) {
             toast.error(error?.response?.data?.message);
-            navigate("/")
+            navigate("/login")
         }
 
         dispatch(setLoading(false));
