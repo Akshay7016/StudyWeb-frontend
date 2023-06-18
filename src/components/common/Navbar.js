@@ -45,7 +45,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className='h-14 flex items-center border-b-[1px] border-richblack-700'>
+        <div className={`h-14 flex items-center border-b-[1px] border-richblack-700 ${location.pathname !== "/" && "bg-richblack-800"}`}>
             <div className='w-11/12 relative mx-auto flex justify-between items-center'>
                 {/* Logo */}
                 <Link to="/">
