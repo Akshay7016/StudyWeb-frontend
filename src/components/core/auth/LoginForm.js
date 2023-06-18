@@ -1,9 +1,13 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form';
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 
+import { login } from "../../../services/operations/authAPI";
+
 const LoginForm = () => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const { register, handleSubmit, reset, formState } = useForm({
@@ -15,9 +19,9 @@ const LoginForm = () => {
     const { errors } = formState;
 
     const submitHandler = (data) => {
-        console.log(data);
+        const { email, password } = data;
+        dispatch(login(email, password, navigate));
         reset();
-        navigate("/dashboard");
     }
 
     return (

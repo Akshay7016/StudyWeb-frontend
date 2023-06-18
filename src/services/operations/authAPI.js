@@ -77,12 +77,6 @@ export const login = (email, password, navigate) => {
                 password
             });
 
-            console.log("LOGIN API RESPONSE...", response);
-
-            if (!response?.data?.success) {
-                throw new Error(response?.data?.message);
-            }
-
             toast.success("Login successful");
             dispatch(setToken(response?.data?.token));
 
@@ -96,8 +90,7 @@ export const login = (email, password, navigate) => {
 
             navigate("/dashboard/my-profile");
         } catch (error) {
-            console.log("LOGIN API ERROR...", error);
-            toast.error("Login failed");
+            toast.error(error?.response?.data?.message);
         }
 
         dispatch(setLoading(false));
@@ -118,7 +111,6 @@ export const logout = (navigate) => {
     }
 };
 
-// TODO: check whether setEmailSent used in parent comp
 export const getPasswordResetToken = (email, setEmailSent) => {
     return async (dispatch) => {
         dispatch(setLoading(true));
