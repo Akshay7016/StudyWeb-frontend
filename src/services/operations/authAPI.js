@@ -105,7 +105,6 @@ export const logout = (navigate) => {
         dispatch(setUser(null));
         dispatch(resetCart());
         localStorage.removeItem("token");
-        // TODO: first set user in localStorage while login and add user in localStorage in profileSlice
         localStorage.removeItem("user");
         toast.success("Logged out");
         navigate("/")
