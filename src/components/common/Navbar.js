@@ -16,7 +16,6 @@ import Logo from "../../assets/Logo/logo.png"
 const Navbar = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const { token } = useSelector((state) => state.auth);
     const { user } = useSelector((state) => state.profile);
     const { totalItems } = useSelector((state) => state.cart);
     const [catalogs, setCatalogs] = useState([]);
@@ -128,7 +127,7 @@ const Navbar = () => {
                     }
 
                     {
-                        token === null && (
+                        user === null && (
                             <div className='flex gap-4'>
                                 <Link to="/login">
                                     <button className='text-[14px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 rounded-md'>
@@ -146,7 +145,7 @@ const Navbar = () => {
                     }
 
                     {
-                        token !== null && <ProfileDropdown />
+                        user !== null && <ProfileDropdown />
                     }
                 </div>
 
