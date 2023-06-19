@@ -9,6 +9,7 @@ import Signup from './pages/Signup';
 import ForgotPassword from './pages/ForgotPassword';
 import UpdatePassword from './pages/UpdatePassword';
 import VerifyEmail from './pages/VerifyEmail';
+import About from './pages/About';
 import Navbar from './components/common/Navbar';
 import OpenRoute from './components/core/auth/OpenRoute';
 import { store } from './redux/store';
@@ -68,6 +69,11 @@ const App = () => {
                   <UpdatePassword />
                 </OpenRoute>
               }
+            />
+
+            <Route
+              path="/about"
+              element={<About />}
             />
 
             <Route
