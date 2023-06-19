@@ -12,7 +12,7 @@ const About = () => {
             {/* Section 1 */}
             <section className='w-full h-[calc(100vh-56px)] bg-richblack-700'>
                 <div className='w-11/12 mx-auto relative'>
-                    <h1 className='w-full md:w-[70%] pt-[30px] md:pt-[50px] lg:pt-[60px] mx-auto text-[28px] md:text-[34px] leading-[40px] text-white text-center font-bold'>
+                    <h1 className='w-full md:w-[70%] pt-[30px] md:pt-[40px] lg:pt-[50px] mx-auto text-[28px] md:text-[34px] leading-[40px] text-white text-center font-bold'>
                         Driving Innovation in Online Education for a <HighlightText text="Brighter Future" />
                     </h1>
 
