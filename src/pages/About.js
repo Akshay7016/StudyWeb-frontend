@@ -58,7 +58,7 @@ const About = () => {
             <section className='w-11/12 mx-auto text-white'>
                 {/* sub section 1 */}
                 <div className='mt-[80px] flex gap-16 md:gap-0 flex-col md:flex-row justify-between items-center'>
-                    <div className='w-[90%] md:w-[48%] flex flex-col gap-6'>
+                    <div className='w-[90%] md:w-[45%] flex flex-col gap-6'>
                         <h1 className='text-[34px] font-semibold bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045] bg-clip-text text-transparent'>
                             Our Founding Story
                         </h1>
@@ -83,7 +83,7 @@ const About = () => {
 
                 {/* sub section 2 */}
                 <div className='mt-[80px] md:mt-[120px] mb-[70px] md:mb-[90px] flex flex-col md:flex-row gap-12 md:gap-0 justify-between items-center md:items-start'>
-                    <div className='w-[90%] md:w-[38%] flex flex-col gap-7'>
+                    <div className='w-[90%] md:w-[35%] flex flex-col gap-7'>
                         <h1 className='text-center md:text-left text-[34px] font-semibold bg-gradient-to-b from-[#FF512F] to-[#F09819] bg-clip-text text-transparent'>
                             Our Vision
                         </h1>
@@ -93,7 +93,7 @@ const About = () => {
                         </p>
                     </div>
 
-                    <div className='w-[90%] md:w-[38%] flex flex-col gap-7'>
+                    <div className='w-[90%] md:w-[35%] flex flex-col gap-7'>
                         <h1 className='text-center md:text-left text-[34px] font-semibold bg-gradient-to-b from-[#1FA2FF] via-[#12D8FA] to-[#A6FFCB] text-transparent bg-clip-text'>
                             Our Mission
                         </h1>
