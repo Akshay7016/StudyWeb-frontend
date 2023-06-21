@@ -104,6 +104,31 @@ const About = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Section 4 */}
+            <section className='bg-richblack-700 py-10'>
+                <div className='flex justify-around'>
+                    <div className='flex flex-col items-center'>
+                        <div className='text-white text-3xl font-bold'>5K</div>
+                        <p className='text-richblack-400 font-semibold'>Active Students</p>
+                    </div>
+
+                    <div className='flex flex-col items-center'>
+                        <div className='text-white text-3xl font-bold'>10+</div>
+                        <p className='text-richblack-400 font-semibold'>Mentors</p>
+                    </div>
+
+                    <div className='flex flex-col items-center'>
+                        <div className='text-white text-3xl font-bold'>200+</div>
+                        <p className='text-richblack-400 font-semibold'>Courses</p>
+                    </div>
+
+                    <div className='flex flex-col items-center'>
+                        <div className='text-white text-3xl font-bold'>50+</div>
+                        <p className='text-richblack-400 font-semibold'>Awards</p>
+                    </div>
+                </div>
+            </section>
         </div>
     )
 }
