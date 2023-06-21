@@ -107,24 +107,24 @@ const About = () => {
 
             {/* Section 4 */}
             <section className='bg-richblack-700 py-10'>
-                <div className='flex justify-around'>
+                <div className='flex justify-around px-3 md:px-0'>
                     <div className='flex flex-col items-center'>
-                        <div className='text-white text-3xl font-bold'>5K</div>
-                        <p className='text-richblack-400 font-semibold'>Active Students</p>
+                        <div className='text-white text-2xl md:text-3xl font-semibold md:font-bold'>5K</div>
+                        <p className='text-richblack-400 font-semibold'>Students</p>
                     </div>
 
                     <div className='flex flex-col items-center'>
-                        <div className='text-white text-3xl font-bold'>10+</div>
+                        <div className='text-white text-2xl md:text-3xl font-semibold md:font-bold'>10+</div>
                         <p className='text-richblack-400 font-semibold'>Mentors</p>
                     </div>
 
                     <div className='flex flex-col items-center'>
-                        <div className='text-white text-3xl font-bold'>200+</div>
+                        <div className='text-white text-2xl md:text-3xl font-semibold md:font-bold'>200+</div>
                         <p className='text-richblack-400 font-semibold'>Courses</p>
                     </div>
 
                     <div className='flex flex-col items-center'>
-                        <div className='text-white text-3xl font-bold'>50+</div>
+                        <div className='text-white text-2xl md:text-3xl font-semibold md:font-bold'>50+</div>
                         <p className='text-richblack-400 font-semibold'>Awards</p>
                     </div>
                 </div>
