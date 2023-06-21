@@ -5,7 +5,7 @@ import frameImage from '../../../assets/Images/frame.png';
 
 const Template = ({ title, desc1, desc2, image, formType }) => {
     return (
-        <div className='w-11/12 mx-auto pt-9 pb-6 lg:flex justify-between'>
+        <div className='w-11/12 max-w-maxContent mx-auto pt-9 pb-6 lg:flex justify-between'>
             {/* Left container */}
             <div className='w-[90%] mx-auto md:w-[75%] lg:w-[38%] lg:mx-0'>
                 <h1 className='text-richblack-5 font-semibold text-[28px] leading-9'>

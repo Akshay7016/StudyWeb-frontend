@@ -13,7 +13,7 @@ const About = () => {
         <div>
             {/* Section 1 */}
             <section className='w-full bg-richblack-700'>
-                <div className='relative w-11/12 mx-auto pt-[30px] md:pt-[40px] lg:pt-[50px] pb-[125px] md:pb-[185px] lg:pb-[250px]'>
+                <div className='relative w-11/12 max-w-maxContent mx-auto pt-[30px] md:pt-[40px] lg:pt-[50px] pb-[125px] md:pb-[185px] lg:pb-[250px]'>
                     <h1 className='w-full md:w-[70%] mx-auto text-[28px] md:text-[34px] leading-[40px] text-white text-center font-bold'>
                         Driving Innovation in Online Education for a <HighlightText text="Brighter Future" />
                     </h1>
@@ -55,7 +55,7 @@ const About = () => {
             </section>
 
             {/* Section 3 */}
-            <section className='w-11/12 mx-auto text-white'>
+            <section className='w-11/12 max-w-maxContent mx-auto text-white'>
                 {/* sub section 1 */}
                 <div className='mt-[80px] flex gap-16 md:gap-0 flex-col md:flex-row justify-between items-center'>
                     <div className='w-[90%] md:w-[45%] flex flex-col gap-6'>
@@ -107,7 +107,7 @@ const About = () => {
 
             {/* Section 4 */}
             <section className='bg-richblack-700 py-10'>
-                <div className='flex justify-around px-3 md:px-0'>
+                <div className='max-w-maxContent mx-auto flex justify-around px-3 md:px-0'>
                     <div className='flex flex-col items-center'>
                         <div className='text-white text-2xl md:text-3xl font-semibold md:font-bold'>5K</div>
                         <p className='text-richblack-400 font-semibold'>Students</p>

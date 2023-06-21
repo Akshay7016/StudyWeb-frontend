@@ -3,7 +3,7 @@ import HighlightText from '../homepage/HighlightText'
 
 const Quote = () => {
     return (
-        <div className='w-[84%] mx-auto text-center text-4xl font-bold text-white'>
+        <div className='w-[84%] max-w-maxContent mx-auto text-center text-4xl font-bold text-white'>
             We are passionate about revolutionizing the way we learn. Our innovative platform {" "}
             <HighlightText text="combines technology" />
             ,{" "}

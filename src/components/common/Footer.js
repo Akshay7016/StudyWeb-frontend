@@ -71,7 +71,7 @@ const informationLinks = [
 const Footer = () => {
     return (
         <div className='bg-richblack-800'>
-            <div className='w-[80%] mx-auto flex flex-col gap-5 md:gap-0 md:flex-row flex-wrap justify-between text-richblack-400 pt-6 md:pt-14 pb-5'>
+            <div className='w-[80%] max-w-maxContent mx-auto flex flex-col gap-5 md:gap-0 md:flex-row flex-wrap justify-between text-richblack-400 pt-6 md:pt-14 pb-5'>
                 {/* Menu links */}
                 <div className='flex flex-col'>
                     <div className='text-richblack-50 font-semibold mb-[2px]'>Menu Links</div>
@@ -142,7 +142,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="w-full mx-auto mb-5 mt-5 flex justify-center items-center text-[13px] font-normal text-richblack-400">
+            <div className="w-full max-w-maxContent mx-auto mb-5 mt-5 flex justify-center items-center text-[13px] font-normal text-richblack-400">
                 Made with<AiFillHeart className='mx-1 text-[15px] text-[#FF0000]' /> by Akshay &copy; 2023 StudyWeb
             </div>
         </div>

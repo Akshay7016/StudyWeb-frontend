@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <>
             {/* Section 1 */}
-            <div className='mt-10 w-11/12 mx-auto flex flex-col items-center text-white'>
+            <div className='mt-10 w-11/12 max-w-maxContent mx-auto flex flex-col items-center text-white'>
                 <Link to="/signup">
                     <div className='group rounded-full bg-richblack-800 font-medium text-richblack-200 transition-all duration-200 hover:scale-95 py-[10px] px-[22px] shadow-[0_1px_1px_rgba(255,255,255,0.25)] hover:shadow-none hover:bg-richblack-900 hover:outline outline-richblack-700'>
                         <div className='flex items-center gap-3'>
