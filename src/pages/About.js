@@ -49,7 +49,7 @@ const About = () => {
 
             {/* Section 2 */}
             <section className='bg-richblack-900'>
-                <div className='mt-[120px] md:mt-[140px] pb-[80px] border-b-[1px] border-richblack-700'>
+                <div className='mt-[120px] md:mt-[180px] pb-[80px] border-b-[1px] border-richblack-700'>
                     <Quote />
                 </div>
             </section>
@@ -128,6 +128,11 @@ const About = () => {
                         <p className='text-richblack-400 font-semibold'>Awards</p>
                     </div>
                 </div>
+            </section>
+
+            {/* Section 5 */}
+            <section>
+
             </section>
         </div>
     )
