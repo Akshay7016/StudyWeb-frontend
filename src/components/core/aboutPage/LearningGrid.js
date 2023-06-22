@@ -55,9 +55,9 @@ const LearningGrid = () => {
                             key={index}
                             className={`
                                 ${index === 0 && "h-fit lg:col-span-2 bg-richblack-900"}
-                                ${card.order % 2 === 1 ? "w-[90%] md:w-[50%] lg:w-full bg-richblack-700" : "w-[90%] md:w-[50%] lg:w-full bg-richblack-800"}
+                                ${card.order % 2 === 1 ? "bg-richblack-700" : "bg-richblack-800"}
                                 ${card.order === 3 && "lg:col-start-2"}
-                                h-[280px] mx-auto
+                                h-[280px] mx-auto w-[90%] md:w-[50%] lg:w-full
                         `}
                         >
                             {
