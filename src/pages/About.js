@@ -4,6 +4,7 @@ import HighlightText from "../components/core/homepage/HighlightText";
 import Quote from '../components/core/aboutPage/Quote';
 import LearningGrid from '../components/core/aboutPage/LearningGrid';
 import ContactFormSection from '../components/core/aboutPage/ContactFormSection';
+import Footer from "../components/common/Footer";
 
 import BannerImage1 from "../assets/Images/aboutus1.webp";
 import BannerImage2 from "../assets/Images/aboutus2.webp";
@@ -137,6 +138,13 @@ const About = () => {
                 <LearningGrid />
                 <ContactFormSection />
             </section>
+
+            {/*TODO: Add reviews component */}
+            {/* Section 6 */}
+
+            {/* Footer */}
+            <Footer />
+
         </div>
     )
 }

@@ -142,7 +142,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="w-full max-w-maxContent mx-auto mb-5 mt-5 flex justify-center items-center text-[13px] font-normal text-richblack-400">
+            <div className="w-full max-w-maxContent mx-auto py-5 flex justify-center items-center text-[13px] font-normal text-richblack-400">
                 Made with<AiFillHeart className='mx-1 text-[15px] text-[#FF0000]' /> by Akshay &copy; 2023 StudyWeb
             </div>
         </div>
