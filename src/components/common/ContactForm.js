@@ -111,6 +111,7 @@ const ContactForm = () => {
                 </p>
 
                 <div className='flex gap-4'>
+                    {/* TODO: add default value to option tag */}
                     <select
                         {...register("countryCode")}
                         className="w-[16%] bg-richblack-700 rounded-lg text-richblack-5 placeholder-richblack-400 p-[10px] pr-0 border-b-[1px] border-richblack-300 outline-none"

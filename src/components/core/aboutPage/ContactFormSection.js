@@ -1,9 +1,6 @@
 import ContactForm from "../../common/ContactForm"
 
 const ContactFormSection = () => {
-
-
-
     return (
         <div className='w-11/12 max-w-maxContent mx-auto flex justify-center'>
             <div className='lg:w-[45%]'>
