@@ -29,7 +29,7 @@ const ContactFormSection = () => {
 
     return (
         <div className='w-11/12 max-w-maxContent mx-auto flex justify-center'>
-            <div className='w-[45%]'>
+            <div className='lg:w-[45%]'>
                 <h1 className='text-[40px] text-center font-semibold text-richblack-25'>
                     Get in Touch
                 </h1>
@@ -152,6 +152,10 @@ const ContactFormSection = () => {
                                     required: {
                                         value: true,
                                         message: "Phone number is required"
+                                    },
+                                    pattern: {
+                                        value: /^\d+$/,
+                                        message: "Please enter valid phone number"
                                     }
                                 })}
                                 className="w-[84%] bg-richblack-700 rounded-lg text-richblack-5 placeholder-richblack-400 p-[10px] border-b-[1px] border-richblack-300 outline-none"
