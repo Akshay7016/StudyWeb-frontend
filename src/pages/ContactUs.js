@@ -3,11 +3,16 @@ import { BsFillChatRightTextFill } from "react-icons/bs";
 import { GiEarthAmerica } from "react-icons/gi";
 import { MdCall } from "react-icons/md";
 
+import Reviews from "../components/common/Reviews";
+import ContactForm from '../components/common/ContactForm';
+import Footer from "../components/common/Footer";
+
 const ContactUs = () => {
     return (
         <div>
-            <div className='w-11/12 max-w-maxContent mx-auto mt-[90px] flex '>
-                <div className='w-[40%] flex flex-col gap-12 p-9 bg-richblack-800 rounded-2xl'>
+            {/* Contact section */}
+            <div className='w-11/12 max-w-maxContent mx-auto mt-[80px] mb-[100px] flex justify-between'>
+                <div className='w-[38%] h-max flex flex-col gap-12 p-9 bg-richblack-800 rounded-2xl'>
                     {/* Chat with us */}
                     <div>
                         <div className='flex items-center gap-3 mb-1'>
@@ -40,11 +45,11 @@ const ContactUs = () => {
                         </p>
 
                         <p className='text-[14px] font-semibold text-richblack-300'>
-                            Near City Center Mall, College Road,
+                            Pimpalgaon Baswant, District - Nashik, Taluka - Niphad
                         </p>
 
                         <p className='text-[13px] font-semibold text-richblack-300'>
-                            Nashik - 422209
+                            Nashik, Maharashtra - 422209
                         </p>
                     </div>
 
@@ -66,7 +71,29 @@ const ContactUs = () => {
                         </p>
                     </div>
                 </div>
+
+                <div className='w-[56%] p-12 pb-0 bg-richblack-900 rounded-2xl border-[1px] border-richblack-600'>
+                    <div className='text-4xl font-bold text-richblack-25 mb-[2px]'>
+                        Got a Idea? We've got the skills.
+                    </div>
+
+                    <div className='text-4xl font-bold text-richblack-25 mb-4'>
+                        Let's team up
+                    </div>
+
+                    <p className='text-[17px] text-richblack-400'>
+                        Tell us more about yourself and what you're got in mind.
+                    </p>
+
+                    <ContactForm />
+                </div>
             </div>
+
+            {/* Reviews section */}
+            <Reviews />
+
+            {/* Footer */}
+            <Footer />
         </div>
     )
 }
