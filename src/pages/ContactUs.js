@@ -11,8 +11,8 @@ const ContactUs = () => {
     return (
         <div>
             {/* Contact section */}
-            <div className='w-11/12 max-w-maxContent mx-auto mt-[80px] mb-[100px] flex justify-between'>
-                <div className='w-[38%] h-max flex flex-col gap-12 p-9 bg-richblack-800 rounded-2xl'>
+            <div className='w-11/12 max-w-maxContent mx-auto mt-[40px] md:mt-[80px] mb-[100px] flex flex-col md:flex-row gap-7 md:gap-0 justify-between'>
+                <div className='w-full md:w-[38%] h-max flex flex-col gap-12 p-9 bg-richblack-800 rounded-2xl'>
                     {/* Chat with us */}
                     <div>
                         <div className='flex items-center gap-3 mb-1'>
@@ -72,7 +72,7 @@ const ContactUs = () => {
                     </div>
                 </div>
 
-                <div className='w-[56%] p-12 pb-0 bg-richblack-900 rounded-2xl border-[1px] border-richblack-600'>
+                <div className='w-full md:w-[56%] p-9 pb-0 md:p-12 md:pb-0 bg-richblack-900 rounded-2xl border-[1px] border-richblack-600'>
                     <div className='text-4xl font-bold text-richblack-25 mb-[2px]'>
                         Got a Idea? We've got the skills.
                     </div>
