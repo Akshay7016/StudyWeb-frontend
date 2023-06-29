@@ -111,10 +111,9 @@ const ContactForm = () => {
                 </p>
 
                 <div className='flex gap-4'>
-                    {/* TODO: add default value to option tag */}
                     <select
                         {...register("countryCode")}
-                        className="w-[16%] bg-richblack-700 rounded-lg text-richblack-5 placeholder-richblack-400 p-[10px] pr-0 border-b-[1px] border-richblack-300 outline-none"
+                        className="w-[22%] bg-richblack-700 rounded-lg text-richblack-5 placeholder-richblack-400 p-[10px] pr-0 border-b-[1px] border-richblack-300 outline-none"
                     >
                         {
                             countrycode.map((element, index) => {
@@ -148,7 +147,7 @@ const ContactForm = () => {
                                 message: "Please enter valid phone number"
                             }
                         })}
-                        className="w-[84%] bg-richblack-700 rounded-lg text-richblack-5 placeholder-richblack-400 p-[10px] border-b-[1px] border-richblack-300 outline-none"
+                        className="w-[78%] bg-richblack-700 rounded-lg text-richblack-5 placeholder-richblack-400 p-[10px] border-b-[1px] border-richblack-300 outline-none"
                     />
                 </div>
                 <p className='text-pink-200 text-xs'>{errors?.phoneNumber?.message}</p>
