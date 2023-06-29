@@ -9,7 +9,7 @@ const ContactForm = () => {
             firstName: "",
             lastName: "",
             email: "",
-            countryCode: "",
+            countryCode: "+91",
             phoneNumber: "",
             message: ""
         }
