@@ -2,7 +2,7 @@ import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
 
-import Button from './Button';
+import Button from '../../common/Button';
 
 const CodeBlocks = ({
     flexDirection,
