@@ -72,16 +72,16 @@ const ContactUs = () => {
                     </div>
                 </div>
 
-                <div className='w-full md:w-[56%] p-9 pb-0 md:p-12 md:pb-0 bg-richblack-900 rounded-2xl border-[1px] border-richblack-600'>
+                <div className='w-full md:w-[56%] p-9 md:p-12 bg-richblack-900 rounded-2xl border-[1px] border-richblack-600'>
                     <div className='text-4xl font-bold text-richblack-25 mb-[2px]'>
                         Got a Idea? We've got the skills.
                     </div>
 
-                    <div className='text-4xl font-bold text-richblack-25 mb-4'>
+                    <div className='text-4xl font-bold text-richblack-25 mb-3'>
                         Let's team up
                     </div>
 
-                    <p className='text-[17px] text-richblack-400'>
+                    <p className='text-[17px] text-richblack-400 mb-10'>
                         Tell us more about yourself and what you're got in mind.
                     </p>
 
