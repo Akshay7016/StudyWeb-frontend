@@ -29,7 +29,7 @@ const ContactForm = () => {
     return (
         <form
             onSubmit={handleSubmit(submitHandler)}
-            className='w-full flex flex-col gap-6'
+            className='w-full flex flex-col gap-4 md:gap-5'
         >
             {/* First name and Last name */}
             <div className='w-full flex gap-5'>
