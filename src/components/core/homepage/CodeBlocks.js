@@ -40,17 +40,17 @@ const CodeBlocks = ({
                 {/* TODO: add background gradient */}
 
                 <div className='w-[10%] flex flex-col items-center text-richblack-400 font-inter font-bold'>
-                    <p>1</p>
-                    <p>2</p>
-                    <p>3</p>
-                    <p>4</p>
-                    <p>5</p>
-                    <p>6</p>
-                    <p>7</p>
-                    <p>8</p>
-                    <p>9</p>
-                    <p>10</p>
-                    <p>11</p>
+                    <p className="text-[13px] lg:text-[14px]">1</p>
+                    <p className="text-[13px] lg:text-[14px]">2</p>
+                    <p className="text-[13px] lg:text-[14px]">3</p>
+                    <p className="text-[13px] lg:text-[14px]">4</p>
+                    <p className="text-[13px] lg:text-[14px]">5</p>
+                    <p className="text-[13px] lg:text-[14px]">6</p>
+                    <p className="text-[13px] lg:text-[14px]">7</p>
+                    <p className="text-[13px] lg:text-[14px]">8</p>
+                    <p className="text-[13px] lg:text-[14px]">9</p>
+                    <p className="text-[13px] lg:text-[14px]">10</p>
+                    <p className="text-[13px] lg:text-[14px]"s>11</p>
                 </div>
 
                 <div className={`w-[90%] flex flex-col font-bold font-mono ${codeColor}`}>

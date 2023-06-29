@@ -67,7 +67,7 @@ const Home = () => {
                         subHeading="Our courses are designed and taught by industry experts who have years of experience in coding and are passionate about sharing their knowledge with you."
                         ctabtn1="Try it Yourself"
                         ctabtn2="Learn More"
-                        codeLines={`<!DOCTYPE html> \n <html lang="en"> \n <head> \n <title>This is myPage</title> \n </head> \n <body> \n <nav> \n <a href="/one>One</a> <a href="/two>Two</a> \n </nav> \n </body> \n </html>`}
+                        codeLines={`<!DOCTYPE html> \n <html lang="en"> \n <head> \n <title>This is myPage</title> \n </head> \n <body> \n <nav> \n <a href="/contactUs>Contact Us</a> \n </nav> \n </body> \n </html>`}
                         codeColor="text-yellow-25"
                     />
 
@@ -82,7 +82,7 @@ const Home = () => {
                         subHeading="Go ahead, give it a try. Our hands-on learning environment means you'll be writing real code from your very first lesson."
                         ctabtn1="Continue Lesson"
                         ctabtn2="Learn More"
-                        codeLines={`import React, {useState} from 'react'; \n import Button from './Button'; \n import {toast} from 'react-toastify'; \n import {FaArrowRight} from 'react-icons/fa'; \n  \n const Home = () => { \n return ( \n <div>Home</div> \n ) \n }; \n export default Home;`}
+                        codeLines={`import {useState} from 'react'; \n import Button from './Button'; \n import {toast} from 'react-toastify'; \n import {getScore} from 'utils'; \n  \n const Home = () => { \n return ( \n <div>Home</div> \n ) \n }; \n export default Home;`}
                         codeColor="text-caribbeangreen-5"
                     />
                 </div>
