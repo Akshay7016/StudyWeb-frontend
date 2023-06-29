@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa';
 
 import HighlightText from '../components/core/homepage/HighlightText';
-import Button from '../components/common/Button';
+import ButtonLink from '../components/common/ButtonLink';
 import CodeBlocks from '../components/core/homepage/CodeBlocks';
 import TimelineSection from '../components/core/homepage/TimelineSection';
 import LearningLanguageSection from '../components/core/homepage/LearningLanguageSection';
@@ -37,13 +37,13 @@ const Home = () => {
                 </div>
 
                 <div className='flex gap-6 mt-[38px]'>
-                    <Button active={true} linkTo="/signup">
+                    <ButtonLink active={true} linkTo="/signup">
                         Learn More
-                    </Button>
+                    </ButtonLink>
 
-                    <Button linkTo="/login">
+                    <ButtonLink linkTo="/login">
                         Book a Demo
-                    </Button>
+                    </ButtonLink>
                 </div>
 
                 <div className='mt-12 mb-[80px] lg:mb-[140px] w-[97%] relative shadow-[-5px_-5px_40px_10px_#073B4C]'>
@@ -96,16 +96,16 @@ const Home = () => {
                 <div className='homepage_bg h-[200px] lg:h-[318px]'>
                     <div className='w-11/12 h-full mx-auto max-w-maxContent flex justify-center'>
                         <div className='mt-[70px] lg:mt-[200px] flex gap-6'>
-                            <Button active={true} linkTo="/signup">
+                            <ButtonLink active={true} linkTo="/signup">
                                 <div className='flex gap-2 items-center'>
                                     Explore Full Catalog
                                     <FaArrowRight />
                                 </div>
-                            </Button>
+                            </ButtonLink>
 
-                            <Button linkTo="/signup">
+                            <ButtonLink linkTo="/signup">
                                 Learn More
-                            </Button>
+                            </ButtonLink>
                         </div>
                     </div>
                 </div>
@@ -122,9 +122,9 @@ const Home = () => {
                                 The modern StudyNotion is the dictates its own terms. Today, to be a competitive specialist requires more than professional skills.
                             </div>
 
-                            <Button active={true} linkTo="/signup">
+                            <ButtonLink active={true} linkTo="/signup">
                                 Learn More
-                            </Button>
+                            </ButtonLink>
                         </div>
                     </div>
 

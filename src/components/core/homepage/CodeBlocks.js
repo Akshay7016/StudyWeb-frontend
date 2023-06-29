@@ -2,7 +2,7 @@ import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
 
-import Button from '../../common/Button';
+import ButtonLink from '../../common/ButtonLink';
 
 const CodeBlocks = ({
     flexDirection,
@@ -22,16 +22,16 @@ const CodeBlocks = ({
                     {subHeading}
                 </div>
                 <div className='flex gap-6'>
-                    <Button active={true} linkTo="/signup">
+                    <ButtonLink active={true} linkTo="/signup">
                         <div className='flex gap-2 items-center'>
                             {ctabtn1}
                             <FaArrowRight />
                         </div>
-                    </Button>
+                    </ButtonLink>
 
-                    <Button linkTo="/signup">
+                    <ButtonLink linkTo="/signup">
                         {ctabtn2}
-                    </Button>
+                    </ButtonLink>
                 </div>
             </div>
 

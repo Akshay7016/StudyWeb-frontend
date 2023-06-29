@@ -1,7 +1,7 @@
 import React from 'react';
 
 import HighlightText from '../homepage/HighlightText';
-import Button from '../../common/Button';
+import ButtonLink from '../../common/ButtonLink';
 
 const LearningGridArray = [
     {
@@ -74,11 +74,11 @@ const LearningGrid = () => {
                                         </p>
 
                                         <div className='w-fit mt-3 mb-8 lg:mb-0'>
-                                            <Button active={true} linkTo={card.BtnLink}>
+                                            <ButtonLink active={true} linkTo={card.BtnLink}>
                                                 <div className='font-semibold'>
                                                     {card.BtnText}
                                                 </div>
-                                            </Button>
+                                            </ButtonLink>
                                         </div>
                                     </div>
                                 ) : (

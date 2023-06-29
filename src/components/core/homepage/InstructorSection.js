@@ -2,7 +2,7 @@ import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 
 import Instructor from '../../../assets/Images/Instructor.png';
-import Button from '../../common/Button';
+import ButtonLink from '../../common/ButtonLink';
 import HighlightText from './HighlightText';
 
 const InstructorSection = () => {
@@ -28,12 +28,12 @@ const InstructorSection = () => {
                 </div>
 
                 <div className='w-fit mx-auto lg:mx-0'>
-                    <Button active={true} linkTo="/signup">
+                    <ButtonLink active={true} linkTo="/signup">
                         <div className='flex items-center gap-2'>
                             Start Teaching Today
                             <FaArrowRight />
                         </div>
-                    </Button>
+                    </ButtonLink>
                 </div>
             </div>
         </div>

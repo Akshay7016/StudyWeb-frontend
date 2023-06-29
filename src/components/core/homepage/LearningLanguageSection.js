@@ -1,7 +1,7 @@
 import React from 'react';
 
 import HighlightText from "./HighlightText";
-import Button from '../../common/Button';
+import ButtonLink from '../../common/ButtonLink';
 
 import know_your_progress from "../../../assets/Images/Know_your_progress.svg";
 import compare_with_others from "../../../assets/Images/Compare_with_others.svg";
@@ -38,11 +38,11 @@ const LearningLanguageSection = () => {
             </div>
 
             <div className='mt-[25px] md:mt-[10px] lg:mt-0'>
-                <Button active={true} linkTo="/signup">
+                <ButtonLink active={true} linkTo="/signup">
                     <div className='font-semibold'>
                         Learn More
                     </div>
-                </Button>
+                </ButtonLink>
             </div>
         </div>
     )
