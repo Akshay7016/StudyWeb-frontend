@@ -16,7 +16,7 @@ const Dashboard = () => {
         <div className='relative flex h-[calc(100vh-56px)]'>
             <Sidebar />
 
-            <div className='h-[calc(100vh-56px)] overflow-auto'>
+            <div className='w-full h-[calc(100vh-56px)] overflow-auto'>
                 <div className='w-11/12 max-w-[1000px] mx-auto py-10'>
                     <Outlet />
                 </div>

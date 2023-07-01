@@ -2,14 +2,10 @@
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 
-function OpenRoute({ children }) {
-    const { token } = useSelector((state) => state.auth)
+const OpenRoute = ({ children }) => {
+    const { user } = useSelector((state) => state.profile)
 
-    if (token === null) {
-        return children
-    } else {
-        return <Navigate to="/dashboard/my-profile" />
-    }
-}
+    return user ? <Navigate to="/dashboard/my-profile" /> : children;
+};
 
 export default OpenRoute;

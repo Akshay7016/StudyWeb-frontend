@@ -10,9 +10,12 @@ import ForgotPassword from './pages/ForgotPassword';
 import UpdatePassword from './pages/UpdatePassword';
 import VerifyEmail from './pages/VerifyEmail';
 import About from './pages/About';
+import Dashboard from './pages/Dashboard';
 import ContactUs from './pages/ContactUs';
 import Navbar from './components/common/Navbar';
 import OpenRoute from './components/core/auth/OpenRoute';
+import PrivateRoute from './components/core/auth/PrivateRoute';
+import MyProfile from './components/core/dashboard/MyProfile';
 import { store } from './redux/store';
 
 const App = () => {
@@ -81,6 +84,16 @@ const App = () => {
               path="/contact"
               element={<ContactUs />}
             />
+
+            <Route
+              element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
+              }
+            >
+              <Route path="dashboard/my-profile" element={<MyProfile />} />
+            </Route>
 
             <Route
               path="*"
