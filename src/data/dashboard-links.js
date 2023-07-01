@@ -1,4 +1,5 @@
-import { ACCOUNT_TYPE } from "../utils/constants";
+import { ACCOUNT_TYPE } from "../enums";
+
 export const sidebarLinks = [
   {
     id: 1,
