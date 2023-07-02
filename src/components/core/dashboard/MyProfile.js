@@ -36,7 +36,7 @@ const MyProfile = () => {
                     </div>
                 </div>
 
-                <Button active={true} onClick={() => navigate("/dashboard/settings")}>
+                <Button variant='variant1' onClick={() => navigate("/dashboard/settings")}>
                     <div className='flex gap-2 items-center'>
                         Edit
                         <RiEditBoxLine />
@@ -51,7 +51,7 @@ const MyProfile = () => {
                         About
                     </p>
 
-                    <Button active={true} onClick={() => navigate("/dashboard/settings")}>
+                    <Button variant='variant1' onClick={() => navigate("/dashboard/settings")}>
                         <div className='flex gap-2 items-center'>
                             Edit
                             <RiEditBoxLine />
@@ -73,7 +73,7 @@ const MyProfile = () => {
                         Personal Details
                     </p>
 
-                    <Button active={true} onClick={() => navigate("/dashboard/settings")}>
+                    <Button variant='variant1' onClick={() => navigate("/dashboard/settings")}>
                         <div className='flex gap-2 items-center'>
                             Edit
                             <RiEditBoxLine />
