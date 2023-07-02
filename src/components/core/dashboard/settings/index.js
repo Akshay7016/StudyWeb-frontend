@@ -1,4 +1,5 @@
 import ChangeProfilePicture from "./ChangeProfilePicture";
+import EditProfile from "./EditProfile";
 
 const Settings = () => {
     return (
@@ -9,6 +10,9 @@ const Settings = () => {
 
             {/* change profile picture */}
             <ChangeProfilePicture />
+
+            {/* Edit profile */}
+            <EditProfile />
         </>
     )
 }
