@@ -16,6 +16,7 @@ import Navbar from './components/common/Navbar';
 import OpenRoute from './components/core/auth/OpenRoute';
 import PrivateRoute from './components/core/auth/PrivateRoute';
 import MyProfile from './components/core/dashboard/MyProfile';
+import Settings from './components/core/dashboard/settings';
 import { store } from './redux/store';
 
 const App = () => {
@@ -93,6 +94,7 @@ const App = () => {
               }
             >
               <Route path="dashboard/my-profile" element={<MyProfile />} />
+              <Route path="dashboard/settings" element={<Settings />} />
             </Route>
 
             <Route

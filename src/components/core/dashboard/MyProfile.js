@@ -10,8 +10,6 @@ const MyProfile = () => {
     const navigate = useNavigate();
     const { user } = useSelector((state) => state.profile);
 
-    console.log("User:", user)
-
     return (
         <div>
             <h1 className='text-3xl font-medium text-richblack-5 mb-14'>
