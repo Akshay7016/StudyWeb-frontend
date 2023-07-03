@@ -19,11 +19,11 @@ const ConfirmationModal = ({ heading1, heading2, btnText1, btnText2, btn1Handler
                 </div>
 
                 <div className='flex gap-4'>
-                    <Button active={true} onClick={btn1Handler}>
+                    <Button variant='variant1' onClick={btn1Handler}>
                         {btnText1}
                     </Button>
 
-                    <Button onClick={btn2Handler}>
+                    <Button variant='variant3' onClick={btn2Handler}>
                         {btnText2}
                     </Button>
                 </div>
