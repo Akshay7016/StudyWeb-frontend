@@ -40,7 +40,7 @@ const EditProfile = () => {
         <form
             onSubmit={handleSubmit(submitHandler)}
         >
-            <div className='my-10 rounded-md border-[1px] border-richblack-700 bg-richblack-800 py-8 px-12'>
+            <div className='mt-10 mb-6 rounded-md border-[1px] border-richblack-700 bg-richblack-800 py-8 px-12'>
                 <p className='text-lg font-semibold text-richblack-5 mb-6'>
                     Profile Information
                 </p>
