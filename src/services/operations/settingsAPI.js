@@ -6,7 +6,8 @@ import { setUser } from "../../redux/slices/profileSlice";
 
 const {
     UPDATE_DISPLAY_PICTURE_API,
-    UPDATE_PROFILE_API
+    UPDATE_PROFILE_API,
+    CHANGE_PASSWORD_API
 } = settingsEndpoints;
 
 export const updateDisplayPicture = (token, formData) => {
@@ -55,4 +56,23 @@ export const updateProfile = (token, formData) => {
         }
         toast.dismiss(toastId);
     }
+};
+
+export const changePassword = async (token, formData) => {
+    const toastId = toast.loading("Loading...");
+    try {
+        await apiConnector(
+            "PUT",
+            CHANGE_PASSWORD_API,
+            formData,
+            {
+                Authorization: `Bearer ${token}`
+            }
+        );
+
+        toast.success("Password changed successfully");
+    } catch (error) {
+        toast.error(error?.response?.data?.message);
+    }
+    toast.dismiss(toastId);
 };
