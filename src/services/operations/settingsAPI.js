@@ -6,6 +6,7 @@ import { setUser } from "../../redux/slices/profileSlice";
 
 const {
     UPDATE_DISPLAY_PICTURE_API,
+    UPDATE_PROFILE_API
 } = settingsEndpoints;
 
 export const updateDisplayPicture = (token, formData) => {
@@ -30,4 +31,28 @@ export const updateDisplayPicture = (token, formData) => {
         }
         toast.dismiss(toastId);
     }
-}
+};
+
+export const updateProfile = (token, formData) => {
+    return async (dispatch) => {
+        const toastId = toast.loading("Loading...");
+
+        try {
+            const response = await apiConnector(
+                "PUT",
+                UPDATE_PROFILE_API,
+                formData,
+                {
+                    Authorization: `Bearer ${token}`
+                }
+            );
+
+            dispatch(setUser(response?.data?.data));
+            localStorage.setItem("user", JSON.stringify(response?.data?.data));
+            toast.success("Profile updated successfully");
+        } catch (error) {
+            toast.error(error?.response?.data?.message);
+        }
+        toast.dismiss(toastId);
+    }
+};

@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
+import { updateProfile } from "../../../../services/operations/settingsAPI";
 import Button from "../../../common/Button";
 
 const genders = ["Male", "Female", "Other"];
@@ -28,7 +29,11 @@ const EditProfile = () => {
     });
 
     const submitHandler = (data) => {
-        console.log(data)
+        try {
+            dispatch(updateProfile(token, data))
+        } catch (error) {
+            console.log("Error", error)
+        }
     }
 
     return (
