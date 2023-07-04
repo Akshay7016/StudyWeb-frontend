@@ -3,12 +3,16 @@ import { toast } from "react-hot-toast";
 import { apiConnector } from "../apiConnector";
 import { settingsEndpoints } from "../apis";
 import { setUser } from "../../redux/slices/profileSlice";
+import { logout } from "./authAPI";
 
 const {
     UPDATE_DISPLAY_PICTURE_API,
     UPDATE_PROFILE_API,
-    CHANGE_PASSWORD_API
+    CHANGE_PASSWORD_API,
+    DELETE_PROFILE_API
 } = settingsEndpoints;
+
+
 
 export const updateDisplayPicture = (token, formData) => {
     return async (dispatch) => {
@@ -76,3 +80,25 @@ export const changePassword = async (token, formData) => {
     }
     toast.dismiss(toastId);
 };
+
+export const deleteProfile = (token, navigate) => {
+    return async (dispatch) => {
+        const toastId = toast.loading("Loading...");
+        try {
+            await apiConnector(
+                "DELETE",
+                DELETE_PROFILE_API,
+                null,
+                {
+                    Authorization: `Bearer ${token}`
+                }
+            );
+
+            toast.success("Profile deleted successfully");
+            dispatch(logout(navigate));
+        } catch (error) {
+            toast.error(error?.response?.data?.message);
+        }
+        toast.dismiss(toastId);
+    }
+}
