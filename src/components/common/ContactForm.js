@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { toast } from "react-hot-toast";
 import { useForm } from "react-hook-form";
 
+import Button from "../common/Button";
 import { apiConnector } from "../../services/apiConnector";
 import { contactUsEndpoints } from "../../services/apis";
 import countrycode from "../../data/countrycode.json";
@@ -9,6 +10,7 @@ import countrycode from "../../data/countrycode.json";
 const { CONTACT_US_API } = contactUsEndpoints;
 
 const ContactForm = () => {
+    const [loading, setLoading] = useState(false);
     const { handleSubmit, register, reset, formState } = useForm({
         defaultValues: {
             firstName: "",
@@ -22,17 +24,19 @@ const ContactForm = () => {
     const { errors, isSubmitSuccessful } = formState;
 
     const submitHandler = async (data) => {
-        console.log(data)
         try {
+            setLoading(true);
             await apiConnector(
                 "POST",
                 CONTACT_US_API,
                 data
             );
 
-            toast.success("Response send")
+            toast.success("Response send");
+            setLoading(false);
         } catch (error) {
-            toast.error("Something went wrong")
+            toast.error("Something went wrong");
+            setLoading(false);
         }
     };
 
@@ -190,10 +194,15 @@ const ContactForm = () => {
 
             </label>
 
-
-            <button className='mt-2 bg-yellow-50 rounded-lg font-semibold text-richblack-900 px-3 py-2'>
-                Send Message
-            </button>
+            <Button
+                variant='variant1'
+                type='submit'
+                disabled={loading}
+            >
+                {
+                    loading ? "Sending..." : "Send Message"
+                }
+            </Button>
         </form>
     )
 }
