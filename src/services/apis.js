@@ -43,3 +43,8 @@ export const settingsEndpoints = {
     CHANGE_PASSWORD_API: BASE_URL + "/auth/changePassword",
     DELETE_PROFILE_API: BASE_URL + "/profile/deleteProfile",
 }
+
+// CONTACT US PAGE ENDPOINTS
+export const contactUsEndpoints = {
+    CONTACT_US_API: BASE_URL + "/reach/contact"
+};

@@ -1,7 +1,12 @@
 import React, { useEffect } from 'react';
+import { toast } from "react-hot-toast";
 import { useForm } from "react-hook-form";
 
+import { apiConnector } from "../../services/apiConnector";
+import { contactUsEndpoints } from "../../services/apis";
 import countrycode from "../../data/countrycode.json";
+
+const { CONTACT_US_API } = contactUsEndpoints;
 
 const ContactForm = () => {
     const { handleSubmit, register, reset, formState } = useForm({
@@ -16,9 +21,20 @@ const ContactForm = () => {
     });
     const { errors, isSubmitSuccessful } = formState;
 
-    const submitHandler = (data) => {
-        console.log(data);
-    }
+    const submitHandler = async (data) => {
+        console.log(data)
+        try {
+            await apiConnector(
+                "POST",
+                CONTACT_US_API,
+                data
+            );
+
+            toast.success("Response send")
+        } catch (error) {
+            toast.error("Something went wrong")
+        }
+    };
 
     useEffect(() => {
         if (isSubmitSuccessful) {
