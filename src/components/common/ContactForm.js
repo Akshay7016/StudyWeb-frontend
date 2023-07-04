@@ -174,7 +174,7 @@ const ContactForm = () => {
             </label>
 
             {/* Message */}
-            <label className='w-full'>
+            <label className='w-full mb-2'>
                 <p className='text-[14px] text-richblack-25 mb-1'>
                     Message<sup className='ml-1 text-pink-200'>*</sup>
                 </p>
