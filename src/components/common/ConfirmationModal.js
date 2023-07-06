@@ -6,10 +6,10 @@ const ConfirmationModal = ({ heading1, heading2, btnText1, btnText2, btn1Handler
         <>
             <div
                 onClick={btn2Handler}
-                className='fixed top-0 bottom-0 left-0 right-0 backdrop-blur-sm'>
+                className='fixed top-0 bottom-0 left-0 right-0 backdrop-blur-sm z-[200]'>
             </div>
 
-            <div className='fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-11/12 max-w-[350px] rounded-lg border border-richblack-400 bg-richblack-800 p-6'>
+            <div className='fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-11/12 max-w-[350px] rounded-lg border border-richblack-400 bg-richblack-800 p-6 z-[220]'>
                 <div className='text-2xl font-semibold text-richblack-5'>
                     {heading1}
                 </div>
