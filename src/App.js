@@ -15,6 +15,7 @@ import ContactUs from './pages/ContactUs';
 import Navbar from './components/common/Navbar';
 import OpenRoute from './components/core/auth/OpenRoute';
 import PrivateRoute from './components/core/auth/PrivateRoute';
+import StudentRoute from './components/core/auth/StudentRoute';
 import MyProfile from './components/core/dashboard/MyProfile';
 import Settings from './components/core/dashboard/settings';
 import EnrolledCourses from './components/core/dashboard/EnrolledCourses';
@@ -97,8 +98,20 @@ const App = () => {
             >
               <Route path="dashboard/my-profile" element={<MyProfile />} />
               <Route path="dashboard/settings" element={<Settings />} />
-              <Route path="dashboard/enrolled-courses" element={<EnrolledCourses />} />
-              <Route path="dashboard/cart" element={<Cart />} />
+              <Route
+                path="dashboard/enrolled-courses"
+                element={
+                  <StudentRoute>
+                    <EnrolledCourses />
+                  </StudentRoute>}
+              />
+              <Route
+                path="dashboard/cart"
+                element={
+                  <StudentRoute>
+                    <Cart />
+                  </StudentRoute>
+                } />
             </Route>
 
             <Route
