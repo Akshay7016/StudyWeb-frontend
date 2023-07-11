@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import ReactStars from "react-stars";
+import StarRatings from "react-star-ratings";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
 import { removeFromCart } from "../../../../redux/slices/cartSlice";
@@ -9,42 +9,62 @@ const RenderCartCourses = () => {
     const { cart } = useSelector((state) => state.cart);
 
     return (
-        <div>
+        <div className="w-[70%] h-fit flex flex-col gap-6">
             {
-                cart.map((course, index) => {
+                cart.map((course) => {
                     return (
-                        <div key={index}>
-                            <div>
+                        <div
+                            key={course._id}
+                            className="w-full flex justify-between gap-6 pb-6 last:pb-0 last:border-none border-b border-richblack-400"
+                        >
+                            <div className="flex gap-4">
                                 <img
                                     src={course?.thumbnail}
                                     alt={`${course.courseName}-thumbnail`}
+                                    className="h-[148px] w-[220px] rounded-lg object-cover"
                                 />
 
-                                <div>
-                                    <p>{course?.courseName}</p>
-                                    <p>{course?.category?.name}</p>
-                                    <div>
-                                        <span>4.5</span>
-                                        <ReactStars
-                                            count={5}
-                                            size={20}
-                                            edit={false}
-                                            activeColor="#ffd700"
-                                        // emptyIcon={ }
-                                        // fullIcon={ }
+                                <div className="flex flex-col gap-1">
+                                    <p className="text-lg font-medium text-richblack-5">
+                                        {course?.courseName}
+                                    </p>
+
+                                    <p className="text-sm text-richblack-300">
+                                        {course?.category?.name}
+                                    </p>
+
+                                    <div className="flex items-center gap-2">
+                                        {/* TODO: add dynamic rating values */}
+                                        <span className="text-yellow-50">4.5</span>
+
+                                        <StarRatings
+                                            numberOfStars={5}
+                                            rating={4.5}
+                                            starRatedColor="#E7C009"
+                                            starEmptyColor="#6E727F"
+                                            starDimension="16px"
+                                            starSpacing="1px"
                                         />
-                                        <span>{course?.ratingAndReviews?.length} Ratings</span>
+
+                                        <span className="text-richblack-400">
+                                            {course?.ratingAndReviews?.length} Ratings
+                                        </span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div>
-                                <button onClick={() => dispatch(removeFromCart(course._id))}>
+                            <div className="flex flex-col gap-2 items-center">
+                                <button
+                                    onClick={() => dispatch(removeFromCart(course._id))}
+                                    className="flex items-center gap-1 rounded-md border border-richblack-600 bg-richblack-700 p-3 text-pink-200"
+                                >
                                     <RiDeleteBin5Line />
                                     Remove
                                 </button>
 
-                                <div>Rs {course.price}</div>
+                                <div className="text-3xl font-medium text-yellow-100">
+                                    ₹ {course.price}
+                                </div>
                             </div>
                         </div>
                     )

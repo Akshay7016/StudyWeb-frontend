@@ -1,5 +1,8 @@
 import { useSelector } from "react-redux";
 
+import RenderCartCourses from "./RenderCartCourses";
+import RenderTotalAmount from "./RenderTotalAmount";
+
 const Cart = () => {
     const { totalItems } = useSelector((state) => state.cart);
 
@@ -17,9 +20,9 @@ const Cart = () => {
 
             {
                 totalItems > 0 ? (
-                    <div>
-                        {/* <RenderCartCourses />
-                        <RenderTotalAmount /> */}
+                    <div className="mt-8 flex gap-10">
+                        <RenderCartCourses />
+                        <RenderTotalAmount />
                     </div>
                 ) : (
                     <div className="text-richblack-200 text-3xl text-center font-medium mt-12">
