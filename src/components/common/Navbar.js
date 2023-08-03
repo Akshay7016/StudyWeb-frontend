@@ -6,8 +6,7 @@ import { RiArrowDownSLine } from 'react-icons/ri';
 import { RxHamburgerMenu, RxCross2 } from 'react-icons/rx';
 
 import ProfileDropdown from '../core/auth/ProfileDropdown';
-import { apiConnector } from '../../services/apiConnector';
-import { categoriesEndpoints } from '../../services/apis';
+import { fetchCourseCategories } from "../../services/operations/courseDetailsAPI"
 import { NavbarLinks } from "../../data/navbar-links";
 import { mobileNavbarLinks } from '../../data/mobileNavbarLinks';
 import { ACCOUNT_TYPE } from '../../enums';
@@ -22,12 +21,8 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const fetchCatalogs = async () => {
-        try {
-            const result = await apiConnector("GET", categoriesEndpoints.CATEGORIES_API);
-            setCatalogs(result?.data?.data);
-        } catch (error) {
-            console.log("Could not fetch category list ", error.message);
-        }
+        const result = await fetchCourseCategories();
+        setCatalogs(result);
     };
 
     useEffect(() => {

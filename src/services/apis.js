@@ -48,11 +48,6 @@ export const ratingsEndpoints = {
     REVIEWS_DETAILS_API: BASE_URL + "/course/getAllRatingAndReview"
 };
 
-// CATEGORIES ENDPOINTS
-export const categoriesEndpoints = {
-    CATEGORIES_API: BASE_URL + "/course/getAllCategories",
-};
-
 // CATALOG PAGE ENDPOINTS
 export const catalogDataEndpoints = {
     CATALOG_PAGE_DATA_API: BASE_URL + "/course/getCategoryPageDetails",
