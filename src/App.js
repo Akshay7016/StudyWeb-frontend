@@ -20,6 +20,7 @@ import MyProfile from './components/core/dashboard/MyProfile';
 import Settings from './components/core/dashboard/settings';
 import EnrolledCourses from './components/core/dashboard/EnrolledCourses';
 import Cart from "./components/core/dashboard/cart";
+import AddCourse from './components/core/dashboard/addCourse';
 import { store } from './redux/store';
 
 const App = () => {
@@ -112,6 +113,11 @@ const App = () => {
                     <Cart />
                   </StudentRoute>
                 } />
+
+              <Route
+                path='dashboard/add-course'
+                element={<AddCourse />}
+              />
             </Route>
 
             <Route
