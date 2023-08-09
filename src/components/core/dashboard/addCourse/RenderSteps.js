@@ -28,7 +28,7 @@ const RenderSteps = () => {
             <div key={id} className="flex w-[40%] last:w-fit">
               <div className={`${step === id
                 ? "bg-yellow-900 border border-yellow-50 text-yellow-50"
-                : "bg-richblack-800 border border-richblack-700 text-richblack-300"} w-[33px] aspect-square flex items-center justify-center rounded-full ${step > id && "bg-yellow-50"}`}
+                : "bg-richblack-800 border border-richblack-700 text-richblack-300"} w-[34px] aspect-square flex items-center justify-center rounded-full ${step > id && "bg-yellow-50"}`}
               >
                 {
                   step > id ? (
