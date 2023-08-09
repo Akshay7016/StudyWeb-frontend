@@ -16,6 +16,7 @@ import Navbar from './components/common/Navbar';
 import OpenRoute from './components/core/auth/OpenRoute';
 import PrivateRoute from './components/core/auth/PrivateRoute';
 import StudentRoute from './components/core/auth/StudentRoute';
+import InstructorRoute from "./components/core/auth/InstructorRoute";
 import MyProfile from './components/core/dashboard/MyProfile';
 import Settings from './components/core/dashboard/settings';
 import EnrolledCourses from './components/core/dashboard/EnrolledCourses';
@@ -116,8 +117,11 @@ const App = () => {
 
               <Route
                 path='dashboard/add-course'
-                element={<AddCourse />}
-              />
+                element={
+                  <InstructorRoute>
+                    <AddCourse />
+                  </InstructorRoute>
+                } />
             </Route>
 
             <Route
