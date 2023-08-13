@@ -132,6 +132,7 @@ const EditProfile = () => {
                                 })}
                                 className="w-full bg-richblack-700 rounded-lg text-richblack-5 placeholder-richblack-400 p-[10px] py-[12px] border-b-[1px] border-richblack-300 outline-none"
                             >
+                                <option value="" disabled>Select Gender</option>
                                 {
                                     genders.map((element, index) => {
                                         return (
