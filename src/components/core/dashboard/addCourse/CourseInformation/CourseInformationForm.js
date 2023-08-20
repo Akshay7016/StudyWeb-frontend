@@ -64,8 +64,7 @@ const CourseInformationForm = () => {
       currentValues.coursePrice !== course.price ||
       currentValues.courseTags.toString() !== course.tags.toString() ||
       currentValues.courseBenefits !== course.whatYouWillLearn ||
-      // TODO: courseCategory needed or courseCategory._id bcz we are setting id only
-      currentValues.courseCategory._id !== course.category._id ||
+      currentValues.courseCategory !== course.category ||
       currentValues.courseRequirements.toString() !== course.instructions.toString() ||
       currentValues.courseImage !== course.thumbnail
     ) {
@@ -107,8 +106,7 @@ const CourseInformationForm = () => {
           formData.append("whatYouWillLearn", data.courseBenefits);
         }
 
-        // TODO: check whether ._id is required or not(Only courseCategory is required)
-        if (currentValues.courseCategory._id !== course.category._id) {
+        if (currentValues.courseCategory !== course.category) {
           formData.append("category", data.courseCategory);
         }
 
