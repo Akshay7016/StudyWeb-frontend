@@ -1,5 +1,8 @@
 import { useSelector } from "react-redux";
 import { FaCheck } from "react-icons/fa";
+import CourseInformationForm from "./CourseInformation/CourseInformationForm";
+import CourseBuilderForm from "./CourseBuilder/CourseBuilderForm";
+import PublishCourse from "./PublishCourse/PublishCourse";
 
 const steps = [
   {
@@ -53,10 +56,10 @@ const RenderSteps = () => {
       </div>
 
       {/* Steps title */}
-      <div className="text-white w-full flex">
+      <div className="w-full flex mb-16">
         {
           steps.map(({ id, title }) => (
-            <div className={`${step >= id ? "text-richblack-5" : "text-richblack-500"} w-[41%] last:w-[14%] last:text-center text-sm`}>
+            <div key={id} className={`${step >= id ? "text-richblack-5" : "text-richblack-500"} w-[41%] last:w-[14%] last:text-center text-sm`}>
               {title}
             </div>
           ))
@@ -65,7 +68,9 @@ const RenderSteps = () => {
 
 
       {/* Render specific component based on current step */}
-
+      {step === 1 && <CourseInformationForm />}
+      {step === 2 && <CourseBuilderForm />}
+      {step === 3 && <PublishCourse />}
     </>
   )
 }
