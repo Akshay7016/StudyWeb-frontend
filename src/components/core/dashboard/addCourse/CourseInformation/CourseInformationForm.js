@@ -157,7 +157,7 @@ const CourseInformationForm = () => {
   return (
     <form
       onSubmit={handleSubmit(submitHandler)}
-      className="flex flex-col gap-8 rounded-md border-richblack-700 bg-richblack-800 p-6"
+      className="flex flex-col gap-8 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-6"
     >
       {/* Course Title */}
       <label className='w-full'>
