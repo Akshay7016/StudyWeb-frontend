@@ -4,7 +4,7 @@ const Button = ({ children, onClick, className = "", variant = "variant1", disab
     const buttonColor = {
         variant1: "bg-yellow-50 text-richblack-900",
         variant2: "bg-richblack-700 text-richblack-50",
-        variant3: "bg-richblack-200 text-richblack-900"
+        variant3: "bg-richblack-300 text-richblack-900"
     };
 
     return (
