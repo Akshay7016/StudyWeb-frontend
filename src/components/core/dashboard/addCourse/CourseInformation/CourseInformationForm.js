@@ -75,8 +75,6 @@ const CourseInformationForm = () => {
   };
 
   const submitHandler = async (data) => {
-    console.log("Form Data: ", data);
-
     // TODO: testing of edit course is remaining
     // Update existing course
     if (editCourse) {
@@ -117,10 +115,8 @@ const CourseInformationForm = () => {
         if (currentValues.courseImage !== course.thumbnail) {
           formData.append("thumbnailImage", data.courseImage);
         }
-
         setLoading(true);
         const result = await editCourseDetails(formData, token);
-        console.log("Edit course details API: ", result);
         if (result) {
           dispatch(setStep(2));
           dispatch(setCourse(result));
@@ -146,7 +142,6 @@ const CourseInformationForm = () => {
 
     setLoading(true);
     const result = await addCourseDetails(formData, token);
-    console.log("Add course api response", result);
     if (result) {
       dispatch(setStep(2));
       dispatch(setCourse(result));
