@@ -1,9 +1,10 @@
 import { toast } from "react-hot-toast";
 
 // TODO: check where this logo is used
-import logo from "../../assets/Logo/logo.png";
-import { resetCart } from "../../redux/slices/cartSlice";
-import { setPaymentLoading } from "../../redux/slices/courseSlice";
+import { resetCart } from "redux/slices/cartSlice";
+import { setPaymentLoading } from "redux/slices/courseSlice";
+import logo from "assets/Logo/logo.png";
+
 import { apiConnector } from "../apiConnector";
 import { studentEndpoints } from "../apis";
 

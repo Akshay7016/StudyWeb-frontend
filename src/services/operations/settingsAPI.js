@@ -1,8 +1,10 @@
 import { toast } from "react-hot-toast";
 
+import { setUser } from "redux/slices/profileSlice";
+
 import { apiConnector } from "../apiConnector";
 import { settingsEndpoints } from "../apis";
-import { setUser } from "../../redux/slices/profileSlice";
+
 import { logout } from "./authAPI";
 
 const {
