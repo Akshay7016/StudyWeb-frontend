@@ -1,4 +1,4 @@
-import { ACCOUNT_TYPE } from "../enums";
+import { ACCOUNT_TYPE } from "enums";
 
 export const sidebarLinks = [
   {
