@@ -2,9 +2,8 @@ import { useRef, useEffect, useState } from 'react'
 import { FiUpload } from "react-icons/fi";
 import { useDispatch, useSelector } from 'react-redux';
 
-import { updateDisplayPicture } from "../../../../services/operations/settingsAPI";
-
-import Button from '../../../common/Button';
+import { updateDisplayPicture } from "services/operations/settingsAPI";
+import Button from 'components/common/Button';
 
 const ChangeProfilePicture = () => {
     const dispatch = useDispatch();

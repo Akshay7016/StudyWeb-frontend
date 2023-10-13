@@ -1,4 +1,5 @@
 import React from 'react'
+
 import HighlightText from '../homepage/HighlightText'
 
 const Quote = () => {

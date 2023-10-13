@@ -2,8 +2,8 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { updateProfile } from "../../../../services/operations/settingsAPI";
-import Button from "../../../common/Button";
+import { updateProfile } from "services/operations/settingsAPI";
+import Button from "components/common/Button";
 
 const genders = ["Male", "Female", "Other"];
 

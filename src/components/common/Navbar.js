@@ -5,12 +5,12 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { RiArrowDownSLine } from 'react-icons/ri';
 import { RxHamburgerMenu, RxCross2 } from 'react-icons/rx';
 
-import ProfileDropdown from '../core/auth/ProfileDropdown';
-import { fetchCourseCategories } from "../../services/operations/courseDetailsAPI"
-import { NavbarLinks } from "../../data/navbar-links";
-import { mobileNavbarLinks } from '../../data/mobileNavbarLinks';
-import { ACCOUNT_TYPE } from '../../enums';
-import Logo from "../../assets/Logo/logo.png"
+import ProfileDropdown from 'components/core/auth/ProfileDropdown';
+import { fetchCourseCategories } from "services/operations/courseDetailsAPI"
+import { NavbarLinks } from "data/navbar-links";
+import { mobileNavbarLinks } from 'data/mobileNavbarLinks';
+import { ACCOUNT_TYPE } from 'enums';
+import Logo from "assets/Logo/logo.png"
 
 const Navbar = () => {
     const navigate = useNavigate();

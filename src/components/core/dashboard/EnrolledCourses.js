@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { useSelector } from "react-redux";
 import ProgressBar from "@ramonak/react-progress-bar";
 
-import { getUserEnrolledCourses } from "../../../services/operations/profileAPI";
-import Spinner from "../../common/Spinner";
+import { getUserEnrolledCourses } from "services/operations/profileAPI";
+import Spinner from "components/common/Spinner";
 
 const EnrolledCourses = () => {
     const { token } = useSelector((state) => state.auth);

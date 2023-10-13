@@ -4,8 +4,8 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 
-import { changePassword } from "../../../../services/operations/settingsAPI";
-import Button from "../../../common/Button";
+import { changePassword } from "services/operations/settingsAPI";
+import Button from "components/common/Button";
 
 const UpdatePassword = () => {
     const navigate = useNavigate();

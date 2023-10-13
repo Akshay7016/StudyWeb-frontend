@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 
-import { ACCOUNT_TYPE } from "../../../enums";
+import { ACCOUNT_TYPE } from "enums";
 
 const InstructorRoute = ({ children }) => {
     const { user } = useSelector((state) => state.profile);

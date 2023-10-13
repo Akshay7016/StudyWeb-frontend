@@ -2,7 +2,7 @@ import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
 
-import ButtonLink from '../../common/ButtonLink';
+import ButtonLink from 'components/common/ButtonLink';
 
 const CodeBlocks = ({
     flexDirection,
@@ -50,7 +50,7 @@ const CodeBlocks = ({
                     <p className="text-[13px] lg:text-[14px]">8</p>
                     <p className="text-[13px] lg:text-[14px]">9</p>
                     <p className="text-[13px] lg:text-[14px]">10</p>
-                    <p className="text-[13px] lg:text-[14px]"s>11</p>
+                    <p className="text-[13px] lg:text-[14px]" s>11</p>
                 </div>
 
                 <div className={`w-[90%] flex flex-col font-bold font-mono ${codeColor}`}>

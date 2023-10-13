@@ -1,10 +1,8 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useDropzone } from "react-dropzone";
 import { FiUploadCloud } from "react-icons/fi"
 import { Player } from "video-react"
 import "video-react/dist/video-react.css";
-import { useEffect } from 'react';
-
 
 const Upload = ({ name, label, register, errors, setValue, video = false, viewData = null, editData = null }) => {
     const [selectedFile, setSelectedFile] = useState(null);

@@ -3,11 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { VscSignOut } from "react-icons/vsc";
 
-import { sidebarLinks } from "../../../data/dashboard-links";
-import { logout } from "../../../services/operations/authAPI";
-
-import Spinner from '../../common/Spinner';
-import ConfirmationModal from '../../common/ConfirmationModal';
+import { sidebarLinks } from "data/dashboard-links";
+import { logout } from "services/operations/authAPI";
+import Spinner from 'components/common/Spinner';
+import ConfirmationModal from 'components/common/ConfirmationModal';
 
 import SidebarLink from './SidebarLink';
 

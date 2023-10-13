@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 
-import { login } from "../../../services/operations/authAPI";
+import { login } from "services/operations/authAPI";
 
 const LoginForm = () => {
     const dispatch = useDispatch();

@@ -1,7 +1,8 @@
 import React from 'react';
 
+import ButtonLink from 'components/common/ButtonLink';
+
 import HighlightText from '../homepage/HighlightText';
-import ButtonLink from '../../common/ButtonLink';
 
 const LearningGridArray = [
     {

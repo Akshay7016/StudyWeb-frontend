@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 
-import Button from "../../../common/Button";
+import Button from "components/common/Button";
 
 const RenderTotalAmount = () => {
     const { total, cart } = useSelector((state) => state.cart);

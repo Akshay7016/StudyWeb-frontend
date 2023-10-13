@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { toast } from "react-hot-toast";
 import { useForm } from "react-hook-form";
 
-import Button from "../common/Button";
-import { apiConnector } from "../../services/apiConnector";
-import { contactUsEndpoints } from "../../services/apis";
-import countrycode from "../../data/countrycode.json";
+import { apiConnector } from "services/apiConnector";
+import { contactUsEndpoints } from "services/apis";
+import countrycode from "data/countrycode.json";
+
+import Button from "./Button";
 
 const { CONTACT_US_API } = contactUsEndpoints;
 

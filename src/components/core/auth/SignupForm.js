@@ -5,11 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 
-import Tab from '../../common/Tab';
-
-import { ACCOUNT_TYPE } from '../../../enums';
-import { setSignupData } from '../../../redux/slices/authSlice';
-import { sendOtp } from "../../../services/operations/authAPI";
+import Tab from 'components/common/Tab';
+import { ACCOUNT_TYPE } from 'enums';
+import { setSignupData } from 'redux/slices/authSlice';
+import { sendOtp } from "services/operations/authAPI";
 
 const tabData = [
     {

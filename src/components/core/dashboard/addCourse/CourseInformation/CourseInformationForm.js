@@ -5,13 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { HiOutlineCurrencyRupee } from "react-icons/hi";
 import { MdNavigateNext } from "react-icons/md";
 
-import ChipInput from "./ChipInput";
-import RequirementsField from "./RequirementsField";
+import { setStep, setCourse } from "redux/slices/courseSlice";
+import Button from "components/common/Button";
+import { fetchCourseCategories, editCourseDetails, addCourseDetails } from "services/operations/courseDetailsAPI";
+import { COURSE_STATUS } from "enums";
+
 import Upload from "../Upload";
-import { setStep, setCourse } from "../../../../../redux/slices/courseSlice";
-import Button from "../../../../common/Button";
-import { fetchCourseCategories, editCourseDetails, addCourseDetails } from "../../../../../services/operations/courseDetailsAPI";
-import { COURSE_STATUS } from "../../../../../enums";
+
+import RequirementsField from "./RequirementsField";
+import ChipInput from "./ChipInput";
 
 const CourseInformationForm = () => {
   const dispatch = useDispatch();

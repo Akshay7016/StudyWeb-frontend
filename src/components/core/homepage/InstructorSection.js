@@ -1,8 +1,9 @@
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 
-import Instructor from '../../../assets/Images/Instructor.png';
-import ButtonLink from '../../common/ButtonLink';
+import Instructor from 'assets/Images/Instructor.png';
+import ButtonLink from 'components/common/ButtonLink';
+
 import HighlightText from './HighlightText';
 
 const InstructorSection = () => {

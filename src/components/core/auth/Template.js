@@ -1,7 +1,7 @@
 import LoginForm from './LoginForm';
 import SignupForm from './SignupForm';
 
-import frameImage from '../../../assets/Images/frame.png';
+import frameImage from 'assets/Images/frame.png';
 
 const Template = ({ title, desc1, desc2, image, formType }) => {
     return (

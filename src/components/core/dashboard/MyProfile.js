@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { RiEditBoxLine } from "react-icons/ri";
 
-import Button from "../../common/Button";
-import { formattedDate } from '../../../utils/dateFormatter';
+import Button from "components/common/Button";
+import { formattedDate } from 'utils/dateFormatter';
 
 const MyProfile = () => {
     const navigate = useNavigate();
