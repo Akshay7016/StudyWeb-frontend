@@ -1,16 +1,15 @@
 import React from 'react';
 
-import HighlightText from "../components/core/homepage/HighlightText";
-import Quote from '../components/core/aboutPage/Quote';
-import LearningGrid from '../components/core/aboutPage/LearningGrid';
-import ContactFormSection from '../components/core/aboutPage/ContactFormSection';
-import Footer from "../components/common/Footer";
-import Reviews from '../components/common/Reviews';
-
-import BannerImage1 from "../assets/Images/aboutus1.webp";
-import BannerImage2 from "../assets/Images/aboutus2.webp";
-import BannerImage3 from "../assets/Images/aboutus3.webp";
-import FoundingStory from "../assets/Images/FoundingStory.png";
+import HighlightText from "components/core/homepage/HighlightText";
+import Quote from 'components/core/aboutPage/Quote';
+import LearningGrid from 'components/core/aboutPage/LearningGrid';
+import ContactFormSection from 'components/core/aboutPage/ContactFormSection';
+import Footer from "components/common/Footer";
+import Reviews from 'components/common/Reviews';
+import BannerImage1 from "assets/Images/aboutus1.webp";
+import BannerImage2 from "assets/Images/aboutus2.webp";
+import BannerImage3 from "assets/Images/aboutus3.webp";
+import FoundingStory from "assets/Images/FoundingStory.png";
 
 const About = () => {
     return (

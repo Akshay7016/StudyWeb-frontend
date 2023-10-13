@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 
-import Spinner from "../components/common/Spinner";
-import Sidebar from '../components/core/dashboard/Sidebar';
+import Spinner from "components/common/Spinner";
+import Sidebar from 'components/core/dashboard/Sidebar';
 
 const Dashboard = () => {
     const { loading: authLoading } = useSelector((state) => state.auth);

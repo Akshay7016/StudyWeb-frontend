@@ -2,17 +2,16 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa';
 
-import HighlightText from '../components/core/homepage/HighlightText';
-import ButtonLink from '../components/common/ButtonLink';
-import CodeBlocks from '../components/core/homepage/CodeBlocks';
-import TimelineSection from '../components/core/homepage/TimelineSection';
-import LearningLanguageSection from '../components/core/homepage/LearningLanguageSection';
-import InstructorSection from '../components/core/homepage/InstructorSection';
-import ExploreMore from '../components/core/homepage/ExploreMore';
-import Footer from '../components/common/Footer';
-import Reviews from '../components/common/Reviews';
-
-import Banner from '../assets/Images/banner.mp4';
+import HighlightText from 'components/core/homepage/HighlightText';
+import ButtonLink from 'components/common/ButtonLink';
+import CodeBlocks from 'components/core/homepage/CodeBlocks';
+import TimelineSection from 'components/core/homepage/TimelineSection';
+import LearningLanguageSection from 'components/core/homepage/LearningLanguageSection';
+import InstructorSection from 'components/core/homepage/InstructorSection';
+import ExploreMore from 'components/core/homepage/ExploreMore';
+import Footer from 'components/common/Footer';
+import Reviews from 'components/common/Reviews';
+import Banner from 'assets/Images/banner.mp4';
 
 const Home = () => {
     return (

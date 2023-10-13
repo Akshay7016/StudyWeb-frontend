@@ -6,8 +6,8 @@ import { toast } from 'react-hot-toast';
 import { RxArrowLeft } from "react-icons/rx";
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 
-import Spinner from '../components/common/Spinner';
-import { resetPassword } from "../services/operations/authAPI";
+import Spinner from 'components/common/Spinner';
+import { resetPassword } from "services/operations/authAPI";
 
 const UpdatePassword = () => {
     const location = useLocation();

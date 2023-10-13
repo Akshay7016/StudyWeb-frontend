@@ -4,8 +4,8 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { RxArrowLeft } from 'react-icons/rx';
 
-import Spinner from "../components/common/Spinner";
-import { getPasswordResetToken } from "../services/operations/authAPI"
+import Spinner from "components/common/Spinner";
+import { getPasswordResetToken } from "services/operations/authAPI"
 
 const ForgotPassword = () => {
     const dispatch = useDispatch();

@@ -4,8 +4,8 @@ import OtpInput from "react-otp-input";
 import { Link, useNavigate } from "react-router-dom";
 import { RxArrowLeft, RxCountdownTimer } from "react-icons/rx";
 
-import Spinner from "../components/common/Spinner";
-import { signUp, sendOtp } from "../services/operations/authAPI";
+import Spinner from "components/common/Spinner";
+import { signUp, sendOtp } from "services/operations/authAPI";
 
 const VerifyEmail = () => {
     const dispatch = useDispatch();

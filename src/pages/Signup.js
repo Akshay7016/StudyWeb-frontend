@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 
-import Template from '../components/core/auth/Template';
-import signupImage from '../assets/Images/signup.webp';
-import Spinner from "../components/common/Spinner";
+import Template from 'components/core/auth/Template';
+import Spinner from "components/common/Spinner";
+import signupImage from 'assets/Images/signup.webp';
 
 
 const Signup = () => {

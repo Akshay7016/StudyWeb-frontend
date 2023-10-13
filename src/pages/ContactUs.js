@@ -3,9 +3,9 @@ import { BsFillChatRightTextFill } from "react-icons/bs";
 import { GiEarthAmerica } from "react-icons/gi";
 import { MdCall } from "react-icons/md";
 
-import Reviews from "../components/common/Reviews";
-import ContactForm from '../components/common/ContactForm';
-import Footer from "../components/common/Footer";
+import Reviews from "components/common/Reviews";
+import ContactForm from 'components/common/ContactForm';
+import Footer from "components/common/Footer";
 
 const ContactUs = () => {
     return (
