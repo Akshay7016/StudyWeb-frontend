@@ -2,27 +2,27 @@ import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-import Home from './pages/Home';
-import PageNotFound from './pages/PageNotFound';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import ForgotPassword from './pages/ForgotPassword';
-import UpdatePassword from './pages/UpdatePassword';
-import VerifyEmail from './pages/VerifyEmail';
-import About from './pages/About';
-import Dashboard from './pages/Dashboard';
-import ContactUs from './pages/ContactUs';
-import Navbar from './components/common/Navbar';
-import OpenRoute from './components/core/auth/OpenRoute';
-import PrivateRoute from './components/core/auth/PrivateRoute';
-import StudentRoute from './components/core/auth/StudentRoute';
-import InstructorRoute from "./components/core/auth/InstructorRoute";
-import MyProfile from './components/core/dashboard/MyProfile';
-import Settings from './components/core/dashboard/settings';
-import EnrolledCourses from './components/core/dashboard/EnrolledCourses';
-import Cart from "./components/core/dashboard/cart";
-import AddCourse from './components/core/dashboard/addCourse';
-import { store } from './redux/store';
+import Home from 'pages/Home';
+import PageNotFound from 'pages/PageNotFound';
+import Login from 'pages/Login';
+import Signup from 'pages/Signup';
+import ForgotPassword from 'pages/ForgotPassword';
+import UpdatePassword from 'pages/UpdatePassword';
+import VerifyEmail from 'pages/VerifyEmail';
+import About from 'pages/About';
+import Dashboard from 'pages/Dashboard';
+import ContactUs from 'pages/ContactUs';
+import Navbar from 'components/common/Navbar';
+import OpenRoute from 'components/core/auth/OpenRoute';
+import PrivateRoute from 'components/core/auth/PrivateRoute';
+import StudentRoute from 'components/core/auth/StudentRoute';
+import InstructorRoute from "components/core/auth/InstructorRoute";
+import MyProfile from 'components/core/dashboard/MyProfile';
+import Settings from 'components/core/dashboard/settings';
+import EnrolledCourses from 'components/core/dashboard/EnrolledCourses';
+import Cart from "components/core/dashboard/cart";
+import AddCourse from 'components/core/dashboard/addCourse';
+import { store } from 'redux/store';
 
 const App = () => {
   return (
