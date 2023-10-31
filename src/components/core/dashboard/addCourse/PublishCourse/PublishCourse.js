@@ -63,7 +63,7 @@ const PublishCourse = () => {
         <input
           type="checkbox"
           id="publish-checkbox"
-          value={isChecked}
+          checked={isChecked}
           onChange={() => setIsChecked(!isChecked)}
           className="h-4 w-4 rounded bg-richblack-500 text-richblack-400 focus:ring-2 focus:ring-richblack-5"
         />
