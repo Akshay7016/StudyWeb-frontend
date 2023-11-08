@@ -241,7 +241,7 @@ const CourseInformationForm = () => {
           {
             courseCategories.map((element) => {
               return (
-                <option key={element._id} value={element._id}>
+                <option key={element._id} selected={element._id === getValues("courseCategory")} value={element._id}>
                   {element.name}
                 </option>
               )
