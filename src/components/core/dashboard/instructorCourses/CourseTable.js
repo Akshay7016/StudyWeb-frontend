@@ -11,6 +11,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import ConfirmationModal from "components/common/ConfirmationModal";
 import { deleteCourse, fetchInstructorCourses } from 'services/operations/courseDetailsAPI';
 import { COURSE_STATUS } from 'enums';
+import { formatDate } from 'utils/formatDate';
 
 export const CourseTable = ({ courses, setCourses }) => {
     const navigate = useNavigate();
@@ -84,7 +85,7 @@ export const CourseTable = ({ courses, setCourses }) => {
                                             </p>
 
                                             <p className="text-[12px] text-white">
-                                                Created:
+                                                Created: {formatDate(course.createdAt)}
                                             </p>
 
                                             {
