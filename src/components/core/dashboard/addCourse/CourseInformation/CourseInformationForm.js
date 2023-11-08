@@ -49,7 +49,7 @@ const CourseInformationForm = () => {
       setValue("coursePrice", course.price);
       setValue("courseTags", course.tags);
       setValue("courseBenefits", course.whatYouWillLearn);
-      setValue("courseCategory", course.category);
+      setValue("courseCategory", course.category._id);
       setValue("courseRequirements", course.instructions);
       setValue("courseImage", course.thumbnail);
     }
@@ -66,7 +66,7 @@ const CourseInformationForm = () => {
       currentValues.coursePrice !== course.price ||
       currentValues.courseTags.toString() !== course.tags.toString() ||
       currentValues.courseBenefits !== course.whatYouWillLearn ||
-      currentValues.courseCategory !== course.category ||
+      currentValues.courseCategory !== course.category._id ||
       currentValues.courseRequirements.toString() !== course.instructions.toString() ||
       currentValues.courseImage !== course.thumbnail
     ) {
@@ -79,6 +79,7 @@ const CourseInformationForm = () => {
   const submitHandler = async (data) => {
     // TODO: testing of edit course is remaining
     // Update existing course
+    // FIXME: course category is not selected properly
     if (editCourse) {
       if (isFormUpdated()) {
         const currentValues = getValues();
@@ -106,7 +107,7 @@ const CourseInformationForm = () => {
           formData.append("whatYouWillLearn", data.courseBenefits);
         }
 
-        if (currentValues.courseCategory !== course.category) {
+        if (currentValues.courseCategory !== course.category._id) {
           formData.append("category", data.courseCategory);
         }
 
