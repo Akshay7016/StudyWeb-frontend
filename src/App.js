@@ -12,6 +12,7 @@ import VerifyEmail from 'pages/VerifyEmail';
 import About from 'pages/About';
 import Dashboard from 'pages/Dashboard';
 import ContactUs from 'pages/ContactUs';
+import { Catalog } from 'pages/Catalog';
 import Navbar from 'components/common/Navbar';
 import OpenRoute from 'components/core/auth/OpenRoute';
 import PrivateRoute from 'components/core/auth/PrivateRoute';
@@ -36,6 +37,11 @@ const App = () => {
             <Route
               path="/"
               element={<Home />}
+            />
+
+            <Route
+              path="/catalog/:catalogName"
+              element={<Catalog />}
             />
 
             <Route

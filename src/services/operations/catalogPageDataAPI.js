@@ -12,7 +12,7 @@ export const getCatalogPageData = async (categoryId) => {
 
     try {
         const response = await apiConnector(
-            "GET",
+            "POST",
             CATALOG_PAGE_DATA_API,
             {
                 categoryId

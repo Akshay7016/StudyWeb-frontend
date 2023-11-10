@@ -78,9 +78,13 @@ const Navbar = () => {
                                                                     const { _id, name } = catalog;
 
                                                                     return (
-                                                                        <Link key={_id} to={`catalog/${name.toLowerCase().replaceAll(" ", "-")}`}>
-                                                                            <div className='px-2 py-3 rounded-md hover:bg-richblack-50'>{name}</div>
-                                                                        </Link>
+                                                                        <div
+                                                                            key={_id}
+                                                                            className='px-2 py-3 rounded-md hover:bg-richblack-50'
+                                                                            onClick={() => navigate(`/catalog/${name.toLowerCase().replaceAll(" ", "-")}`, { state: { categoryId: _id } })}
+                                                                        >
+                                                                            {name}
+                                                                        </div>
                                                                     );
                                                                 })
                                                             ) : (
