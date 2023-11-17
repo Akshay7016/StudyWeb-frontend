@@ -8,15 +8,15 @@ const Cart = () => {
 
     return (
         <div>
-            <div className='text-3xl font-medium text-richblack-5 mb-14'>
+            <div className='text-3xl font-medium text-richblack-5 mb-16'>
                 Cart
             </div>
 
-            <div className="text-richblack-400 font-semibold mb-4">
+            <div className="text-richblack-400 font-semibold mb-2">
                 {totalItems} Courses in Cart
             </div>
 
-            <div className="w-full h-[1px] bg-richblack-500"></div>
+            <div className="w-full h-[1px] bg-richblack-600"></div>
 
             {
                 totalItems > 0 ? (
