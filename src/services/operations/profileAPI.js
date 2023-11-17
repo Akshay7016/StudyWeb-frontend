@@ -49,7 +49,6 @@ export const getUserEnrolledCourses = async (token) => {
                 Authorization: `Bearer ${token}`
             }
         );
-        console.log(response);
         result = response?.data?.data;
     } catch (error) {
         toast.error(error?.response?.data?.message);

@@ -13,6 +13,7 @@ import About from 'pages/About';
 import Dashboard from 'pages/Dashboard';
 import ContactUs from 'pages/ContactUs';
 import { Catalog } from 'pages/Catalog';
+import { CourseDetails } from 'pages/CourseDetails';
 import Navbar from 'components/common/Navbar';
 import OpenRoute from 'components/core/auth/OpenRoute';
 import PrivateRoute from 'components/core/auth/PrivateRoute';
@@ -42,6 +43,11 @@ const App = () => {
             <Route
               path="/catalog/:catalogName"
               element={<Catalog />}
+            />
+
+            <Route
+              path="/courses/:courseId"
+              element={<CourseDetails />}
             />
 
             <Route

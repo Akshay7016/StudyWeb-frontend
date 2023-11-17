@@ -3,6 +3,7 @@ import { toast } from "react-hot-toast";
 // TODO: check where this logo is used
 import { resetCart } from "redux/slices/cartSlice";
 import { setPaymentLoading } from "redux/slices/courseSlice";
+// TODO: add svg logo 
 import logo from "assets/Logo/logo.png";
 
 import { apiConnector } from "../apiConnector";
@@ -55,8 +56,7 @@ export const buyCourse = async (token, courses, user_details, navigate, dispatch
 
         // Opening the Razorpay SDK
         const options = {
-            // TODO: add razorpay key
-            key: process.env.RAZORPAY_KEY,
+            key: process.env.REACT_APP_RAZORPAY_KEY,
             currency: orderResponse.data?.data?.currency,
             amount: `${orderResponse.data?.data?.amount}`,
             order_id: orderResponse.data?.data?.id,
