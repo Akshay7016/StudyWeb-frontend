@@ -30,7 +30,7 @@ export const CatalogCourseCard = ({ course, height }) => {
                     {course?.instructor?.firstName} {course?.instructor?.lastName}
                 </p>
                 <div className="flex items-center gap-2">
-                    <p className="text-[#E7C009]">{averageRating ?? 0}</p>
+                    <p className="pt-1 text-[#E7C009]">{averageRating ?? 0}</p>
                     <StarRatings
                         numberOfStars={5}
                         rating={averageRating}
@@ -39,7 +39,7 @@ export const CatalogCourseCard = ({ course, height }) => {
                         starDimension="16px"
                         starSpacing="1px"
                     />
-                    <p className="text-richblack-400">{course?.ratingAndReviews?.length} Ratings</p>
+                    <p className="pt-1 text-richblack-400">{course?.ratingAndReviews?.length} Ratings</p>
                 </div>
                 <p className="text-xl text-richblack-5">Rs. {course?.price}</p>
             </div>
