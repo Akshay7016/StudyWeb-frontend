@@ -35,7 +35,7 @@ const RenderCartCourses = () => {
 
                                     <div className="flex items-center gap-2">
                                         {/* TODO: add dynamic rating values */}
-                                        <span className="text-yellow-50">4.5</span>
+                                        <span className="pt-1 text-yellow-50">4.5</span>
 
                                         <StarRatings
                                             numberOfStars={5}
@@ -46,7 +46,7 @@ const RenderCartCourses = () => {
                                             starSpacing="1px"
                                         />
 
-                                        <span className="text-richblack-400">
+                                        <span className="pt-1 text-richblack-400">
                                             {course?.ratingAndReviews?.length} Ratings
                                         </span>
                                     </div>
