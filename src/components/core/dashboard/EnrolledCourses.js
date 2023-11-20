@@ -12,12 +12,8 @@ const EnrolledCourses = () => {
 
     const getEnrolledCourses = async () => {
         setLoading(true);
-        try {
-            const courses = await getUserEnrolledCourses(token);
-            setEnrolledCourses(courses);
-        } catch (error) {
-            console.log("Could not fetch enrolled courses")
-        }
+        const courses = await getUserEnrolledCourses(token);
+        setEnrolledCourses(courses);
         setLoading(false);
     };
 
@@ -57,8 +53,7 @@ const EnrolledCourses = () => {
                                 return (
                                     <div
                                         key={index}
-                                        className={`flex items-center border border-richblack-700 ${index === array.length - 1 ? "rounded-b-lg" : "rounded-none"
-                                            }`}
+                                        className={`flex items-center border border-richblack-700 last:rounded-b-lg`}
                                     >
                                         {/* Course Name */}
                                         <div className="flex w-[45%] cursor-pointer items-center gap-4 px-5 py-3">
