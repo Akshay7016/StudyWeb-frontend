@@ -41,7 +41,7 @@ export const fetchCourseDetails = async (courseId) => {
 
     try {
         const response = await apiConnector(
-            "GET",
+            "POST",
             COURSE_DETAILS_API,
             {
                 courseId: courseId

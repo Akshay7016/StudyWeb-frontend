@@ -104,6 +104,7 @@ export const logout = (navigate) => {
     return (dispatch) => {
         dispatch(setToken(null));
         dispatch(setUser(null));
+        // TODO: after again login persist cart courses, remove this resetCart
         dispatch(resetCart());
         localStorage.removeItem("token");
         localStorage.removeItem("user");
