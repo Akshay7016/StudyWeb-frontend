@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from "react-redux";
 import ProgressBar from "@ramonak/react-progress-bar";
+import { useNavigate } from 'react-router-dom';
 
 import { getUserEnrolledCourses } from "services/operations/profileAPI";
 import Spinner from "components/common/Spinner";
 
 const EnrolledCourses = () => {
+    const navigate = useNavigate();
     const { token } = useSelector((state) => state.auth);
     const [enrolledCourses, setEnrolledCourses] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -56,7 +58,10 @@ const EnrolledCourses = () => {
                                         className={`flex items-center border border-richblack-700 last:rounded-b-lg`}
                                     >
                                         {/* Course Name */}
-                                        <div className="flex w-[45%] cursor-pointer items-center gap-4 px-5 py-3">
+                                        <div
+                                            className="flex w-[45%] cursor-pointer items-center gap-4 px-5 py-3"
+                                            onClick={() => navigate(`/view-course/${course._id}/section/${course?.courseContent[0]?._id}/sub-section/${course?.courseContent[0]?.subSection[0]?._id}`)}
+                                        >
                                             <img
                                                 src={course.thumbnail}
                                                 alt={`${course.courseName}-thumbnail`}

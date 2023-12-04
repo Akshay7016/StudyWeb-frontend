@@ -14,6 +14,7 @@ import Dashboard from 'pages/Dashboard';
 import ContactUs from 'pages/ContactUs';
 import { Catalog } from 'pages/Catalog';
 import { CourseDetails } from 'pages/CourseDetails';
+import { ViewCourse } from 'pages/ViewCourse';
 import Navbar from 'components/common/Navbar';
 import OpenRoute from 'components/core/auth/OpenRoute';
 import PrivateRoute from 'components/core/auth/PrivateRoute';
@@ -26,6 +27,7 @@ import Cart from "components/core/dashboard/cart";
 import AddCourse from 'components/core/dashboard/addCourse';
 import { MyCourses } from 'components/core/dashboard/MyCourses'
 import { EditCourse } from 'components/core/dashboard/EditCourse';
+import { VideoDetails } from 'components/core/viewCourse/VideoDetails';
 import { store } from 'redux/store';
 
 const App = () => {
@@ -156,6 +158,25 @@ const App = () => {
                   </InstructorRoute>
                 }
               />
+            </Route>
+
+            {/* View course Route */}
+            <Route
+              element={
+                <PrivateRoute>
+                  <ViewCourse />
+                </PrivateRoute>
+              }
+            >
+              <Route
+                path='view-course/:courseId/section/:sectionId/sub-section/:subSectionId'
+                element={
+                  <StudentRoute>
+                    <VideoDetails />
+                  </StudentRoute>
+                }
+              />
+
             </Route>
 
             <Route
