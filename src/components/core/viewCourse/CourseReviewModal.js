@@ -25,6 +25,8 @@ export const CourseReviewModal = ({ setReviewModal }) => {
             review: data.courseReview,
             courseId
         }, token);
+
+        setReviewModal(false);
     }
 
     return (
