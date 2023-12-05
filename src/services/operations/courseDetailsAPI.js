@@ -1,7 +1,7 @@
 import { toast } from "react-hot-toast";
 
 import { apiConnector } from "../apiConnector";
-import { courseEndpoints } from "../apis";
+import { courseEndpoints, ratingsEndpoints } from "../apis";
 
 const {
     COURSE_DETAILS_API,
@@ -21,6 +21,8 @@ const {
     CREATE_RATING_API,
     LECTURE_COMPLETION_API
 } = courseEndpoints;
+
+const { REVIEWS_DETAILS_API } = ratingsEndpoints;
 
 export const getAllCourses = async () => {
     const toastId = toast.loading("Loading...");
@@ -368,6 +370,19 @@ export const createRating = async (data, token) => {
 
         result = true;
         toast.success("Rating added");
+    } catch (error) {
+        toast.error(error?.response?.data?.message);
+    }
+    toast.dismiss(toastId);
+    return result;
+};
+
+export const getAllRatingsAndReviews = async () => {
+    const toastId = toast.loading("Loading...");
+    let result = [];
+    try {
+        const response = await apiConnector("GET", REVIEWS_DETAILS_API);
+        result = response.data?.data;
     } catch (error) {
         toast.error(error?.response?.data?.message);
     }
