@@ -3,6 +3,7 @@ import StarRatings from "react-star-ratings";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
 import { removeFromCart } from "redux/slices/cartSlice";
+import { getAverageRating } from "utils/getAverageRating";
 
 const RenderCartCourses = () => {
     const dispatch = useDispatch();
@@ -12,6 +13,8 @@ const RenderCartCourses = () => {
         <div className="w-[70%] h-fit flex flex-col gap-6">
             {
                 cart.map((course) => {
+                    const averageRating = getAverageRating(course?.ratingAndReviews);
+
                     return (
                         <div
                             key={course._id}
@@ -34,12 +37,11 @@ const RenderCartCourses = () => {
                                     </p>
 
                                     <div className="flex items-center gap-2">
-                                        {/* TODO: add dynamic rating values */}
-                                        <span className="pt-1 text-yellow-50">4.5</span>
+                                        <span className="pt-1 text-yellow-50">{averageRating}</span>
 
                                         <StarRatings
                                             numberOfStars={5}
-                                            rating={4.5}
+                                            rating={averageRating}
                                             starRatedColor="#E7C009"
                                             starEmptyColor="#6E727F"
                                             starDimension="16px"
