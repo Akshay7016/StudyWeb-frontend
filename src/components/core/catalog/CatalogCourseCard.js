@@ -22,7 +22,7 @@ export const CatalogCourseCard = ({ course, height }) => {
             <img
                 src={course?.thumbnail}
                 alt="course thumbnail"
-                className={`${height} w-full rounded-xl object-cover`}
+                className={`${height} w-full rounded-xl`}
             />
             <div className="flex flex-col gap-2 px-1 py-3">
                 <p className="text-xl text-richblack-5">{course?.courseName}</p>

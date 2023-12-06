@@ -28,6 +28,7 @@ import AddCourse from 'components/core/dashboard/addCourse';
 import { MyCourses } from 'components/core/dashboard/MyCourses'
 import { EditCourse } from 'components/core/dashboard/EditCourse';
 import { VideoDetails } from 'components/core/viewCourse/VideoDetails';
+import { InstructorDashboard } from 'components/core/dashboard/InstructorDashboard/InstructorDashboard';
 import { store } from 'redux/store';
 
 const App = () => {
@@ -155,6 +156,15 @@ const App = () => {
                 element={
                   <InstructorRoute>
                     <EditCourse />
+                  </InstructorRoute>
+                }
+              />
+
+              <Route
+                path='dashboard/instructor'
+                element={
+                  <InstructorRoute>
+                    <InstructorDashboard />
                   </InstructorRoute>
                 }
               />

@@ -66,7 +66,7 @@ export const CourseTable = ({ courses, setCourses }) => {
                                         <img
                                             src={course.thumbnail}
                                             alt="course-thumbnail"
-                                            className='h-[148px] w-[220px] rounded-lg object-cover'
+                                            className='h-[148px] w-[220px] rounded-lg'
                                         />
 
                                         <div className="flex flex-col justify-between">
