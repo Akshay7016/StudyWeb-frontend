@@ -104,9 +104,8 @@ export const CourseTable = ({ courses, setCourses }) => {
                                         </div>
                                     </Td>
 
-                                    {/* TODO: Duration is hardcore getCourseDetails is returning total course duration - implement that logic fetchInstructorAPI */}
                                     <Td className="text-sm font-medium text-richblack-100">
-                                        2 hrs 30 min
+                                        {course?.totalDuration}
                                     </Td>
 
                                     <Td className="text-sm font-medium text-richblack-100">
