@@ -8,7 +8,7 @@ const { CATALOG_PAGE_DATA_API } = catalogDataEndpoints;
 // get catalog page data
 export const getCatalogPageData = async (categoryId) => {
     const toastId = toast.loading("Loading...");
-    let result = [];
+    let result = {};
 
     try {
         const response = await apiConnector(
