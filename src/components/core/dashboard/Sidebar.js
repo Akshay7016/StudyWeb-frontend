@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { VscSignOut } from "react-icons/vsc";
+import { RxCross2 } from "react-icons/rx";
 
 import { sidebarLinks } from "data/dashboard-links";
 import { logout } from "services/operations/authAPI";
@@ -9,6 +10,7 @@ import Spinner from 'components/common/Spinner';
 import ConfirmationModal from 'components/common/ConfirmationModal';
 
 import SidebarLink from './SidebarLink';
+import { setIsOpen } from 'redux/slices/mobileViewSlice';
 
 const Sidebar = () => {
     const dispatch = useDispatch();
@@ -26,7 +28,13 @@ const Sidebar = () => {
     }
 
     return (
-        <div className='min-w-[222px] h-[calc(100vh-56px)] border-r-[1px] border-r-richblack-700 bg-richblack-800 py-10'>
+        <div className='min-w-[222px] h-[calc(100vh-56px)] border-r-[1px] border-r-richblack-700 bg-richblack-800 py-10 relative'>
+            <div
+                onClick={() => dispatch(setIsOpen(false))}
+                className='flex md:hidden absolute top-2 right-2 text-white cursor-pointer'
+            >
+                <RxCross2 size={24} />
+            </div>
             <div className='flex flex-col'>
                 {
                     sidebarLinks.map((link) => {

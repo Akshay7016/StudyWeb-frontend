@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link, matchPath, useLocation, useNavigate } from 'react-router-dom';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { RiArrowDownSLine } from 'react-icons/ri';
+import { CgProfile } from "react-icons/cg";
 
 import ProfileDropdown from 'components/core/auth/ProfileDropdown';
 import { fetchCourseCategories } from "services/operations/courseDetailsAPI"
 import { NavbarLinks } from "data/navbar-links";
 import { ACCOUNT_TYPE } from 'enums';
+import { setIsOpen } from 'redux/slices/mobileViewSlice';
 import Logo from "assets/Logo/logo.png"
 
 const Navbar = () => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const location = useLocation();
     const { user } = useSelector((state) => state.profile);
@@ -28,11 +31,24 @@ const Navbar = () => {
 
     const matchRoute = (route) => {
         return matchPath({ path: route }, location.pathname)
-    }
+    };
+
+    const mobileScreenHandler = () => {
+        if (!location.pathname.includes("/dashboard")) {
+            navigate("/dashboard/my-profile");
+        }
+        dispatch(setIsOpen(true));
+    };
 
     return (
         <div className={`h-14 flex items-center border-b-[1px] border-richblack-700 ${location.pathname !== "/" && "bg-richblack-800"}`}>
             <div className='w-11/12 max-w-maxContent relative mx-auto flex justify-between items-center'>
+                {/* show profile icon for mobile screens */}
+                <div
+                    onClick={mobileScreenHandler}
+                    className='flex md:hidden text-white cursor-pointer'>
+                    <CgProfile size={28} />
+                </div>
                 {/* Logo */}
                 <Link to="/">
                     <img

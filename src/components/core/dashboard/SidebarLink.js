@@ -1,19 +1,29 @@
-import { useLocation, matchPath, NavLink } from "react-router-dom";
+import { useLocation, matchPath, useNavigate } from "react-router-dom";
 import * as Icons from "react-icons/vsc";
+import { useDispatch } from "react-redux";
+
+import { setIsOpen } from "redux/slices/mobileViewSlice";
 
 const SidebarLink = ({ name, path, icon }) => {
+    const navigate = useNavigate();
     const location = useLocation();
+    const dispatch = useDispatch();
     const Icon = Icons[icon];
 
     const matchRoute = (route) => {
         return matchPath({ path: route }, location.pathname);
     };
 
+    const navigationHandler = () => {
+        navigate(path);
+        dispatch(setIsOpen(false));
+    }
+
     return (
-        <NavLink
-            to={path}
+        <div
+            onClick={navigationHandler}
             //TODO: homework what action need to perform onClick={}
-            className={`${matchRoute(path) ? "bg-yellow-800 text-yellow-50" : "bg-transparent"} relative text-richblack-300 px-8 py-2 text-sm font-medium`}
+            className={`${matchRoute(path) ? "bg-yellow-800 text-yellow-50" : "bg-transparent"} relative text-richblack-300 px-8 py-2 text-sm font-medium cursor-pointer`}
         >
             {/* Vertical Line */}
             <span className={`absolute left-0 top-0 h-full w-[2.5px] bg-yellow-50 
@@ -24,7 +34,7 @@ const SidebarLink = ({ name, path, icon }) => {
                 <Icon className="text-lg" />
                 <span>{name}</span>
             </div>
-        </NavLink>
+        </div>
     )
 }
 
