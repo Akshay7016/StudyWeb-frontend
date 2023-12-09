@@ -139,6 +139,38 @@ const Navbar = () => {
                         user !== null && <ProfileDropdown />
                     }
                 </div>
+
+                {/* for mobile screens show catalog */}
+                <div className='flex md:hidden relative cursor-pointer items-center group'>
+                    <div className='text-richblack-25'>Catalog</div>
+                    <RiArrowDownSLine className='text-richblack-25' fontSize="22px" />
+
+                    <div className='invisible py-5 px-4 absolute top-[40px] right-0 flex flex-col rounded-md bg-richblack-5 text-richblack-900 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 w-[280px] z-[120]'>
+
+                        <div className='absolute -top-[9px] right-[4px] w-6 h-6 rotate-45 rounded bg-richblack-5 invisible opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100'>
+                        </div>
+
+                        {
+                            catalogs.length ? (
+                                catalogs.map((catalog) => {
+                                    const { _id, name } = catalog;
+
+                                    return (
+                                        <div
+                                            key={_id}
+                                            className='px-2 py-3 rounded-md hover:bg-richblack-50'
+                                            onClick={() => navigate(`/catalog/${name.toLowerCase().replaceAll(" ", "-")}`, { state: { categoryId: _id } })}
+                                        >
+                                            {name}
+                                        </div>
+                                    );
+                                })
+                            ) : (
+                                <div className='text-center'>No catalogs found</div>
+                            )
+                        }
+                    </div>
+                </div>
             </div>
         </div>
     )

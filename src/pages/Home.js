@@ -1,6 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import {  useNavigate } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 
 import HighlightText from 'components/core/homepage/HighlightText';
 import ButtonLink from 'components/common/ButtonLink';
@@ -14,20 +15,46 @@ import Reviews from 'components/common/Reviews';
 import Banner from 'assets/Images/banner.mp4';
 
 const Home = () => {
+    const navigate = useNavigate();
+    const { user } = useSelector((state) => state.profile);
+
     return (
         <>
             {/* Section 1 */}
             <div className='mt-10 w-11/12 max-w-maxContent mx-auto flex flex-col items-center text-white'>
-                <Link to="/signup">
-                    <div className='group rounded-full bg-richblack-800 font-medium text-richblack-200 transition-all duration-200 hover:scale-95 py-[10px] px-[22px] shadow-[0_1px_1px_rgba(255,255,255,0.25)] hover:shadow-none hover:bg-richblack-900 hover:outline outline-richblack-700'>
-                        <div className='flex items-center gap-3'>
-                            Become an Instructor
-                            <FaArrowRight />
+                {
+                    !user && (
+                        <div
+                            onClick={() => navigate("/signup")}
+                            className='hidden md:flex cursor-pointer group rounded-full bg-richblack-800 font-medium text-richblack-200 transition-all duration-200 hover:scale-95 py-[10px] px-[22px] shadow-[0_1px_1px_rgba(255,255,255,0.25)] hover:shadow-none hover:bg-richblack-900 hover:outline outline-richblack-700'>
+                            <div className='flex items-center gap-3'>
+                                Become an Instructor
+                                <FaArrowRight />
+                            </div>
                         </div>
-                    </div>
-                </Link>
+                    )
+                }
 
-                <div className='mt-[38px] w-[90%] mx-auto text-center font-semibold text-4xl'>
+                {/* login/signup for mobile screens */}
+                {
+                    !user && (
+                        <div className='md:hidden flex gap-4 items-center '>
+                            <div
+                                onClick={() => navigate("/login")}
+                                className='cursor-pointer group rounded-full bg-richblack-800 font-medium text-richblack-200 transition-all duration-200 hover:scale-95 py-[10px] px-[22px] shadow-[0_1px_1px_rgba(255,255,255,0.25)] hover:shadow-none hover:bg-richblack-900 hover:outline outline-richblack-700'>
+                                Log in
+                            </div>
+
+                            <div
+                                onClick={() => navigate("/signup")}
+                                className='cursor-pointer group rounded-full bg-richblack-800 font-medium text-richblack-200 transition-all duration-200 hover:scale-95 py-[10px] px-[22px] shadow-[0_1px_1px_rgba(255,255,255,0.25)] hover:shadow-none hover:bg-richblack-900 hover:outline outline-richblack-700'>
+                                Sign up
+                            </div>
+                        </div>
+                    )
+                }
+
+                <div className='mt-[30px] w-[90%] mx-auto text-center font-semibold text-4xl'>
                     Empower Your Future with <HighlightText text="Coding Skills" />
                 </div>
 
