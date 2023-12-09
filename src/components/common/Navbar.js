@@ -3,12 +3,10 @@ import { useSelector } from 'react-redux';
 import { Link, matchPath, useLocation, useNavigate } from 'react-router-dom';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { RiArrowDownSLine } from 'react-icons/ri';
-import { RxHamburgerMenu, RxCross2 } from 'react-icons/rx';
 
 import ProfileDropdown from 'components/core/auth/ProfileDropdown';
 import { fetchCourseCategories } from "services/operations/courseDetailsAPI"
 import { NavbarLinks } from "data/navbar-links";
-import { mobileNavbarLinks } from 'data/mobileNavbarLinks';
 import { ACCOUNT_TYPE } from 'enums';
 import Logo from "assets/Logo/logo.png"
 
@@ -18,7 +16,6 @@ const Navbar = () => {
     const { user } = useSelector((state) => state.profile);
     const { totalItems } = useSelector((state) => state.cart);
     const [catalogs, setCatalogs] = useState([]);
-    const [isOpen, setIsOpen] = useState(false);
 
     const fetchCatalogs = async () => {
         const result = await fetchCourseCategories();
@@ -31,11 +28,6 @@ const Navbar = () => {
 
     const matchRoute = (route) => {
         return matchPath({ path: route }, location.pathname)
-    }
-
-    const navigationHandler = (path) => {
-        navigate(path);
-        setIsOpen(false);
     }
 
     return (
@@ -147,29 +139,8 @@ const Navbar = () => {
                         user !== null && <ProfileDropdown />
                     }
                 </div>
-
-                {/* Mobile responsiveness */}
-                <div onClick={() => setIsOpen(!isOpen)} className='flex md:hidden lg:hidden'>
-                    {
-                        isOpen ?
-                            <RxCross2 className='text-richblack-50 text-[26px]' /> :
-                            <RxHamburgerMenu className='text-richblack-50 text-[26px]' />
-                    }
-                </div>
-
-                <div className={`w-full absolute top-[44px] z-[100] py-4 gap-[18px] ${isOpen ? "flex" : "hidden"} bg-richblue-600 text-richblack-25 border-[1px] border-richblue-300 rounded-md flex-col items-center md:hidden lg:hidden`}>
-                    {
-                        mobileNavbarLinks.map((element, index) => {
-                            const { title, path } = element;
-
-                            return (
-                                <div key={index} onClick={() => navigationHandler(path)} className='font-semibold text-[20px]'>{title}</div>
-                            )
-                        })
-                    }
-                </div>
             </div>
-        </div >
+        </div>
     )
 }
 
