@@ -122,7 +122,7 @@ export const VideoDetails = () => {
                                             <Button
                                                 disabled={isLoading}
                                                 onClick={handleLectureCompletion}
-                                                className="text-xl"
+                                                className="text-xs md:text-xl"
                                             >
                                                 {
                                                     isLoading ? "Loading..." : "Mark as completed"
@@ -139,12 +139,12 @@ export const VideoDetails = () => {
                                                 setIsVideoEnded(false);
                                             }
                                         }}
-                                        className="text-xl !w-fit"
+                                        className="text-xs md:text-xl !w-fit"
                                     >
                                         Rewatch
                                     </Button>
 
-                                    <div className="mt-0 md:mt-7 flex gap-4 text-xl justify-center">
+                                    <div className="mt-0 md:mt-7 flex gap-4 text-xs md:text-xl justify-center">
                                         {
                                             !isFirstVideo() && (
                                                 <Button
