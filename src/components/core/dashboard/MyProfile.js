@@ -17,7 +17,7 @@ const MyProfile = () => {
             </h1>
 
             {/* Section 1 */}
-            <div className='flex justify-between items-start md:items-center rounded-md border-[1px] border-richblack-700 bg-richblack-800 py-8 px-12'>
+            <div className='flex justify-between items-start md:items-center rounded-md border-[1px] border-richblack-700 bg-richblack-800 py-4 md:py-8 px-4 md:px-12'>
                 <div className='flex flex-col md:flex-row gap-4 items-start md:items-center'>
                     <img
                         src={user?.image}
@@ -45,7 +45,7 @@ const MyProfile = () => {
             </div>
 
             {/* section 2 */}
-            <div className='flex flex-col gap-8 my-10 rounded-md border-[1px] border-richblack-700 bg-richblack-800 py-8 px-12'>
+            <div className='flex flex-col gap-8 my-10 rounded-md border-[1px] border-richblack-700 bg-richblack-800 py-4 md:py-8 px-4 md:px-12'>
                 <div className='flex justify-between'>
                     <p className='text-lg font-semibold text-richblack-5'>
                         About
@@ -67,7 +67,7 @@ const MyProfile = () => {
             </div>
 
             {/* section 3 */}
-            <div className='flex flex-col gap-8 rounded-md border-[1px] border-richblack-700 bg-richblack-800 py-8 px-12'>
+            <div className='flex flex-col gap-8 rounded-md border-[1px] border-richblack-700 bg-richblack-800 py-4 md:py-8 px-4 md:px-12'>
                 <div className='flex justify-between'>
                     <p className='text-lg font-semibold text-richblack-5'>
                         Personal Details
