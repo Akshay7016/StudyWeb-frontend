@@ -26,11 +26,7 @@ const UpdatePassword = () => {
     });
 
     const submitHandler = async (data) => {
-        try {
-            await changePassword(token, data);
-        } catch (error) {
-            console.log("Error", error)
-        }
+        await changePassword(token, data);
         reset();
     }
 

@@ -29,11 +29,7 @@ const EditProfile = () => {
     });
 
     const submitHandler = (data) => {
-        try {
-            dispatch(updateProfile(token, data))
-        } catch (error) {
-            console.log("Error", error)
-        }
+        dispatch(updateProfile(token, data));
     }
 
     return (

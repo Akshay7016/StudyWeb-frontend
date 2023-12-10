@@ -31,7 +31,6 @@ const PublishCourse = () => {
     navigate('/dashboard/my-courses');
   };
 
-  // TODO: testing is remaining
   const submitHandler = async () => {
     // No updation in the form => No need to make API call
     if ((course?.status === COURSE_STATUS.PUBLISHED && isChecked) ||

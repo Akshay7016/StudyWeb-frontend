@@ -5,8 +5,6 @@ import { setUser, setLoading } from "redux/slices/profileSlice";
 import { apiConnector } from "../apiConnector";
 import { profileEndpoints } from "../apis";
 
-import { logout } from "./authAPI";
-
 const {
     GET_USER_DETAILS_API,
     GET_USER_ENROLLED_COURSES_API,
@@ -27,11 +25,8 @@ export const getUserDetails = (token, navigate) => {
                 }
             );
 
-            console.log("getUserDetails services", response);
             dispatch(setUser(response?.data?.data));
         } catch (error) {
-            // TODO: remove logout functionality/check why it is needed?
-            dispatch(logout(navigate));
             toast.error(error?.response?.data?.message);
         };
         toast.dismiss(toastId);

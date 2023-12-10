@@ -11,11 +11,7 @@ const DeleteAccount = () => {
     const { token } = useSelector((state) => state.auth);
 
     const handleDeleteAccount = () => {
-        try {
-            dispatch(deleteProfile(token, navigate));
-        } catch (error) {
-            console.log("Error", error);
-        }
+        dispatch(deleteProfile(token, navigate));
     };
 
     return (

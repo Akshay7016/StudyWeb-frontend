@@ -8,7 +8,6 @@ export const CatalogCourseCard = ({ course, height }) => {
     const navigate = useNavigate();
     const [averageRating, setAverageRating] = useState(0);
 
-    // TODO: test averageRating count and stars after student adds rating and review
     useEffect(() => {
         const count = getAverageRating(course?.ratingAndReviews);
         setAverageRating(count)

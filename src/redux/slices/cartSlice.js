@@ -28,7 +28,6 @@ const cartSlice = createSlice({
             }
 
             // If the course is not in the cart, add it to the cart
-            // TODO: remove push and add array destructuring
             state.cart.push(course);
 
             // update the total quantity and price

@@ -22,7 +22,6 @@ const SidebarLink = ({ name, path, icon }) => {
     return (
         <div
             onClick={navigationHandler}
-            //TODO: homework what action need to perform onClick={}
             className={`${matchRoute(path) ? "bg-yellow-800 text-yellow-50" : "bg-transparent"} relative text-richblack-300 px-8 py-2 text-sm font-medium cursor-pointer`}
         >
             {/* Vertical Line */}

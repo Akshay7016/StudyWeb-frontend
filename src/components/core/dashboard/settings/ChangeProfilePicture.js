@@ -38,17 +38,13 @@ const ChangeProfilePicture = () => {
     };
 
     const handleFileUpload = () => {
-        try {
-            setLoading(true);
-            const formData = new FormData();
-            formData.append("displayPicture", imageFile);
+        setLoading(true);
+        const formData = new FormData();
+        formData.append("displayPicture", imageFile);
 
-            dispatch(updateDisplayPicture(token, formData)).then(() => {
-                setLoading(false);
-            })
-        } catch (error) {
-            console.log("Error: ", error)
-        }
+        dispatch(updateDisplayPicture(token, formData)).then(() => {
+            setLoading(false);
+        })
     };
 
     useEffect(() => {
