@@ -20,7 +20,7 @@ const Cart = () => {
 
             {
                 totalItems > 0 ? (
-                    <div className="mt-8 flex gap-10">
+                    <div className="mt-8 flex flex-col md:flex-row gap-10">
                         <RenderCartCourses />
                         <RenderTotalAmount />
                     </div>
