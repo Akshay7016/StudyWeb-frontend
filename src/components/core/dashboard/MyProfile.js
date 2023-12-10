@@ -17,8 +17,8 @@ const MyProfile = () => {
             </h1>
 
             {/* Section 1 */}
-            <div className='flex justify-between items-center rounded-md border-[1px] border-richblack-700 bg-richblack-800 py-8 px-12'>
-                <div className='flex gap-4 items-center'>
+            <div className='flex justify-between items-start md:items-center rounded-md border-[1px] border-richblack-700 bg-richblack-800 py-8 px-12'>
+                <div className='flex flex-col md:flex-row gap-4 items-start md:items-center'>
                     <img
                         src={user?.image}
                         alt={`profile-${user?.firstName}`}
@@ -81,7 +81,7 @@ const MyProfile = () => {
                     </Button>
                 </div>
 
-                <div className='flex gap-32'>
+                <div className='flex flex-col md:flex-row md:gap-32'>
                     {/* First name, Email, Gender */}
                     <div className='flex flex-col gap-6'>
                         {/* First Name */}
