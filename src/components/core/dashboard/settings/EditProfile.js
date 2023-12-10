@@ -40,14 +40,14 @@ const EditProfile = () => {
         <form
             onSubmit={handleSubmit(submitHandler)}
         >
-            <div className='mt-10 mb-6 rounded-md border-[1px] border-richblack-700 bg-richblack-800 py-8 px-12'>
+            <div className='mt-10 mb-6 rounded-md border-[1px] border-richblack-700 bg-richblack-800 py-4 md:py-8 px-4 md:px-12'>
                 <p className='text-lg font-semibold text-richblack-5 mb-6'>
                     Profile Information
                 </p>
 
                 <div className="flex flex-col gap-6">
                     {/* first name, last name */}
-                    <div className="flex gap-5">
+                    <div className="flex flex-col md:flex-row gap-5">
                         {/* First name */}
                         <label className='w-full'>
                             <p className='text-[14px] text-richblack-5 mb-1'>
@@ -92,7 +92,7 @@ const EditProfile = () => {
                     </div>
 
                     {/* Date of birth, Gender */}
-                    <div className="flex gap-5">
+                    <div className="flex flex-col md:flex-row gap-5">
                         {/* Date of birth */}
                         <label className='w-full'>
                             <p className='text-[14px] text-richblack-5 mb-1'>
@@ -149,7 +149,7 @@ const EditProfile = () => {
                     </div>
 
                     {/* Contact number and About */}
-                    <div className="flex gap-5">
+                    <div className="flex flex-col md:flex-row gap-5">
                         {/* Contact number */}
                         <label className='w-full'>
                             <p className='text-[14px] text-richblack-5 mb-1'>

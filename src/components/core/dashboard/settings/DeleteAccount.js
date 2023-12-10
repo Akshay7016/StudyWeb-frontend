@@ -19,7 +19,7 @@ const DeleteAccount = () => {
     };
 
     return (
-        <div className='mt-10 flex flex-row gap-5 rounded-md border-[1px] border-pink-700 bg-pink-900 py-8 px-12'>
+        <div className='mt-10 flex flex-col md:flex-row items-center md:items-start gap-5 rounded-md border-[1px] border-pink-700 bg-pink-900 py-4 md:py-8 px-4 md:px-12'>
             <div className='flex items-center justify-center aspect-square h-14 w-14 rounded-full bg-pink-700'>
                 <FiTrash2 className='text-3xl text-pink-200' />
             </div>
@@ -29,7 +29,7 @@ const DeleteAccount = () => {
                     Delete Account
                 </p>
 
-                <div className='w-3/5 text-pink-25'>
+                <div className='md:w-3/5 text-pink-25'>
                     <p>
                         Would you like to delete account?
                     </p>

@@ -10,7 +10,7 @@ const RenderCartCourses = () => {
     const { cart } = useSelector((state) => state.cart);
 
     return (
-        <div className="w-[70%] h-fit flex flex-col gap-6">
+        <div className="md:w-[70%] h-fit flex flex-col gap-6">
             {
                 cart.map((course) => {
                     const averageRating = getAverageRating(course?.ratingAndReviews);
@@ -18,13 +18,13 @@ const RenderCartCourses = () => {
                     return (
                         <div
                             key={course._id}
-                            className="w-full flex justify-between gap-6 pb-6 last:pb-0 last:border-none border-b border-richblack-400"
+                            className="w-full flex flex-col md:flex-row justify-between gap-6 pb-6 last:pb-0 last:border-none border-b border-richblack-400"
                         >
-                            <div className="flex gap-4">
+                            <div className="flex flex-col md:flex-row gap-4">
                                 <img
                                     src={course?.thumbnail}
                                     alt={`${course.courseName}-thumbnail`}
-                                    className="h-[148px] w-[220px] rounded-lg"
+                                    className="md:h-[148px] w-full md:w-[220px] rounded-lg"
                                 />
 
                                 <div className="flex flex-col gap-1">
@@ -55,7 +55,7 @@ const RenderCartCourses = () => {
                                 </div>
                             </div>
 
-                            <div className="flex flex-col gap-2 items-center">
+                            <div className="flex flex-row-reverse justify-between md:justify-start md:flex-col gap-2 items-center">
                                 <button
                                     onClick={() => dispatch(removeFromCart(course._id))}
                                     className="flex items-center gap-1 rounded-md border border-richblack-600 bg-richblack-700 p-3 text-pink-200"

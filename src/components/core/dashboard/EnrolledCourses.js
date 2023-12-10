@@ -37,7 +37,7 @@ const EnrolledCourses = () => {
             {
 
                 !enrolledCourses.length ? (
-                    <div className='text-richblack-5 text-center'>
+                    <div className='text-richblack-5 text-center mt-28 md:mt-0'>
                         You have not enrolled in any course yet.
                     </div>
                 ) : (
@@ -45,7 +45,7 @@ const EnrolledCourses = () => {
                         {/* heading */}
                         <div className='flex rounded-t-lg bg-richblack-500 text-richblack-5'>
                             <p className='w-[45%] px-5 py-3'>Course Name</p>
-                            <p className='w-1/4 px-2 py-3'>Durations</p>
+                            <p className='w-1/4 px-2 py-3'>Duration</p>
                             <p className='flex-1 px-2 py-3'>Progress</p>
                         </div>
 
@@ -59,7 +59,7 @@ const EnrolledCourses = () => {
                                     >
                                         {/* Course Name */}
                                         <div
-                                            className="flex w-[45%] cursor-pointer items-center gap-4 px-5 py-3"
+                                            className="flex flex-col md:flex-row w-[45%] cursor-pointer md:items-center gap-4 px-5 py-3"
                                             onClick={() => navigate(`/view-course/${course._id}/section/${course?.courseContent[0]?._id}/sub-section/${course?.courseContent[0]?.subSection[0]?._id}`)}
                                         >
                                             <img

@@ -5,6 +5,7 @@ import profileReducer from './slices/profileSlice';
 import cartReducer from './slices/cartSlice';
 import courseReducer from './slices/courseSlice';
 import viewCourseReducer from "./slices/viewCourseSlice";
+import mobileViewReducer from './slices/mobileViewSlice';
 
 export const store = configureStore({
     reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
         profile: profileReducer,
         cart: cartReducer,
         course: courseReducer,
-        viewCourse: viewCourseReducer
+        viewCourse: viewCourseReducer,
+        mobileView: mobileViewReducer
     }
 });

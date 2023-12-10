@@ -38,10 +38,10 @@ export const ViewCourse = () => {
 
     return (
         <>
-            <div className='relative flex h-[calc(100vh-56px)]'>
+            <div className='relative flex flex-col-reverse md:flex-row md:h-[calc(100vh-56px)]'>
                 <VideoDetailsSidebar setReviewModal={setReviewModal} />
 
-                <div className='w-full h-[calc(100vh-56px)] overflow-auto'>
+                <div className='w-full md:h-[calc(100vh-56px)] overflow-auto'>
                     <div className='w-[98%] max-w-[1000px] mx-auto pt-2 pb-4'>
                         <Outlet />
                     </div>

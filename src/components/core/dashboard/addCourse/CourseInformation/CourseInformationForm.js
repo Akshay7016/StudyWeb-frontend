@@ -77,9 +77,7 @@ const CourseInformationForm = () => {
   };
 
   const submitHandler = async (data) => {
-    // TODO: testing of edit course is remaining
     // Update existing course
-    // FIXME: course category is not selected properly
     if (editCourse) {
       if (isFormUpdated()) {
         const currentValues = getValues();

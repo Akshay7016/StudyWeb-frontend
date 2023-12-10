@@ -140,7 +140,7 @@ const CourseBuilderForm = () => {
         )
       }
 
-      <div className='flex justify-end gap-3'>
+      <div className='mt-10 flex justify-end gap-3'>
         <Button
           onClick={goBack}
           variant="variant3"

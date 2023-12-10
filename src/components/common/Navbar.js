@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link, matchPath, useLocation, useNavigate } from 'react-router-dom';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { RiArrowDownSLine } from 'react-icons/ri';
-import { RxHamburgerMenu, RxCross2 } from 'react-icons/rx';
+import { CgProfile } from "react-icons/cg";
 
 import ProfileDropdown from 'components/core/auth/ProfileDropdown';
 import { fetchCourseCategories } from "services/operations/courseDetailsAPI"
 import { NavbarLinks } from "data/navbar-links";
-import { mobileNavbarLinks } from 'data/mobileNavbarLinks';
 import { ACCOUNT_TYPE } from 'enums';
+import { setIsOpen } from 'redux/slices/mobileViewSlice';
 import Logo from "assets/Logo/logo.png"
 
 const Navbar = () => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const location = useLocation();
     const { user } = useSelector((state) => state.profile);
     const { totalItems } = useSelector((state) => state.cart);
     const [catalogs, setCatalogs] = useState([]);
-    const [isOpen, setIsOpen] = useState(false);
 
     const fetchCatalogs = async () => {
         const result = await fetchCourseCategories();
@@ -31,16 +31,28 @@ const Navbar = () => {
 
     const matchRoute = (route) => {
         return matchPath({ path: route }, location.pathname)
-    }
+    };
 
-    const navigationHandler = (path) => {
-        navigate(path);
-        setIsOpen(false);
-    }
+    const mobileScreenHandler = () => {
+        if (!location.pathname.includes("/dashboard")) {
+            navigate("/dashboard/my-profile");
+        }
+        dispatch(setIsOpen(true));
+    };
 
     return (
         <div className={`h-14 flex items-center border-b-[1px] border-richblack-700 ${location.pathname !== "/" && "bg-richblack-800"}`}>
             <div className='w-11/12 max-w-maxContent relative mx-auto flex justify-between items-center'>
+                {/* show profile icon for mobile screens */}
+                {
+                    user && (
+                        <div
+                            onClick={mobileScreenHandler}
+                            className='flex md:hidden text-white cursor-pointer'>
+                            <CgProfile size={28} />
+                        </div>
+                    )
+                }
                 {/* Logo */}
                 <Link to="/">
                     <img
@@ -148,28 +160,39 @@ const Navbar = () => {
                     }
                 </div>
 
-                {/* Mobile responsiveness */}
-                <div onClick={() => setIsOpen(!isOpen)} className='flex md:hidden lg:hidden'>
-                    {
-                        isOpen ?
-                            <RxCross2 className='text-richblack-50 text-[26px]' /> :
-                            <RxHamburgerMenu className='text-richblack-50 text-[26px]' />
-                    }
-                </div>
+                {/* for mobile screens show catalog */}
+                <div className='flex md:hidden relative cursor-pointer items-center group'>
+                    <div className='text-richblack-25'>Catalog</div>
+                    <RiArrowDownSLine className='text-richblack-25' fontSize="22px" />
 
-                <div className={`w-full absolute top-[44px] z-[100] py-4 gap-[18px] ${isOpen ? "flex" : "hidden"} bg-richblue-600 text-richblack-25 border-[1px] border-richblue-300 rounded-md flex-col items-center md:hidden lg:hidden`}>
-                    {
-                        mobileNavbarLinks.map((element, index) => {
-                            const { title, path } = element;
+                    <div className='invisible py-5 px-4 absolute top-[40px] right-0 flex flex-col rounded-md bg-richblack-5 text-richblack-900 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 w-[280px] z-[120]'>
 
-                            return (
-                                <div key={index} onClick={() => navigationHandler(path)} className='font-semibold text-[20px]'>{title}</div>
+                        <div className='absolute -top-[9px] right-[4px] w-6 h-6 rotate-45 rounded bg-richblack-5 invisible opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100'>
+                        </div>
+
+                        {
+                            catalogs.length ? (
+                                catalogs.map((catalog) => {
+                                    const { _id, name } = catalog;
+
+                                    return (
+                                        <div
+                                            key={_id}
+                                            className='px-2 py-3 rounded-md hover:bg-richblack-50'
+                                            onClick={() => navigate(`/catalog/${name.toLowerCase().replaceAll(" ", "-")}`, { state: { categoryId: _id } })}
+                                        >
+                                            {name}
+                                        </div>
+                                    );
+                                })
+                            ) : (
+                                <div className='text-center'>No catalogs found</div>
                             )
-                        })
-                    }
+                        }
+                    </div>
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
 

@@ -47,7 +47,7 @@ export const InstructorDashboard = () => {
                 !!instructorData.length ? (
                     <div>
                         {/* Pie chart and statistics */}
-                        <div className='my-10 h-[450px] flex gap-4'>
+                        <div className='my-10 md:h-[450px] flex flex-col md:flex-row gap-4'>
                             {
                                 totalAmount > 0 || totalStudents > 0 ? (
                                     <InstructorChart courses={instructorData} />
@@ -101,10 +101,10 @@ export const InstructorDashboard = () => {
                                 </p>
                             </div>
 
-                            <div className='flex gap-6'>
+                            <div className='flex flex-col md:flex-row gap-6'>
                                 {
                                     instructorData.slice(0, 3).map((course) => (
-                                        <div key={course._id} className="w-1/3">
+                                        <div key={course._id} className="md:w-1/3">
                                             <img
                                                 src={course?.thumbnail}
                                                 alt="course-thumbnail"

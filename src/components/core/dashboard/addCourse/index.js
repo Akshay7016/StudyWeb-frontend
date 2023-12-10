@@ -8,7 +8,7 @@ const AddCourse = () => {
                 <RenderSteps />
             </div>
 
-            <div className="sticky top-10 max-w-[400px] h-fit p-6 bg-richblack-800 border border-richblack-700 rounded-md">
+            <div className="hidden md:block sticky top-10 max-w-[400px] h-fit p-6 bg-richblack-800 border border-richblack-700 rounded-md">
                 <p className="text-lg text-richblack-5 mb-8">⚡Course Upload Tips</p>
                 <ul className="ml-5 list-disc space-y-4 text-xs text-richblack-5">
                     <li>Set the Course Price option or make it free.</li>

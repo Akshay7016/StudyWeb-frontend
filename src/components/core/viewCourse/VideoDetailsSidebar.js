@@ -23,7 +23,7 @@ export const VideoDetailsSidebar = ({ setReviewModal }) => {
     }, [sectionId, subSectionId]);
 
     return (
-        <div className='w-[320px] max-w-[350px] h-[calc(100vh-56px)] border-r-[1px] border-r-richblack-700 bg-richblack-800 pt-5'>
+        <div className='md:w-[320px] max-w-[400px] border-r-[1px] border-r-richblack-700 bg-richblack-800 pt-5'>
             <div className="px-3 mb-3">
                 {/* buttons */}
                 <div className="flex items-center justify-between mb-8">

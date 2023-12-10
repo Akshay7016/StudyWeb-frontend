@@ -18,7 +18,7 @@ const RenderTotalAmount = () => {
     }
 
     return (
-        <div className='w-[30%] h-fit rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-6'>
+        <div className='md:w-[30%] h-fit rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-6 mt-10 md:mt-0'>
             <div className='mb-1 text-sm font-medium text-richblack-300'>
                 Total:
             </div>
