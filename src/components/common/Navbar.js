@@ -44,11 +44,15 @@ const Navbar = () => {
         <div className={`h-14 flex items-center border-b-[1px] border-richblack-700 ${location.pathname !== "/" && "bg-richblack-800"}`}>
             <div className='w-11/12 max-w-maxContent relative mx-auto flex justify-between items-center'>
                 {/* show profile icon for mobile screens */}
-                <div
-                    onClick={mobileScreenHandler}
-                    className='flex md:hidden text-white cursor-pointer'>
-                    <CgProfile size={28} />
-                </div>
+                {
+                    user && (
+                        <div
+                            onClick={mobileScreenHandler}
+                            className='flex md:hidden text-white cursor-pointer'>
+                            <CgProfile size={28} />
+                        </div>
+                    )
+                }
                 {/* Logo */}
                 <Link to="/">
                     <img
