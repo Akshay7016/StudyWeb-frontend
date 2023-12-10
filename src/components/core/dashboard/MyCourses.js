@@ -29,7 +29,10 @@ export const MyCourses = () => {
         <div>
             <div className='flex justify-between mb-14'>
                 <h1 className='text-3xl font-medium text-richblack-5'>My Courses</h1>
-                <Button onClick={() => navigate("/dashboard/add-course")}>
+                <Button
+                    onClick={() => navigate("/dashboard/add-course")}
+                    className="h-fit"
+                >
                     <div className='flex items-center gap-2'>
                         <p className='font-semibold'>Add Course</p>
                         <AiOutlinePlus />
