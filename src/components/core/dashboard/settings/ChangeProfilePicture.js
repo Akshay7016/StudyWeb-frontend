@@ -58,7 +58,7 @@ const ChangeProfilePicture = () => {
     }, [imageFile])
 
     return (
-        <div className='flex items-center rounded-md border-[1px] border-richblack-700 bg-richblack-800 py-8 px-12'>
+        <div className='flex items-center rounded-md border-[1px] border-richblack-700 bg-richblack-800 py-4 md:py-8 px-4 md:px-12'>
             <div className='flex gap-4 items-center'>
                 <img
                     src={previewSource || user?.image}
@@ -71,7 +71,7 @@ const ChangeProfilePicture = () => {
                         Change Profile Picture
                     </p>
 
-                    <div className='flex gap-3'>
+                    <div className='flex flex-col md:flex-row gap-3'>
                         <input
                             type="file"
                             ref={fileInputRef}
@@ -96,7 +96,7 @@ const ChangeProfilePicture = () => {
                                 loading ? (
                                     "Uploading..."
                                 ) : (
-                                    <div className='flex gap-2 items-center'>
+                                    <div className='flex gap-2 justify-center items-center'>
                                         Upload
                                         <FiUpload className='text-lg text-richblack-900' />
                                     </div>
