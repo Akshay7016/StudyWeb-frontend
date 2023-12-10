@@ -144,7 +144,7 @@ export const VideoDetails = () => {
                                         Rewatch
                                     </Button>
 
-                                    <div className="mt-7 flex gap-4 text-xl justify-center">
+                                    <div className="mt-0 md:mt-7 flex gap-4 text-xl justify-center">
                                         {
                                             !isFirstVideo() && (
                                                 <Button
