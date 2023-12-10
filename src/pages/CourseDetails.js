@@ -118,7 +118,7 @@ export const CourseDetails = () => {
                     <div className="text-lg flex flex-col md:flex-row gap-5 md:items-center">
                         <div className="flex md:items-center gap-2">
                             <IoMdInformationCircleOutline size={19} className="mt-1 md:mt-0" />
-                            <p>
+                            <p className="w-[83%] md:w-full">
                                 Created at {
                                     formatDate(courseData?.courseDetails?.createdAt)
                                 }
