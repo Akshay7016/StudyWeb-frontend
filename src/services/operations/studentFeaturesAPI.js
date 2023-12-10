@@ -99,7 +99,7 @@ const verifyPayment = async (bodyData, token, navigate, dispatch) => {
             }
         );
 
-        toast.success("Payment Successful. Check course in Enrolled Courses section");
+        toast.success("Payment Successful");
         navigate("/dashboard/enrolled-courses");
         dispatch(resetCart());
     } catch (error) {
