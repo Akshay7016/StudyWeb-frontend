@@ -2,6 +2,7 @@ import { toast } from "react-hot-toast";
 
 import { setLoading, setToken } from "redux/slices/authSlice";
 import { resetCart } from "redux/slices/cartSlice";
+import { setIsOpen } from "redux/slices/mobileViewSlice";
 import { setUser } from "redux/slices/profileSlice";
 
 import { apiConnector } from "../apiConnector";
@@ -106,6 +107,7 @@ export const logout = (navigate) => {
         dispatch(setUser(null));
         // TODO: after again login persist cart courses, remove this resetCart
         dispatch(resetCart());
+        dispatch(setIsOpen(false));
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         toast.success("Logged out");
