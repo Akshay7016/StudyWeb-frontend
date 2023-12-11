@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 
 import Tab from 'components/common/Tab';
-import { ACCOUNT_TYPE } from 'enums';
+import { ACCOUNT_TYPE, YES_NO_OPTIONS } from 'enums';
 import { setSignupData } from 'redux/slices/authSlice';
 import { sendOtp } from "services/operations/authAPI";
 
@@ -42,6 +42,13 @@ const SignupForm = () => {
 
     const submitHandler = (data) => {
         const { email, password, confirmPassword } = data;
+
+        // prevent instructor signup based on environment variable
+        if (accountType === ACCOUNT_TYPE.INSTRUCTOR &&
+            process.env.REACT_APP_IS_INSTRUCTOR_SIGNUP_ALLOWED === YES_NO_OPTIONS.NO) {
+            toast.error("Instructor signup is prohibited");
+            return;
+        }
 
         if (password !== confirmPassword) {
             toast.error("Passwords do not match");

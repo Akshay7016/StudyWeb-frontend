@@ -7,4 +7,9 @@ export const ACCOUNT_TYPE = {
 export const COURSE_STATUS = {
     DRAFT: "Draft",
     PUBLISHED: "Published",
-}
+};
+
+export const YES_NO_OPTIONS = {
+    YES: "YES",
+    NO: "NO"
+};
