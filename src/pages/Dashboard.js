@@ -19,7 +19,7 @@ const Dashboard = () => {
                 <Sidebar />
             </div>
 
-            <div className={`w-full h-[calc(100vh-56px)] overflow-auto ${isOpen ? "blur-lg" : "blur-none"} md:blur-none`}>
+            <div className={`w-full h-[calc(100vh-56px)] overflow-auto ${isOpen && "blur-lg"}`}>
                 <div className='w-11/12 max-w-[1000px] mx-auto py-10'>
                     <Outlet />
                 </div>
