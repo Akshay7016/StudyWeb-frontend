@@ -81,7 +81,7 @@ const MyProfile = () => {
                     </Button>
                 </div>
 
-                <div className='flex flex-col md:flex-row md:gap-32'>
+                <div className='flex flex-col md:flex-row gap-6 md:gap-32'>
                     {/* First name, Email, Gender */}
                     <div className='flex flex-col gap-6'>
                         {/* First Name */}

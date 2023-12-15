@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { MdArrowRight } from "react-icons/md";
 import { FaShareSquare } from "react-icons/fa";
 import copy from "copy-to-clipboard";
 import { toast } from "react-hot-toast";
@@ -34,11 +33,11 @@ export const CourseDetailsCard = ({ courseData, setConfirmationModal, handleBuyC
     }
 
     return (
-        <div className="w-fit flex flex-col gap-4 p-4 bg-richblack-700 text-richblack-5 rounded-md">
+        <div className="md:w-[440px] flex flex-col gap-4 p-4 bg-richblack-700 text-richblack-5 rounded-md">
             <img
                 src={courseData?.courseDetails?.thumbnail}
                 alt="course-thumbnail"
-                className="max-h-[300px] min-h-[180px] w-[400px] rounded-xl"
+                className="max-h-[300px] min-h-[180px] w-full rounded-xl"
             />
 
             <div className="px-4">
@@ -79,8 +78,8 @@ export const CourseDetailsCard = ({ courseData, setConfirmationModal, handleBuyC
                 <div>
                     {
                         courseData?.courseDetails?.instructions?.map((item, index) => (
-                            <div key={index} className="flex items-center gap-[2px] text-sm text-caribbeangreen-100">
-                                <MdArrowRight size={30} />
+                            <div key={index} className="flex items-start gap-[6px] text-sm text-caribbeangreen-100">
+                                <span className="text-[16px]">&#11208;</span>
                                 <span>{item}</span>
                             </div>
                         ))

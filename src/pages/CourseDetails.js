@@ -91,7 +91,7 @@ export const CourseDetails = () => {
                         />
                     </div>
 
-                    <p className="md:w-[48%] mt-5 md:mt-0 text-4xl font-bold text-richblack-5">
+                    <p className="md:w-[48%] mt-5 md:mt-0 text-3xl md:text-4xl font-bold text-richblack-5">
                         {courseData?.courseDetails?.courseName}
                     </p>
                     <p className="md:w-[48%] text-richblack-200 text-lg">
