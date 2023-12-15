@@ -75,11 +75,11 @@ export const CourseDetailsCard = ({ courseData, setConfirmationModal, handleBuyC
                 <p className="mt-2 mb-1 text-xl font-semibold">
                     This Course Includes :
                 </p>
-                <div>
+                <div className="flex flex-col gap-1">
                     {
                         courseData?.courseDetails?.instructions?.map((item, index) => (
                             <div key={index} className="flex items-start gap-[6px] text-sm text-caribbeangreen-100">
-                                <span className="text-[16px]">&#11208;</span>
+                                <span className="text-[16px]">⯈</span>
                                 <span>{item}</span>
                             </div>
                         ))
