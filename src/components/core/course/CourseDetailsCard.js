@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { FaShareSquare } from "react-icons/fa";
 import copy from "copy-to-clipboard";
 import { toast } from "react-hot-toast";
+import { IoMdArrowDropright } from "react-icons/io";
 
 import { ACCOUNT_TYPE } from "enums";
 import Button from "components/common/Button";
@@ -79,7 +80,7 @@ export const CourseDetailsCard = ({ courseData, setConfirmationModal, handleBuyC
                     {
                         courseData?.courseDetails?.instructions?.map((item, index) => (
                             <div key={index} className="flex items-start gap-[6px] text-sm text-caribbeangreen-100">
-                                <span className="text-[16px]">⯈</span>
+                                <span className="text-[22px]"><IoMdArrowDropright /></span>
                                 <span>{item}</span>
                             </div>
                         ))
