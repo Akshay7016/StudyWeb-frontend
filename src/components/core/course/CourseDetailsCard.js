@@ -79,7 +79,7 @@ export const CourseDetailsCard = ({ courseData, setConfirmationModal, handleBuyC
                 <div className="flex flex-col gap-1">
                     {
                         courseData?.courseDetails?.instructions?.map((item, index) => (
-                            <div key={index} className="flex items-start gap-[6px] text-sm text-caribbeangreen-100">
+                            <div key={index} className="flex items-start gap-[2px] text-sm text-caribbeangreen-100">
                                 <span className="text-[22px]"><IoMdArrowDropright /></span>
                                 <span>{item}</span>
                             </div>
