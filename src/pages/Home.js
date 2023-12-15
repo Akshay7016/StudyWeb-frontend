@@ -1,5 +1,5 @@
 import React from 'react'
-import {  useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 
@@ -145,7 +145,7 @@ const Home = () => {
 
                         <div className='lg:w-[42%] flex flex-col items-center lg:items-start gap-12'>
                             <div>
-                                The modern StudyNotion is the dictates its own terms. Today, to be a competitive specialist requires more than professional skills.
+                                The modern StudyWeb is the dictates its own terms. Today, to be a competitive specialist requires more than professional skills.
                             </div>
 
                             <ButtonLink active={true} linkTo="/signup">

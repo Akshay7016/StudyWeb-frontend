@@ -25,7 +25,7 @@ const InstructorSection = () => {
                 </div>
 
                 <div className='lg:w-[90%] text-richblack-300 text-center lg:text-start'>
-                    Instructors from around the world teach millions of students on StudyNotion. We provide the tools and skills to teach what you love.
+                    Instructors from around the world teach millions of students on StudyWeb. We provide the tools and skills to teach what you love.
                 </div>
 
                 <div className='w-fit mx-auto lg:mx-0'>
