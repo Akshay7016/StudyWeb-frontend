@@ -19,10 +19,13 @@ const Navbar = () => {
     const { user } = useSelector((state) => state.profile);
     const { totalItems } = useSelector((state) => state.cart);
     const [catalogs, setCatalogs] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     const fetchCatalogs = async () => {
+        setLoading(true);
         const result = await fetchCourseCategories();
         setCatalogs(result);
+        setLoading(false);
     };
 
     useEffect(() => {
@@ -85,23 +88,24 @@ const Navbar = () => {
                                                         </div>
 
                                                         {
-                                                            catalogs.length ? (
-                                                                catalogs.map((catalog) => {
-                                                                    const { _id, name } = catalog;
+                                                            loading ? (<div className='text-center'>Loading...</div>) :
+                                                                !!catalogs.length ? (
+                                                                    catalogs.map((catalog) => {
+                                                                        const { _id, name } = catalog;
 
-                                                                    return (
-                                                                        <div
-                                                                            key={_id}
-                                                                            className='px-2 py-3 rounded-md hover:bg-richblack-50'
-                                                                            onClick={() => navigate(`/catalog/${name.toLowerCase().replaceAll(" ", "-")}`, { state: { categoryId: _id } })}
-                                                                        >
-                                                                            {name}
-                                                                        </div>
-                                                                    );
-                                                                })
-                                                            ) : (
-                                                                <div className='text-center'>No catalogs found</div>
-                                                            )
+                                                                        return (
+                                                                            <div
+                                                                                key={_id}
+                                                                                className='px-2 py-3 rounded-md hover:bg-richblack-50'
+                                                                                onClick={() => navigate(`/catalog/${name.toLowerCase().replaceAll(" ", "-")}`, { state: { categoryId: _id } })}
+                                                                            >
+                                                                                {name}
+                                                                            </div>
+                                                                        );
+                                                                    })
+                                                                ) : (
+                                                                    <div className='text-center'>No catalogs found</div>
+                                                                )
                                                         }
                                                     </div>
                                                 </div>
