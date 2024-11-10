@@ -7,7 +7,7 @@ import { getInstructorDashboardDetails } from 'services/operations/profileAPI';
 
 import { InstructorChart } from './InstructorChart';
 
-export const InstructorDashboard = () => {
+const InstructorDashboard = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [instructorData, setInstructorData] = useState([]);
@@ -146,3 +146,5 @@ export const InstructorDashboard = () => {
         </div>
     )
 };
+
+export default InstructorDashboard;

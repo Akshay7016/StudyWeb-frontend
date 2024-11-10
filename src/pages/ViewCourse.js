@@ -12,7 +12,7 @@ import {
     setTotalNoOfLectures
 } from "redux/slices/viewCourseSlice";
 
-export const ViewCourse = () => {
+const ViewCourse = () => {
     const dispatch = useDispatch();
     const [reviewModal, setReviewModal] = useState(false);
     const { token } = useSelector((state) => state.auth);
@@ -54,3 +54,5 @@ export const ViewCourse = () => {
         </>
     )
 };
+
+export default ViewCourse;

@@ -7,7 +7,7 @@ import { CatalogCourseCard } from "components/core/catalog/CatalogCourseCard";
 import Footer from "components/common/Footer";
 import Spinner from "components/common/Spinner";
 
-export const Catalog = () => {
+const Catalog = () => {
     const location = useLocation();
     const { categoryId } = location.state;
     const [categoryPageData, setCategoryPageData] = useState({})
@@ -103,3 +103,5 @@ export const Catalog = () => {
         </>
     )
 };
+
+export default Catalog;

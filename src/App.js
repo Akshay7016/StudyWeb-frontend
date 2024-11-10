@@ -1,35 +1,37 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import Home from 'pages/Home';
-import PageNotFound from 'pages/PageNotFound';
-import Login from 'pages/Login';
-import Signup from 'pages/Signup';
-import ForgotPassword from 'pages/ForgotPassword';
-import UpdatePassword from 'pages/UpdatePassword';
-import VerifyEmail from 'pages/VerifyEmail';
-import About from 'pages/About';
-import Dashboard from 'pages/Dashboard';
-import ContactUs from 'pages/ContactUs';
-import { Catalog } from 'pages/Catalog';
-import { CourseDetails } from 'pages/CourseDetails';
-import { ViewCourse } from 'pages/ViewCourse';
 import Navbar from 'components/common/Navbar';
 import OpenRoute from 'components/core/auth/OpenRoute';
 import PrivateRoute from 'components/core/auth/PrivateRoute';
 import StudentRoute from 'components/core/auth/StudentRoute';
 import InstructorRoute from "components/core/auth/InstructorRoute";
-import MyProfile from 'components/core/dashboard/MyProfile';
-import Settings from 'components/core/dashboard/settings';
-import EnrolledCourses from 'components/core/dashboard/EnrolledCourses';
-import Cart from "components/core/dashboard/cart";
-import AddCourse from 'components/core/dashboard/addCourse';
-import { MyCourses } from 'components/core/dashboard/MyCourses'
-import { EditCourse } from 'components/core/dashboard/EditCourse';
-import { VideoDetails } from 'components/core/viewCourse/VideoDetails';
-import { InstructorDashboard } from 'components/core/dashboard/InstructorDashboard/InstructorDashboard';
 import { store } from 'redux/store';
+import Spinner from 'components/common/Spinner'
+
+const Catalog = lazy(() => import('pages/Catalog'));
+const CourseDetails = lazy(() => import('pages/CourseDetails'));
+const Login = lazy(() => import('pages/Login'));
+const Signup = lazy(() => import('pages/Signup'));
+const VerifyEmail = lazy(() => import('pages/VerifyEmail'));
+const ForgotPassword = lazy(() => import('pages/ForgotPassword'));
+const UpdatePassword = lazy(() => import('pages/UpdatePassword'));
+const About = lazy(() => import('pages/About'));
+const ContactUs = lazy(() => import('pages/ContactUs'));
+const Dashboard = lazy(() => import('pages/Dashboard'));
+const MyProfile = lazy(() => import('components/core/dashboard/MyProfile'));
+const Settings = lazy(() => import('components/core/dashboard/settings'));
+const EnrolledCourses = lazy(() => import('components/core/dashboard/EnrolledCourses'));
+const Cart = lazy(() => import("components/core/dashboard/cart"));
+const AddCourse = lazy(() => import('components/core/dashboard/addCourse'));
+const MyCourses = lazy(() => import('components/core/dashboard/MyCourses'));
+const EditCourse = lazy(() => import('components/core/dashboard/EditCourse'));
+const InstructorDashboard = lazy(() => import('components/core/dashboard/InstructorDashboard/InstructorDashboard'));
+const ViewCourse = lazy(() => import('pages/ViewCourse'));
+const VideoDetails = lazy(() => import('components/core/viewCourse/VideoDetails'));
+const PageNotFound = lazy(() => import('pages/PageNotFound'));
 
 const App = () => {
   return (
@@ -45,19 +47,29 @@ const App = () => {
 
             <Route
               path="/catalog/:catalogName"
-              element={<Catalog />}
+              element={
+                <Suspense fallback={<Spinner />}>
+                  <Catalog />
+                </Suspense>
+              }
             />
 
             <Route
               path="/courses/:courseId"
-              element={<CourseDetails />}
+              element={
+                <Suspense fallback={<Spinner />}>
+                  <CourseDetails />
+                </Suspense>
+              }
             />
 
             <Route
               path="/login"
               element={
                 <OpenRoute>
-                  <Login />
+                  <Suspense fallback={<Spinner />}>
+                    <Login />
+                  </Suspense>
                 </OpenRoute>
               }
             />
@@ -66,7 +78,9 @@ const App = () => {
               path="/signup"
               element={
                 <OpenRoute>
-                  <Signup />
+                  <Suspense fallback={<Spinner />}>
+                    <Signup />
+                  </Suspense>
                 </OpenRoute>
               }
             />
@@ -75,7 +89,9 @@ const App = () => {
               path="/verify-email"
               element={
                 <OpenRoute>
-                  <VerifyEmail />
+                  <Suspense fallback={<Spinner />}>
+                    <VerifyEmail />
+                  </Suspense>
                 </OpenRoute>
               }
             />
@@ -84,7 +100,9 @@ const App = () => {
               path="/forgot-password"
               element={
                 <OpenRoute>
-                  <ForgotPassword />
+                  <Suspense fallback={<Spinner />}>
+                    <ForgotPassword />
+                  </Suspense>
                 </OpenRoute>
               }
             />
@@ -93,42 +111,76 @@ const App = () => {
               path="/update-password/:token"
               element={
                 <OpenRoute>
-                  <UpdatePassword />
+                  <Suspense fallback={<Spinner />}>
+                    <UpdatePassword />
+                  </Suspense>
                 </OpenRoute>
               }
             />
 
             <Route
               path="/about"
-              element={<About />}
+              element={
+                <Suspense fallback={<Spinner />}>
+                  <About />
+                </Suspense>
+              }
             />
 
             <Route
               path="/contact"
-              element={<ContactUs />}
+              element={
+                <Suspense fallback={<Spinner />}>
+                  <ContactUs />
+                </Suspense>
+              }
             />
 
             <Route
               element={
                 <PrivateRoute>
-                  <Dashboard />
+                  <Suspense fallback={<Spinner />}>
+                    <Dashboard />
+                  </Suspense>
                 </PrivateRoute>
               }
             >
-              <Route path="dashboard/my-profile" element={<MyProfile />} />
-              <Route path="dashboard/settings" element={<Settings />} />
+              <Route
+                path="dashboard/my-profile"
+                element={
+                  <Suspense fallback={<Spinner />}>
+                    <MyProfile />
+                  </Suspense>
+                }
+              />
+
+              <Route
+                path="dashboard/settings"
+                element={
+                  <Suspense fallback={<Spinner />}>
+                    <Settings />
+                  </Suspense>
+                }
+              />
+
               <Route
                 path="dashboard/enrolled-courses"
                 element={
                   <StudentRoute>
-                    <EnrolledCourses />
-                  </StudentRoute>}
+                    <Suspense fallback={<Spinner />}>
+                      <EnrolledCourses />
+                    </Suspense>
+                  </StudentRoute>
+                }
               />
+
               <Route
                 path="dashboard/cart"
                 element={
                   <StudentRoute>
-                    <Cart />
+                    <Suspense fallback={<Spinner />}>
+                      <Cart />
+                    </Suspense>
                   </StudentRoute>
                 }
               />
@@ -137,7 +189,9 @@ const App = () => {
                 path='dashboard/add-course'
                 element={
                   <InstructorRoute>
-                    <AddCourse />
+                    <Suspense fallback={<Spinner />}>
+                      <AddCourse />
+                    </Suspense>
                   </InstructorRoute>
                 }
               />
@@ -146,7 +200,9 @@ const App = () => {
                 path='dashboard/my-courses'
                 element={
                   <InstructorRoute>
-                    <MyCourses />
+                    <Suspense fallback={<Spinner />}>
+                      <MyCourses />
+                    </Suspense>
                   </InstructorRoute>
                 }
               />
@@ -155,7 +211,9 @@ const App = () => {
                 path='dashboard/edit-course/:courseId'
                 element={
                   <InstructorRoute>
-                    <EditCourse />
+                    <Suspense fallback={<Spinner />}>
+                      <EditCourse />
+                    </Suspense>
                   </InstructorRoute>
                 }
               />
@@ -164,7 +222,9 @@ const App = () => {
                 path='dashboard/instructor'
                 element={
                   <InstructorRoute>
-                    <InstructorDashboard />
+                    <Suspense fallback={<Spinner />}>
+                      <InstructorDashboard />
+                    </Suspense>
                   </InstructorRoute>
                 }
               />
@@ -174,7 +234,9 @@ const App = () => {
             <Route
               element={
                 <PrivateRoute>
-                  <ViewCourse />
+                  <Suspense fallback={<Spinner />}>
+                    <ViewCourse />
+                  </Suspense>
                 </PrivateRoute>
               }
             >
@@ -182,7 +244,9 @@ const App = () => {
                 path='view-course/:courseId/section/:sectionId/sub-section/:subSectionId'
                 element={
                   <StudentRoute>
-                    <VideoDetails />
+                    <Suspense fallback={<Spinner />}>
+                      <VideoDetails />
+                    </Suspense>
                   </StudentRoute>
                 }
               />
@@ -191,7 +255,11 @@ const App = () => {
 
             <Route
               path="*"
-              element={<PageNotFound />}
+              element={
+                <Suspense fallback={<Spinner />}>
+                  <PageNotFound />
+                </Suspense>
+              }
             />
           </Routes>
         </BrowserRouter>

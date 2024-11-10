@@ -8,7 +8,7 @@ import { setCourse, setEditCourse } from "redux/slices/courseSlice";
 
 import RenderSteps from "../addCourse/RenderSteps";
 
-export const EditCourse = () => {
+const EditCourse = () => {
     const dispatch = useDispatch();
     const { courseId } = useParams();
     const [loading, setLoading] = useState(false);
@@ -50,5 +50,6 @@ export const EditCourse = () => {
             </div>
         </>
     )
+};
 
-}
+export default EditCourse;

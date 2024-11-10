@@ -8,7 +8,7 @@ import { fetchInstructorCourses } from 'services/operations/courseDetailsAPI';
 
 import { CourseTable } from './instructorCourses/CourseTable';
 
-export const MyCourses = () => {
+const MyCourses = () => {
     const navigate = useNavigate();
     const { token } = useSelector((state) => state.auth);
     const [courses, setCourses] = useState([]);
@@ -44,3 +44,5 @@ export const MyCourses = () => {
         </div>
     )
 };
+
+export default MyCourses;

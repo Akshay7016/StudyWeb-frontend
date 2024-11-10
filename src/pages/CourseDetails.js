@@ -17,7 +17,7 @@ import { ACCOUNT_TYPE } from "enums";
 import { SectionAccordionBar } from "components/core/course/SectionAccordionBar";
 import Footer from "components/common/Footer";
 
-export const CourseDetails = () => {
+const CourseDetails = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { courseId } = useParams();
@@ -214,3 +214,5 @@ export const CourseDetails = () => {
         </div>
     )
 };
+
+export default CourseDetails;

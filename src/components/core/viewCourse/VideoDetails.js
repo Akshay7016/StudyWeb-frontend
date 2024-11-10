@@ -8,7 +8,7 @@ import { updateCompletedLectures } from "redux/slices/viewCourseSlice";
 import { markLectureAsComplete } from "services/operations/courseDetailsAPI";
 import Button from "components/common/Button";
 
-export const VideoDetails = () => {
+const VideoDetails = () => {
     const { courseId, sectionId, subSectionId } = useParams();
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -179,4 +179,6 @@ export const VideoDetails = () => {
 
         </div>
     )
-}
+};
+
+export default VideoDetails;
