@@ -23,12 +23,12 @@ const Reviews = () => {
   }, []);
 
   return (
-    <div className="bg-richblack-900 mb-[80px]">
+    <div className="bg-richblack-900 mb-[30px] lg:mb-[80px]">
       <div className="text-4xl text-white text-center font-semibold  mb-[80px]">
         Reviews from other learners
       </div>
 
-      <div className="h-[190px] max-w-maxContent mx-auto">
+      <div className="max-w-maxContent mx-auto">
         <Swiper
           slidesPerView={2}
           spaceBetween={25}
